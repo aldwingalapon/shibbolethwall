@@ -1,0 +1,62 @@
+<div id="support-request">
+    <?php
+    /* set timezone to Sydney Australia and then swap back again */
+    $temp_timezone = date_default_timezone_get();
+    date_default_timezone_set('Australia/Sydney');
+    ?>
+<!--    <div class="pdf-notice"><p>
+    <?php _e('Gravity PDF\'s support hours are from 9:00am-5:00pm Monday to Friday, Sydney Australia time.', 'lv-validation'); ?> <br />
+            <strong>
+    <?php
+    printf(
+            __('The current time in Sydney Australia is %s.', 'lv-validation'), date('g:ia l, F d')
+    );
+    ?>
+            </strong>
+        </p></div>-->
+
+    <?php
+    ?>
+
+    <form method="post">
+        <?php wp_nonce_field('lv_send_support_request', 'nonce'); ?>
+        <input type="hidden" name="action" value="lv_send_support_request" />
+        <p>
+
+            <label class="inline-label" for="email">Choose Support Type</label>
+            <input type="radio" name="countType" checked value="Problem" id="lv_tab_pr">  <label class="inline-label radio" for="lv_tab_pr">Problem</label> &nbsp;
+            <input type="radio" name="countType" value="Question" id="lv_tab_q">  <label class="inline-label radio" for="lv_tab_q">Question</label>&nbsp;
+            <input type="radio" name="countType" value="Suggestion" id="lv_tab_sug">  <label class="inline-label radio" for="lv_tab_sug">Suggestion</label>
+
+
+        </p>    
+
+        <p>
+            <label class="inline-label" for="email">Email Address</label>
+            <input type="email" name="email" id="email" value="<?php echo get_option('admin_email'); ?>" />
+            <span class="details tabbed"><?php _e('Enter the email address you want us to contact you on.', 'lv-validation'); ?><br />
+                <strong><?php _e('Note: To ensure the best support possible, please use the above email to respond to all support communications.', 'lv-validation'); ?></strong></span>
+        </p>
+
+        <p>
+            <label class="inline-label" for="website-address">Website</label>
+            <input type="text" name="website-address" id="website-address" value="<?php echo site_url(); ?>" disabled />
+        </p>  
+
+        <p>
+            <label for="active-plugins">Active Plugins</label>
+            <textarea name="active-plugins" id="active-plugins" disabled><?php print $this->get_active_plugins(); ?></textarea>
+        </p>      
+
+
+
+
+        <p>
+            <label for="comments">Comments</label>
+            <textarea name="comments" id="comments" placeholder="<?php _e('Enter as much detail about the problem as you can.', 'lv-validation'); ?>"></textarea>    
+        </p>  
+
+        <p><input class="button-primary gfbutton" type="submit" id="support-request-button" name="submit" value="<?php _e('Request Support', 'lv-validation'); ?>" /> </p>
+
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<?php
+
+$default_messages = array(
+    'text' => __("This field is required.", "lv-validation"),
+    "textarea" => __("This field is required.", "lv-validation"),
+    "radio" => __("This field is required.", "lv-validation"),
+    "checkbox" => __("This field is required.", "lv-validation"),
+    "number" => __("This field is required.", "lv-validation"),
+    "select" => __("This field is required.", "lv-validation"),
+    "multiselect" => __("This field is required.", "lv-validation"),
+    "name" => __("This field is required.", "lv-validation"),
+    "date" => __("This field is required.", "lv-validation"),
+    "phone" => __("This field is required.", "lv-validation"),
+    "email" => __("This field is required.", "lv-validation"),
+    "address" => __("This field is required.", "lv-validation"),
+    "website" => __("This field is required.", "lv-validation"),
+    "time" => __("This field is required.", "lv-validation"),
+    "post_title" => __("This field is required.", "lv-validation"),
+    "post_content" => __("This field is required.", "lv-validation"),
+    "post_excerpt" => __("This field is required.", "lv-validation"),
+    "post_tag" => __("This field is required.", "lv-validation"),
+    "post_category" => __("This field is required.", "lv-validation"),
+    "post_custom_field" => __("This field is required.", "lv-validation"),
+    "product" => __("This field is required.", "lv-validation"),
+    "option" => __("This field is required.", "lv-validation"),
+    "quantity" => __("This field is required.", "lv-validation"),
+    'shipping' => __("This field is required.", "lv-validation"),
+);

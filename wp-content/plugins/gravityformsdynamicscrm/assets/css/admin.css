@@ -1,0 +1,13 @@
+#gform-settings .gforms_form_settings .edd-license-key {
+	float:left; margin:0 5px 10px 0;
+}
+#gform-settings .gforms_form_settings .gfdcrm-button-wrapper {
+	float:left; padding-left:0; padding-right:0;
+}
+#gform-settings .gforms_form_settings .gfdcrm-button-wrapper .button, 
+	#gform-settings .gforms_form_settings .gfdcrm-button-wrapper .button-primary {
+	margin:0 5px 10px 0 !important;
+}
+#gform-settings .gforms_form_settings input {
+	float:left; margin:0 5px 10px 0;
+}

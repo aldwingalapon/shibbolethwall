@@ -1,0 +1,2827 @@
+# Copyright (C) 2017 WPMU DEV
+# This file is distributed under the same license as the Hummingbird Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hummingbird Pro 1.5.5\n"
+"Report-Msgid-Bugs-To: https://wpmudev.org\n"
+"POT-Creation-Date: 2017-07-17 15:13:34+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: admin/abstract-class-admin-page.php:235
+#: build/wp-hummingbird/admin/abstract-class-admin-page.php:235
+msgid "Settings Updated"
+msgstr ""
+
+#: admin/abstract-class-admin-page.php:243
+#: build/wp-hummingbird/admin/abstract-class-admin-page.php:243
+msgid "Made with %s by WPMU DEV"
+msgstr ""
+
+#: admin/class-admin-ajax.php:579
+#: build/wp-hummingbird/admin/class-admin-ajax.php:579
+msgid "Please, select a CloudFlare zone. Normally, this is your website"
+msgstr ""
+
+#: admin/class-admin-ajax.php:595
+#: build/wp-hummingbird/admin/class-admin-ajax.php:595
+msgid "The selected zone is not valid"
+msgstr ""
+
+#: admin/class-admin-notices.php:66
+#: build/wp-hummingbird/admin/class-admin-notices.php:66
+#. translators: %s: Upgrade URL
+msgid ""
+"Awww yeah! You’ve got access to Hummingbird Pro! Let’s upgrade your free "
+"version so you can start using premium features. <a href=\"%s\">Upgrade</a>"
+msgstr ""
+
+#: admin/class-admin-notices.php:96
+#: build/wp-hummingbird/admin/class-admin-notices.php:96
+msgid ""
+"We noticed you’re running both the free and pro versions of Hummingbird. No "
+"biggie! We’ve deactivated the free version for you. Enjoy the pro features!"
+msgstr ""
+
+#: admin/class-admin-notices.php:143
+#: build/wp-hummingbird/admin/class-admin-notices.php:143
+#. translators: %s: Review URL
+msgid ""
+"We've spent countless hours developing this free plugin for you, and we "
+"would really appreciate it if you <a href=\"%s\" target=\"_blank\">dropped "
+"us a quick rating</a>!"
+msgstr ""
+
+#: admin/class-admin.php:56 build/wp-hummingbird/admin/class-admin.php:56
+msgid "Go to Hummingbird Dashboard"
+msgstr ""
+
+#: admin/class-admin.php:56 admin/class-minification-page.php:24
+#: build/wp-hummingbird/admin/class-admin.php:56
+#: build/wp-hummingbird/admin/class-minification-page.php:24
+msgid "Settings"
+msgstr ""
+
+#: admin/class-admin.php:85 admin/class-admin.php:104 admin/class-admin.php:120
+#: admin/views/dashboard/welcome/meta-box.php:7
+#: admin/views/minification/summary-meta-box.php:7
+#: admin/views/modals/membership-modal.php:35
+#: admin/views/performance/module-resume-meta-box.php:7
+#: admin/views/uptime/summary-meta-box.php:7
+#: build/wp-hummingbird/admin/class-admin.php:85
+#: build/wp-hummingbird/admin/class-admin.php:104
+#: build/wp-hummingbird/admin/class-admin.php:120
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:7
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:7
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:35
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:7
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:7
+msgid "Hummingbird"
+msgstr ""
+
+#: admin/class-admin.php:86 admin/class-admin.php:121
+#: build/wp-hummingbird/admin/class-admin.php:86
+#: build/wp-hummingbird/admin/class-admin.php:121
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-admin.php:87 admin/class-admin.php:122
+#: admin/class-dashboard-page.php:129 admin/class-dashboard-page.php:132
+#: admin/class-dashboard-page.php:135 admin/class-dashboard-page.php:487
+#: build/wp-hummingbird/admin/class-admin.php:87
+#: build/wp-hummingbird/admin/class-admin.php:122
+#: build/wp-hummingbird/admin/class-dashboard-page.php:129
+#: build/wp-hummingbird/admin/class-dashboard-page.php:132
+#: build/wp-hummingbird/admin/class-dashboard-page.php:135
+#: build/wp-hummingbird/admin/class-dashboard-page.php:487
+msgid "Performance Report"
+msgstr ""
+
+#: admin/class-admin.php:90 admin/class-admin.php:104
+#: admin/class-dashboard-page.php:154 admin/class-dashboard-page.php:158
+#: admin/class-dashboard-page.php:162 admin/class-dashboard-page.php:165
+#: admin/class-dashboard-page.php:424
+#: build/wp-hummingbird/admin/class-admin.php:90
+#: build/wp-hummingbird/admin/class-admin.php:104
+#: build/wp-hummingbird/admin/class-dashboard-page.php:154
+#: build/wp-hummingbird/admin/class-dashboard-page.php:158
+#: build/wp-hummingbird/admin/class-dashboard-page.php:162
+#: build/wp-hummingbird/admin/class-dashboard-page.php:165
+#: build/wp-hummingbird/admin/class-dashboard-page.php:424
+msgid "Minification"
+msgstr ""
+
+#: admin/class-admin.php:92 admin/class-admin.php:123
+#: admin/class-dashboard-page.php:144 admin/class-dashboard-page.php:315
+#: admin/views/dashboard/welcome/meta-box.php:44
+#: build/wp-hummingbird/admin/class-admin.php:92
+#: build/wp-hummingbird/admin/class-admin.php:123
+#: build/wp-hummingbird/admin/class-dashboard-page.php:144
+#: build/wp-hummingbird/admin/class-dashboard-page.php:315
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:44
+msgid "Browser Caching"
+msgstr ""
+
+#: admin/class-admin.php:93 admin/class-admin.php:124
+#: admin/class-dashboard-page.php:147 admin/class-dashboard-page.php:450
+#: admin/views/dashboard/welcome/meta-box.php:62
+#: build/wp-hummingbird/admin/class-admin.php:93
+#: build/wp-hummingbird/admin/class-admin.php:124
+#: build/wp-hummingbird/admin/class-dashboard-page.php:147
+#: build/wp-hummingbird/admin/class-dashboard-page.php:450
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:62
+msgid "GZIP Compression"
+msgstr ""
+
+#: admin/class-admin.php:94 admin/class-admin.php:125
+#: admin/class-dashboard-page.php:190 admin/class-dashboard-page.php:193
+#: admin/class-dashboard-page.php:196 admin/class-uptime-page.php:68
+#: admin/class-uptime-page.php:71 admin/class-uptime-page.php:74
+#: build/wp-hummingbird/admin/class-admin.php:94
+#: build/wp-hummingbird/admin/class-admin.php:125
+#: build/wp-hummingbird/admin/class-dashboard-page.php:190
+#: build/wp-hummingbird/admin/class-dashboard-page.php:193
+#: build/wp-hummingbird/admin/class-dashboard-page.php:196
+#: build/wp-hummingbird/admin/class-uptime-page.php:68
+#: build/wp-hummingbird/admin/class-uptime-page.php:71
+#: build/wp-hummingbird/admin/class-uptime-page.php:74
+#: build/wp-hummingbird/core/class-core.php:53 core/class-core.php:53
+msgid "Uptime"
+msgstr ""
+
+#: admin/class-admin.php:125 admin/class-dashboard-page.php:187
+#: admin/class-dashboard-page.php:339
+#: build/wp-hummingbird/admin/class-admin.php:125
+#: build/wp-hummingbird/admin/class-dashboard-page.php:187
+#: build/wp-hummingbird/admin/class-dashboard-page.php:339
+msgid "Uptime Monitoring"
+msgstr ""
+
+#: admin/class-caching-page.php:29 admin/class-caching-page.php:50
+#: build/wp-hummingbird/admin/class-caching-page.php:29
+#: build/wp-hummingbird/admin/class-caching-page.php:50
+msgid "Code snippet updated"
+msgstr ""
+
+#: admin/class-caching-page.php:34 admin/class-gzip-page.php:8
+#: build/wp-hummingbird/admin/class-caching-page.php:34
+#: build/wp-hummingbird/admin/class-gzip-page.php:8
+msgid ""
+"Hummingbird could not update or write your .htaccess file. Please, make "
+".htaccess writable or paste the code yourself."
+msgstr ""
+
+#: admin/class-caching-page.php:38
+#: build/wp-hummingbird/admin/class-caching-page.php:38
+msgid ""
+"Apache <strong>.htaccess</strong> file updated. Please, wait while "
+"Hummingbird recheck expirations..."
+msgstr ""
+
+#: admin/class-caching-page.php:42
+#: build/wp-hummingbird/admin/class-caching-page.php:42
+msgid ""
+"CloudFlare cache successfully purged. Please wait 30 seconds for the purge "
+"to complete."
+msgstr ""
+
+#: admin/class-caching-page.php:48
+#: build/wp-hummingbird/admin/class-caching-page.php:48
+msgid "Your .htaccess file has been updated"
+msgstr ""
+
+#: admin/class-caching-page.php:55
+#: build/wp-hummingbird/admin/class-caching-page.php:55
+msgid "Browser cache enabled. Your .htaccess file has been updated"
+msgstr ""
+
+#: admin/class-caching-page.php:59
+#: build/wp-hummingbird/admin/class-caching-page.php:59
+msgid "Browser cache disabled. Your .htaccess file has been updated"
+msgstr ""
+
+#: admin/class-caching-page.php:121 admin/class-caching-page.php:181
+#: admin/class-gzip-page.php:77 admin/class-gzip-page.php:112
+#: admin/class-performance-page.php:87 admin/class-performance-page.php:90
+#: build/wp-hummingbird/admin/class-caching-page.php:121
+#: build/wp-hummingbird/admin/class-caching-page.php:181
+#: build/wp-hummingbird/admin/class-gzip-page.php:77
+#: build/wp-hummingbird/admin/class-gzip-page.php:112
+#: build/wp-hummingbird/admin/class-performance-page.php:87
+#: build/wp-hummingbird/admin/class-performance-page.php:90
+msgid "Summary"
+msgstr ""
+
+#: admin/class-caching-page.php:122 admin/class-caching-page.php:201
+#: build/wp-hummingbird/admin/class-caching-page.php:122
+#: build/wp-hummingbird/admin/class-caching-page.php:201
+msgid "Enable Caching"
+msgstr ""
+
+#: admin/class-caching-page.php:123 admin/class-caching-page.php:256
+#: build/wp-hummingbird/admin/class-caching-page.php:123
+#: build/wp-hummingbird/admin/class-caching-page.php:256
+msgid "CloudFlare"
+msgstr ""
+
+#: admin/class-caching-page.php:171 admin/class-dashboard-page.php:297
+#: admin/views/caching/summary-meta-box.php:36
+#: admin/views/dashboard/caching/module-meta-box.php:25
+#: build/wp-hummingbird/admin/class-caching-page.php:171
+#: build/wp-hummingbird/admin/class-dashboard-page.php:297
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:36
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:25
+msgid "Caching is enabled"
+msgstr ""
+
+#: admin/class-caching-page.php:171 admin/class-dashboard-page.php:297
+#: admin/views/caching/summary-meta-box.php:40
+#: admin/views/dashboard/caching/module-meta-box.php:29
+#: build/wp-hummingbird/admin/class-caching-page.php:171
+#: build/wp-hummingbird/admin/class-dashboard-page.php:297
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:40
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:29
+msgid "Caching is enabled but you aren't using our recommended value"
+msgstr ""
+
+#: admin/class-dashboard-page.php:41 admin/class-minification-page.php:197
+#: build/wp-hummingbird/admin/class-dashboard-page.php:41
+#: build/wp-hummingbird/admin/class-minification-page.php:197
+msgid ""
+"Your cache has been successfully cleared. Your assets will regenerate the "
+"next time someone visits your website."
+msgstr ""
+
+#: admin/class-dashboard-page.php:45 admin/class-minification-page.php:201
+#: build/wp-hummingbird/admin/class-dashboard-page.php:45
+#: build/wp-hummingbird/admin/class-minification-page.php:201
+msgid ""
+"Your local and CloudFlare caches have been successfully cleared. Your "
+"assets will regenerate the next time someone visits your website."
+msgstr ""
+
+#: admin/class-dashboard-page.php:62 admin/class-performance-page.php:60
+#: admin/views/dashboard/performance/disabled-meta-box.php:7
+#: build/wp-hummingbird/admin/class-dashboard-page.php:62
+#: build/wp-hummingbird/admin/class-performance-page.php:60
+#: build/wp-hummingbird/admin/views/dashboard/performance/disabled-meta-box.php:7
+msgid "Run Test"
+msgstr ""
+
+#: admin/class-dashboard-page.php:64
+#: build/wp-hummingbird/admin/class-dashboard-page.php:64
+msgid "Clear Cache"
+msgstr ""
+
+#: admin/class-dashboard-page.php:126
+#: build/wp-hummingbird/admin/class-dashboard-page.php:126
+msgid "Performance test in progress"
+msgstr ""
+
+#: admin/class-dashboard-page.php:171 admin/class-dashboard-page.php:543
+#: build/wp-hummingbird/admin/class-dashboard-page.php:171
+#: build/wp-hummingbird/admin/class-dashboard-page.php:543
+msgid "Image Optimization"
+msgstr ""
+
+#: admin/class-dashboard-page.php:201
+#: build/wp-hummingbird/admin/class-dashboard-page.php:201
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:27
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:40
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:42
+#: build/wp-hummingbird/core/pro/class-pro.php:98
+#: core/pro/admin/class-pro-admin.php:27 core/pro/admin/class-pro-admin.php:40
+#: core/pro/admin/class-pro-admin.php:42 core/pro/class-pro.php:98
+msgid "Reporting"
+msgstr ""
+
+#: admin/class-dashboard-page.php:264
+#: build/wp-hummingbird/admin/class-dashboard-page.php:264
+msgid "Welcome %s"
+msgstr ""
+
+#: admin/class-dashboard-page.php:556
+#: build/wp-hummingbird/admin/class-dashboard-page.php:556
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:55
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:87
+#: core/pro/admin/class-pro-admin.php:55 core/pro/admin/class-pro-admin.php:87
+msgid "Reports"
+msgstr ""
+
+#: admin/class-gzip-page.php:12
+#: build/wp-hummingbird/admin/class-gzip-page.php:12
+msgid "Gzip enabled. Your .htaccess file has been updated"
+msgstr ""
+
+#: admin/class-gzip-page.php:16
+#: build/wp-hummingbird/admin/class-gzip-page.php:16
+msgid "Gzip disabled. Your .htaccess file has been updated"
+msgstr ""
+
+#: admin/class-gzip-page.php:78 admin/class-gzip-page.php:154
+#: build/wp-hummingbird/admin/class-gzip-page.php:78
+#: build/wp-hummingbird/admin/class-gzip-page.php:154
+msgid "Enable GZIP"
+msgstr ""
+
+#: admin/class-minification-page.php:20 admin/class-minification-page.php:279
+#: build/wp-hummingbird/admin/class-minification-page.php:20
+#: build/wp-hummingbird/admin/class-minification-page.php:279
+msgid "Files"
+msgstr ""
+
+#: admin/class-minification-page.php:193
+#: build/wp-hummingbird/admin/class-minification-page.php:193
+msgid ""
+"Your new minify settings have been saved. Simply refresh your homepage and "
+"Hummingbird will minify and serve your newly compressed files."
+msgstr ""
+
+#: admin/class-minification-page.php:205 admin/class-performance-page.php:43
+#: admin/views/minification/advanced-settings.php:2
+#: build/wp-hummingbird/admin/class-minification-page.php:205
+#: build/wp-hummingbird/admin/class-performance-page.php:43
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:2
+msgid "Settings updated"
+msgstr ""
+
+#: admin/class-minification-page.php:242
+#: build/wp-hummingbird/admin/class-minification-page.php:242
+msgid "Disable Minification"
+msgstr ""
+
+#: admin/class-minification-page.php:274
+#: build/wp-hummingbird/admin/class-minification-page.php:274
+msgid "Get Started"
+msgstr ""
+
+#: admin/class-minification-page.php:282 admin/class-minification-page.php:449
+#: build/wp-hummingbird/admin/class-minification-page.php:282
+#: build/wp-hummingbird/admin/class-minification-page.php:449
+msgid "Advanced Settings"
+msgstr ""
+
+#: admin/class-minification-page.php:391 admin/class-minification-page.php:392
+#: admin/class-minification-page.php:393
+#: build/wp-hummingbird/admin/class-minification-page.php:391
+#: build/wp-hummingbird/admin/class-minification-page.php:392
+#: build/wp-hummingbird/admin/class-minification-page.php:393
+msgid "OTHER"
+msgstr ""
+
+#: admin/class-performance-page.php:25 admin/class-performance-page.php:94
+#: admin/class-performance-page.php:148
+#: build/wp-hummingbird/admin/class-performance-page.php:25
+#: build/wp-hummingbird/admin/class-performance-page.php:94
+#: build/wp-hummingbird/admin/class-performance-page.php:148
+msgid "Improvements"
+msgstr ""
+
+#: admin/class-performance-page.php:54
+#: build/wp-hummingbird/admin/class-performance-page.php:54
+msgid "Your last performance test was on <strong>%s</strong> at <strong>%s</strong>"
+msgstr ""
+
+#: admin/class-performance-page.php:56
+#: build/wp-hummingbird/admin/class-performance-page.php:56
+msgid ""
+"Hummingbird is just catching her breath. <strong>Run again in %d "
+"minutes</strong>"
+msgstr ""
+
+#: admin/class-uptime-page.php:22
+#: build/wp-hummingbird/admin/class-uptime-page.php:22
+msgid "Disable Uptime"
+msgstr ""
+
+#: admin/class-uptime-page.php:32
+#: build/wp-hummingbird/admin/class-uptime-page.php:32
+msgid "Reporting period"
+msgstr ""
+
+#: admin/class-uptime-page.php:78 admin/class-uptime-page.php:280
+#: build/wp-hummingbird/admin/class-uptime-page.php:78
+#: build/wp-hummingbird/admin/class-uptime-page.php:280
+msgid "Response Time"
+msgstr ""
+
+#: admin/class-uptime-page.php:79
+#: admin/views/dashboard/uptime/module-meta-box.php:18
+#: admin/views/uptime/summary-meta-box.php:40
+#: build/wp-hummingbird/admin/class-uptime-page.php:79
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:18
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:40
+msgid "Downtime"
+msgstr ""
+
+#: admin/class-uptime-page.php:167
+#: build/wp-hummingbird/admin/class-uptime-page.php:167
+msgid "Last Day"
+msgstr ""
+
+#: admin/class-uptime-page.php:168
+#: build/wp-hummingbird/admin/class-uptime-page.php:168
+msgid "Last Week"
+msgstr ""
+
+#: admin/class-uptime-page.php:169
+#: build/wp-hummingbird/admin/class-uptime-page.php:169
+msgid "Last Month"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box-header.php:4
+#: admin/views/minification/advanced-settings.php:74
+#: admin/views/minification/advanced-settings.php:77
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:74
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:77
+msgid "Deactivate"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:35
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:35
+msgid ""
+"Hummingbird can control your CloudFlare Browser Cache settings from here. "
+"Simply add your CloudFlare API details and configure away."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:38
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:38
+msgid "CloudFlare email"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:39
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:39
+msgid "Your CloudFlare account email"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:42
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:42
+msgid "CloudFlare Global API Key"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:43
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:43
+msgid "Enter your 37 digit API key"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:50
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:50
+msgid "Need help getting your API Key?"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:53
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:53
+msgid "<a target=\"_blank\" href=\"%s\">Log in</a> to your CloudFlare account."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:54
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:54
+msgid "Go to My Settings."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:55
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:55
+msgid "Scroll down to API Key."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:56
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:56
+msgid "Click 'View API Key' button and copy your API identifier."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:66
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:66
+msgid ""
+"It appears you have no active zones available. Double check your domain has "
+"been added to CloudFlare and try again."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:68
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:68
+msgid "Re-Check"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:72
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:72
+msgid "Select the domain that matches this website"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:74
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:74
+msgid "Select domain"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:81
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:81
+msgid "Enable CloudFlare"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:92
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:92
+msgid ""
+"CloudFlare is active on this domain. The settings you choose here will also "
+"update CloudFlare settings."
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:106
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:106
+msgid ""
+"Made changes to your website? Use Purge Cache button to clear CloudFlare's "
+"cache"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:108
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:108
+msgid "Purge Cache"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box-footer.php:4
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box-footer.php:4
+msgid "Disable caching"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box-footer.php:6
+#: admin/views/caching/enable-meta-box-footer.php:9
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box-footer.php:6
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box-footer.php:9
+msgid "Enable caching"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box-footer.php:8
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box-footer.php:8
+msgid "CloudFlare is already controlling your Browser Caching"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box-header.php:4
+#: admin/views/gzip/code-snippet-meta-box-header.php:3
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/gzip/code-snippet-meta-box-header.php:3
+msgid "Server Type:"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:7
+#: admin/views/caching/enable-meta-box.php:46
+#: admin/views/gzip/enable-meta-box.php:5
+#: admin/views/gzip/enable-meta-box.php:39
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:7
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:46
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:5
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:39
+msgid ""
+"Hummingbird will try to write into your <strong>.htaccess</strong> file for "
+"you"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:8
+#: admin/views/caching/enable-meta-box.php:47
+#: admin/views/gzip/enable-meta-box.php:6
+#: admin/views/gzip/enable-meta-box.php:40
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:8
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:47
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:6
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:40
+msgid "Want to do it manually?"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:11
+#: admin/views/caching/enable-meta-box.php:50
+#: admin/views/caching/enable-meta-box.php:85
+#: admin/views/caching/enable-meta-box.php:113
+#: admin/views/caching/enable-meta-box.php:123
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:11
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:50
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:85
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:113
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:123
+msgid "Your browser caching is already enabled and working well"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:17
+#: admin/views/gzip/enable-meta-box.php:11
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:17
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:11
+msgid "For Apache servers:"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:19
+#: admin/views/caching/enable-meta-box.php:58
+#: admin/views/gzip/enable-meta-box.php:13
+#: admin/views/gzip/enable-meta-box.php:47
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:19
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:58
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:13
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:47
+msgid "Copy the generated code into your <strong>.htaccess</strong> file"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:21
+#: admin/views/caching/enable-meta-box.php:60
+#: admin/views/gzip/enable-meta-box.php:15
+#: admin/views/gzip/enable-meta-box.php:49
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:21
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:60
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:15
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:49
+msgid ""
+"If .htaccess does not work, and you have access to "
+"<strong>vhosts.conf</strong> or <strong>httpd.conf</strong> try this:"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:23
+#: admin/views/caching/enable-meta-box.php:62
+#: admin/views/gzip/enable-meta-box.php:17
+#: admin/views/gzip/enable-meta-box.php:51
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:23
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:62
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:17
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:51
+msgid ""
+"Look for your site in the file and find the line that starts with "
+"<Directory> - add the code above into that section and save the file."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:24
+#: admin/views/gzip/enable-meta-box.php:18
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:24
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:18
+msgid "Reload Apache."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:27
+#: admin/views/gzip/enable-meta-box.php:21
+#: admin/views/gzip/enable-meta-box.php:55
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:27
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:21
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:55
+msgid ""
+"If you don't know where those files are, or you aren't able to reload "
+"Apache, you would need to <strong>consult with your hosting provider or a "
+"system administrator who has access</strong> to change the configuration of "
+"your server"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:56
+#: admin/views/gzip/enable-meta-box.php:45
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:56
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:45
+msgid "For LiteSpeed servers:"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:63
+#: admin/views/gzip/enable-meta-box.php:52
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:63
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:52
+msgid "Reload LiteSpeed."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:66
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:66
+msgid ""
+"If you don't know where those files are, or you aren't able to reload "
+"LiteSpeed, you would need to <strong>consult with your hosting provider or "
+"a system administrator who has access</strong> to change the configuration "
+"of your server"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:88
+#: admin/views/gzip/enable-meta-box.php:72
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:88
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:72
+msgid "For NGINX servers:"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:91
+#: admin/views/gzip/enable-meta-box.php:75
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:91
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:75
+msgid ""
+"Copy the generated code into your <strong>nginx.conf</strong> usually "
+"located at <strong>/etc/nginx/nginx.conf</strong> or "
+"<strong>/usr/local/nginx/conf/nginx.conf</strong>"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:92
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:92
+msgid ""
+"Add the code above to the <strong>http</strong> or inside "
+"<strong>server</strong> section in the file."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:93
+#: admin/views/gzip/enable-meta-box.php:77
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:93
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:77
+msgid "Reload NGINX."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:96
+#: admin/views/gzip/enable-meta-box.php:80
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:96
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:80
+msgid ""
+"If you do not have access to your NGINX config files you will need to "
+"contact your hosting provider to make these changes."
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:116
+#: admin/views/gzip/enable-meta-box.php:93
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:116
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:93
+msgid "For IIS servers, <a href=\"%s\">visit Microsoft TechNet</a>"
+msgstr ""
+
+#: admin/views/caching/enable-meta-box.php:126
+#: admin/views/gzip/enable-meta-box.php:97
+#: build/wp-hummingbird/admin/views/caching/enable-meta-box.php:126
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:97
+msgid "For IIS 7 servers, <a href=\"%s\">visit Microsoft TechNet</a>"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box-header.php:3
+#: admin/views/gzip/summary-meta-box-header.php:2
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box-header.php:3
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box-header.php:2
+msgid "Re-Check Status"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:5
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:5
+msgid "Browser Caching is not working properly:"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:7
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:7
+msgid ""
+"Your server may not have the \"expires\" module enabled (mod_expires for "
+"Apache, ngx_http_headers_module for NGINX)"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:8
+#: admin/views/gzip/summary-meta-box.php:6
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:8
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:6
+msgid "Another plugin may be interfering with the configuration"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:10
+#: admin/views/gzip/summary-meta-box.php:8
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:10
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:8
+msgid ""
+"If re-checking and restarting does not resolve, please check with your host "
+"or <a href=\"%s\" target=\"_blank\">open a support ticket with us</a>."
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:15
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:15
+msgid ""
+"Caching stores temporary data on your visitors devices so that they don't "
+"have to download assets twice if they don't have to. This results in a much "
+"faster second time around page load speed. Enabling caching will set the "
+"recommended expiry times for your content."
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:22
+#: admin/views/caching/summary-meta-box.php:51
+#: admin/views/caching/summary-meta-box.php:74
+#: admin/views/caching/summary-meta-box.php:82
+#: admin/views/dashboard/caching/module-meta-box.php:11
+#: admin/views/dashboard/caching/module-meta-box.php:40
+#: admin/views/dashboard/caching/module-meta-box.php:41
+#: admin/views/dashboard/caching/module-meta-box.php:61
+#: admin/views/dashboard/caching/module-meta-box.php:68
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:22
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:51
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:74
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:82
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:11
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:40
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:41
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:61
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:68
+msgid "File Type"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:23
+#: admin/views/caching/summary-meta-box.php:52
+#: admin/views/caching/summary-meta-box.php:75
+#: admin/views/caching/summary-meta-box.php:83
+#: admin/views/dashboard/caching/module-meta-box.php:12
+#: admin/views/dashboard/caching/module-meta-box.php:41
+#: admin/views/dashboard/caching/module-meta-box.php:62
+#: admin/views/dashboard/caching/module-meta-box.php:69
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:23
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:52
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:75
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:83
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:12
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:41
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:62
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:69
+msgid "Recommended"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:24
+#: admin/views/caching/summary-meta-box.php:55
+#: admin/views/caching/summary-meta-box.php:76
+#: admin/views/caching/summary-meta-box.php:86
+#: admin/views/dashboard/caching/module-meta-box.php:13
+#: admin/views/dashboard/caching/module-meta-box.php:44
+#: admin/views/dashboard/caching/module-meta-box.php:63
+#: admin/views/dashboard/caching/module-meta-box.php:72
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:24
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:55
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:76
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:86
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:13
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:44
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:63
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:72
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1161
+msgid "Current"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:25
+#: admin/views/caching/summary-meta-box.php:58
+#: admin/views/caching/summary-meta-box.php:77
+#: admin/views/caching/summary-meta-box.php:89
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:25
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:58
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:77
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:89
+msgid "Set Expiry"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:44
+#: admin/views/dashboard/caching/module-meta-box.php:33
+#: admin/views/dashboard/gzip/module-meta-box.php:12
+#: admin/views/gzip/summary-meta-box.php:23
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:44
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:33
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:12
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:23
+msgid "Disabled"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:46
+#: admin/views/dashboard/caching/module-meta-box.php:35
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:46
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:35
+msgid "Caching is disabled"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:53
+#: admin/views/dashboard/caching/module-meta-box.php:42
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:53
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:42
+msgid ""
+"The recommended value for this file type is at least %s. The longer the "
+"better!"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:68
+#: admin/views/dashboard/caching/module-meta-box.php:56
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:68
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:56
+msgid "CloudFlare is active on this domain"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:82
+#: admin/views/dashboard/caching/module-meta-box.php:68
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:82
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:68
+msgid "All files"
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:84
+#: admin/views/dashboard/caching/module-meta-box.php:70
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:84
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:70
+msgid "The recommended value for CloudFlare settings is at least 8 days."
+msgstr ""
+
+#: admin/views/caching/summary-meta-box.php:84
+#: admin/views/dashboard/caching/module-meta-box.php:70
+#: build/wp-hummingbird/admin/views/caching/summary-meta-box.php:84
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:70
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:408
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:434
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:578
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:582
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:586
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:590
+#: helpers/wp-hummingbird-helpers-core.php:408
+#: helpers/wp-hummingbird-helpers-core.php:434
+#: helpers/wp-hummingbird-helpers-core.php:578
+#: helpers/wp-hummingbird-helpers-core.php:582
+#: helpers/wp-hummingbird-helpers-core.php:586
+#: helpers/wp-hummingbird-helpers-core.php:590
+msgid "8 days"
+msgstr ""
+
+#: admin/views/dashboard/caching/module-meta-box.php:3
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:3
+msgid ""
+"Caching stores temporary data on your visitors devices so that they don’t "
+"have to download assets twice if they don’t have to."
+msgstr ""
+
+#: admin/views/dashboard/caching/module-meta-box.php:82
+#: admin/views/dashboard/gzip/module-meta-box.php:46
+#: admin/views/dashboard/minification/module-meta-box.php:45
+#: admin/views/dashboard/smush/meta-box.php:37
+#: build/wp-hummingbird/admin/views/dashboard/caching/module-meta-box.php:82
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:46
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:45
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:37
+msgid "Configure"
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:4
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:4
+msgid ""
+"Gzip compresses your webpages and style sheets before sending them over to "
+"the browser."
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:9
+#: admin/views/gzip/summary-meta-box.php:20
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:9
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:20
+msgid "Enabled"
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:18
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:18
+msgid "html"
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:21
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:21
+msgid "js"
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:24
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:24
+msgid "css"
+msgstr ""
+
+#: admin/views/dashboard/gzip/module-meta-box.php:35
+#: admin/views/gzip/summary-meta-box.php:30
+#: build/wp-hummingbird/admin/views/dashboard/gzip/module-meta-box.php:35
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:30
+msgid "Gzip compression is %s for %s"
+msgstr ""
+
+#: admin/views/dashboard/minification/cant-execute-php-meta-box.php:7
+#: build/wp-hummingbird/admin/views/dashboard/minification/cant-execute-php-meta-box.php:7
+msgid ""
+"Hummingbird's minification engine requires at least <strong>PHP "
+"5.3</strong> and above. You'll need to update your PHP to a newer version "
+"to use this feature."
+msgstr ""
+
+#: admin/views/dashboard/minification/disabled-meta-box.php:5
+#: build/wp-hummingbird/admin/views/dashboard/minification/disabled-meta-box.php:5
+msgid ""
+"Compress, combine and position your assets to dramatically improve your "
+"pageload speed."
+msgstr ""
+
+#: admin/views/dashboard/minification/disabled-meta-box.php:6
+#: admin/views/dashboard/uptime/disabled-meta-box.php:8
+#: build/wp-hummingbird/admin/views/dashboard/minification/disabled-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/uptime/disabled-meta-box.php:8
+msgid "Activate"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:3
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:3
+msgid ""
+"Compress, combine and position your assets to dramatically improve your "
+"page load speed."
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:8
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:8
+msgid "Total Enqueued Files"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:13
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:13
+msgid "Total Size Reductions"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:23
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:23
+msgid "Total % Reductions"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:29
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:29
+msgid "JS"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:30
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:30
+msgid "Scripts"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:37
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:37
+msgid "CSS"
+msgstr ""
+
+#: admin/views/dashboard/minification/module-meta-box.php:38
+#: build/wp-hummingbird/admin/views/dashboard/minification/module-meta-box.php:38
+msgid "Stylesheets"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:6
+msgid ""
+"Minification can be a bit daunting to configure for beginners, and has the "
+"potential to break the frontend of a site. You can choose here who can "
+"configure Minification options on subsites in your Multisite install."
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:9
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:9
+msgid "Minification settings updated"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:14
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:14
+msgid ""
+"Please, activate minification first. A new menu will appear in every site "
+"on your Network."
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:18
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:18
+msgid "Select users that can minify in this network"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:20
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:20
+msgid "Deactivate completely"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:21
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:21
+msgid "Blog Admins can minify"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:22
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:22
+msgid "Only Super Admins can minify"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:27
+#: admin/views/minification/advanced-settings.php:36
+#: admin/views/minification/summary-meta-box.php:42
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:27
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:36
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:42
+msgid "Enable WPMU DEV CDN"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:29
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:29
+msgid "Enable minification to use the WPMU DEV CDN"
+msgstr ""
+
+#: admin/views/dashboard/minification/network-module-meta-box.php:32
+#: admin/views/minification/advanced-settings.php:31
+#: build/wp-hummingbird/admin/views/dashboard/minification/network-module-meta-box.php:32
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:31
+msgid "Store my files on the WPMU DEV CDN"
+msgstr ""
+
+#: admin/views/dashboard/performance/disabled-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/performance/disabled-meta-box.php:6
+msgid ""
+"Hummingbird will test your website and detect what improvements you can "
+"make. We’ll give you a score out of 100 for each item, with custom "
+"recommendations on how to improve!"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-error-meta-box.php:4
+#: admin/views/dashboard/uptime/error-meta-box.php:4
+#: admin/views/performance/summary-meta-box.php:9
+#: admin/views/uptime/meta-box.php:6 admin/views/wphb-uptime-page.php:20
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-error-meta-box.php:4
+#: build/wp-hummingbird/admin/views/dashboard/uptime/error-meta-box.php:4
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:9
+#: build/wp-hummingbird/admin/views/uptime/meta-box.php:6
+#: build/wp-hummingbird/admin/views/wphb-uptime-page.php:20
+msgid "Try again"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-error-meta-box.php:5
+#: admin/views/dashboard/uptime/error-meta-box.php:5
+#: admin/views/performance/summary-meta-box.php:10
+#: admin/views/uptime/meta-box.php:7
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-error-meta-box.php:5
+#: build/wp-hummingbird/admin/views/dashboard/uptime/error-meta-box.php:5
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:10
+#: build/wp-hummingbird/admin/views/uptime/meta-box.php:7
+msgid "Support"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:4
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:4
+msgid ""
+"Here are your latest performance test results. A score above 85 is "
+"considered a good benchmark."
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:9
+#: admin/views/performance/summary-meta-box.php:58
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:9
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:58
+msgid "Recommendation"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:10
+#: admin/views/performance/summary-meta-box.php:59
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:10
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:59
+msgid "Score /100"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:38
+#: admin/views/performance/summary-meta-box.php:114
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:38
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:114
+msgid "Improve"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:49
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:49
+msgid "View Full Report"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:52
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:52
+msgid "Automated performance tests are disabled"
+msgstr ""
+
+#: admin/views/dashboard/performance/module-meta-box.php:54
+#: build/wp-hummingbird/admin/views/dashboard/performance/module-meta-box.php:54
+msgid "Automated performance tests are enabled"
+msgstr ""
+
+#: admin/views/dashboard/performance/running-test-meta-box.php:5
+#: admin/views/modals/check-performance-modal.php:3
+#: build/wp-hummingbird/admin/views/dashboard/performance/running-test-meta-box.php:5
+#: build/wp-hummingbird/admin/views/modals/check-performance-modal.php:3
+msgid ""
+"Hummingbird is running a test to measure your website performance, please "
+"wait."
+msgstr ""
+
+#: admin/views/dashboard/performance/running-test-meta-box.php:19
+#: admin/views/performance/running-test-meta-box.php:20
+#: build/wp-hummingbird/admin/views/dashboard/performance/running-test-meta-box.php:19
+#: build/wp-hummingbird/admin/views/performance/running-test-meta-box.php:20
+msgid "Analyzing your site..."
+msgstr ""
+
+#: admin/views/dashboard/reports/meta-box-header.php:4
+#: admin/views/dashboard/uptime/module-meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/dashboard/reports/meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box-header.php:4
+msgid "Upgrade to PRO"
+msgstr ""
+
+#: admin/views/dashboard/reports/no-membership-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:6
+msgid ""
+"Get tailored performance reports delivered to your inbox so you don’t have "
+"to worry about checking in."
+msgstr ""
+
+#: admin/views/dashboard/reports/no-membership-meta-box.php:14
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:14
+#: build/wp-hummingbird/core/pro/admin/views/dashboard/reports/meta-box.php:14
+#: core/pro/admin/views/dashboard/reports/meta-box.php:14
+msgid "Performance Test"
+msgstr ""
+
+#: admin/views/dashboard/reports/no-membership-meta-box.php:16
+#: admin/views/dashboard/reports/no-membership-meta-box.php:28
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:16
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:28
+msgid "Pro"
+msgstr ""
+
+#: admin/views/dashboard/reports/no-membership-meta-box.php:26
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:26
+msgid "Uptime Report"
+msgstr ""
+
+#: admin/views/dashboard/reports/no-membership-meta-box.php:40
+#: build/wp-hummingbird/admin/views/dashboard/reports/no-membership-meta-box.php:40
+msgid ""
+"Schedule automated performance tests and receive email reports direct to "
+"your inbox. Get reporting as part of a full WPMU DEV membership. &mdash; <a "
+"href=\"%s\" rel=\"dialog\">Try Pro for FREE today!</a>"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box-header.php:4
+#: admin/views/uptime/no-membership-meta-box.php:14
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/uptime/no-membership-meta-box.php:14
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box-header.php:4
+#: core/pro/admin/views/performance/reporting-meta-box-header.php:4
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:8
+#: admin/views/dashboard/smush/meta-box.php:27
+#: admin/views/dashboard/smush/meta-box.php:32
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:8
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:27
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:32
+msgid ""
+"Automatically compress and optimize your images with our super popular "
+"Smush plugin."
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:10
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:10
+msgid "Install Smush Pro"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:12
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:12
+msgid "Install Smush"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:16
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:16
+msgid ""
+"WP Smush is installed but not activated! Activate and set up now to reduce "
+"page load time."
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:18
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:18
+msgid "Activate Smush Pro"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:20
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:20
+msgid "Activate Smush"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:25
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:25
+msgid ""
+"WP Smush is installed but no images have been smushed yet. Get in there and "
+"smush away!"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:29
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:29
+msgid "There are %s images that need smushing!"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:34
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:34
+msgid ""
+"WP Smush is installed. So far you've saved %s of space. That's a total "
+"savings of %s. Nice one!"
+msgstr ""
+
+#: admin/views/dashboard/smush/meta-box.php:44
+#: build/wp-hummingbird/admin/views/dashboard/smush/meta-box.php:44
+msgid ""
+"<p>Did you know WP Smush Pro delivers up to 2x better compression, allows "
+"you to smush your originals and removes any bulk smushing limits? &mdash; "
+"<a href=\"%s\" rel=\"dialog\">Try it absolutely FREE</a></p>"
+msgstr ""
+
+#: admin/views/dashboard/uptime/disabled-meta-box.php:7
+#: admin/views/dashboard/uptime/no-membership-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/uptime/disabled-meta-box.php:7
+#: build/wp-hummingbird/admin/views/dashboard/uptime/no-membership-meta-box.php:6
+msgid ""
+"Monitor your website and get notified if/when it’s inaccessible. We’ll also "
+"watch your server response time."
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:5
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:5
+msgid "Your website is currently up and humming."
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:11
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:11
+msgid "Availability"
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:25
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:25
+msgid "Average Response Time"
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:32
+#: admin/views/dashboard/welcome/meta-box.php:72
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:32
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:72
+msgid "Last Down"
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:42
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:42
+msgid "View stats"
+msgstr ""
+
+#: admin/views/dashboard/uptime/module-meta-box.php:43
+#: build/wp-hummingbird/admin/views/dashboard/uptime/module-meta-box.php:43
+msgid "Downtime notifications are enabled"
+msgstr ""
+
+#: admin/views/dashboard/uptime/no-membership-meta-box.php:13
+#: build/wp-hummingbird/admin/views/dashboard/uptime/no-membership-meta-box.php:13
+msgid ""
+"Performance improvements hardly matter if your website isn’t accessible. "
+"Monitor your uptime and downtime with WPMU DEV’s Uptime Monitoring website "
+"management tool. &mdash; <a href=\"%s\" rel=\"dialog\">Try Pro for FREE "
+"today!</a>"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:22
+#: admin/views/performance/module-resume-meta-box.php:20
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:22
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:20
+msgid "Current performance score"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:33
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:33
+msgid "Running scan..."
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:35
+#: admin/views/performance/module-resume-meta-box.php:27
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:35
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:27
+msgid "Never"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:38
+#: admin/views/performance/module-resume-meta-box.php:30
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:38
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:30
+msgid "Last test date"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:75
+#: admin/views/minification/summary-meta-box.php:53
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:75
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:53
+msgid "Pro Feature"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:77
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:77
+msgid "Uptime Inactive"
+msgstr ""
+
+#: admin/views/dashboard/welcome/pro-membership-meta-box.php:6
+#: admin/views/dashboard/welcome/pro-membership-meta-box.php:17
+#: build/wp-hummingbird/admin/views/dashboard/welcome/pro-membership-meta-box.php:6
+#: build/wp-hummingbird/admin/views/dashboard/welcome/pro-membership-meta-box.php:17
+msgid "Try pro features for free!"
+msgstr ""
+
+#: admin/views/dashboard/welcome/pro-membership-meta-box.php:7
+#: build/wp-hummingbird/admin/views/dashboard/welcome/pro-membership-meta-box.php:7
+msgid ""
+"Upgrade to Hummingbird Pro and get access to up to 2x minify compression, "
+"automated performance tests, host your files on our blazing fast WPMU DEV "
+"CDN and monitor your website’s downtime with Uptime monitor."
+msgstr ""
+
+#: admin/views/dashboard/welcome/pro-membership-meta-box.php:8
+#: build/wp-hummingbird/admin/views/dashboard/welcome/pro-membership-meta-box.php:8
+msgid ""
+"Get all this as part of a WPMU DEV Membership, and the best part is you can "
+"try everything absolutely free."
+msgstr ""
+
+#: admin/views/dashboard/welcome/pro-membership-meta-box.php:10
+#: build/wp-hummingbird/admin/views/dashboard/welcome/pro-membership-meta-box.php:10
+msgid "Find out more"
+msgstr ""
+
+#: admin/views/gzip/enable-meta-box-footer.php:6
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box-footer.php:6
+msgid "Disable compression"
+msgstr ""
+
+#: admin/views/gzip/enable-meta-box-footer.php:8
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box-footer.php:8
+msgid "Enable compression"
+msgstr ""
+
+#: admin/views/gzip/enable-meta-box.php:76
+#: build/wp-hummingbird/admin/views/gzip/enable-meta-box.php:76
+msgid "Add the code below to the <strong>http</strong> section in the file."
+msgstr ""
+
+#: admin/views/gzip/enabled-meta-box.php:3
+#: build/wp-hummingbird/admin/views/gzip/enabled-meta-box.php:3
+msgid "Looks like gzip has been successfully setup, nice!"
+msgstr ""
+
+#: admin/views/gzip/summary-meta-box.php:3
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:3
+msgid "gzip is not working properly:"
+msgstr ""
+
+#: admin/views/gzip/summary-meta-box.php:5
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:5
+msgid ""
+"Your server may not have the \"deflate\" module enabled (mod_deflate for "
+"Apache, ngx_http_gzip_module for NGINX)"
+msgstr ""
+
+#: admin/views/gzip/summary-meta-box.php:15
+#: build/wp-hummingbird/admin/views/gzip/summary-meta-box.php:15
+msgid ""
+"Gzip compresses your HTML, JavaScript, and Style Sheets before sending them "
+"over to the browser. This drastically reduces transfer time since the files "
+"are much smaller."
+msgstr ""
+
+#: admin/views/minification/advanced-settings-header.php:4
+#: build/wp-hummingbird/admin/views/minification/advanced-settings-header.php:4
+msgid "Try Pro Features free"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:9
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:9
+msgid "Super-minify my files"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:10
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:10
+msgid ""
+"Compress your files up to 2x more than regular optimization and reduce your "
+"page load speed even further."
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:15
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:15
+msgid "Auto Enabled"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:17
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:17
+msgid "Enable Super-minify my files"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:32
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:32
+msgid ""
+"By default we minify your files via our API and then send back to your "
+"server. With this setting enabled we will host your files on WPMU DEV's "
+"secure and hyper fast CDN which will mean less load on your server and a "
+"fast visitor experience."
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:54
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:54
+msgid "WP Smush free installed"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:59
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:59
+msgid ""
+"With our pro version of Hummingbird you can super-minify your files and "
+"then host them on our blazing fast CDN. You'll get Hummingbird PRO plus "
+"100+ WPMU DEV plugins, themes & 24/7 WP support. <a href='%s' "
+"rel='dialog'>Try it free for 14 days</a>!"
+msgstr ""
+
+#: admin/views/minification/advanced-settings.php:75
+#: build/wp-hummingbird/admin/views/minification/advanced-settings.php:75
+msgid ""
+"If you no longer wish to use Hummingbird’s Minification feature you can "
+"turn it off completely."
+msgstr ""
+
+#: admin/views/minification/enqueued-files-empty-meta-box.php:7
+#: admin/views/modals/check-files-modal.php:31
+#: admin/views/modals/check-performance-modal.php:23
+#: admin/views/modals/enable-cdn-modal.php:33
+#: admin/views/modals/quick-setup-modal.php:14
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-empty-meta-box.php:7
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:31
+#: build/wp-hummingbird/admin/views/modals/check-performance-modal.php:23
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:33
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:14
+msgid "Reduce your page load time!"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-empty-meta-box.php:10
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-empty-meta-box.php:10
+msgid ""
+"Hummingbird's Minification engine can combine and minify the files your "
+"website outputs when a <br> user visits your website. The less requests "
+"your visitors have to make to your server, the <br> better. Let's check to "
+"see what we can optimise, %s!"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-empty-meta-box.php:11
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-empty-meta-box.php:11
+msgid "Activate Minification"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box-footer.php:2
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box-footer.php:2
+msgid ""
+"Saving changes will regenerate any necessary assets, this may take a few "
+"seconds to run."
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:3
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box-header.php:3
+msgid "Not seeing all your files in this list?"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box-header.php:4
+msgid "Re-Check Files"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box-header.php:5
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box-header.php:5
+msgid "Start over"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:6
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:6
+msgid ""
+"It seems that we are having problems in our servers. Minification will be "
+"turned off for %d minutes"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:11
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:11
+msgid "Choose what files to minify, combine and where to position them in the page."
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:14
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:14
+msgid "Bulk Update"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:17
+#: admin/views/minification/enqueued-files-meta-box.php:23
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:17
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:23
+msgid "Filter"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:28
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:28
+msgid "Filter plugin or theme."
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:30
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:30
+msgid "Choose Plugin or Theme"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:31
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:31
+msgid "Others"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:39
+#: admin/views/minification/enqueued-files-meta-box.php:40
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:39
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:40
+msgid "Search by name or extension"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:51
+#: admin/views/minification/enqueued-files-rows.php:9
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:51
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:9
+msgid "Hello"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:54
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:54
+msgid "File Details"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:57
+#: admin/views/minification/enqueued-files-rows.php:45
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:57
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:45
+msgid "Configuration"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:58
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:58
+msgid "Filesize"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:64
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:64
+msgid "Discard Changes"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-meta-box.php:65
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-meta-box.php:65
+msgid "Save Changes"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:18
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:18
+msgid "<strong>Error:</strong> %s"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:25
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:25
+msgid "Include/Exclude file"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:49
+#: admin/views/modals/bulk-update-modal.php:37
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:49
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:37
+msgid "Compress this file to reduce it’s filesize"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:51
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:51
+msgid "Hummingbird can't compress this file"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:58
+#: admin/views/modals/bulk-update-modal.php:39
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:58
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:39
+#: build/wp-hummingbird/core/class-core.php:48 core/class-core.php:48
+msgid "Minify"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:61
+#: admin/views/modals/bulk-update-modal.php:44
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:61
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:44
+msgid "Combine this file with others if possible"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:63
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:63
+msgid "Hummingbird can't combine this file with others"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:70
+#: admin/views/modals/bulk-update-modal.php:46
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:70
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:46
+msgid "Combine"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:74
+#: admin/views/modals/bulk-update-modal.php:51
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:74
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:51
+msgid "Load this file in the footer of the page"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:76
+#: admin/views/modals/bulk-update-modal.php:53
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:76
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:53
+msgid "Footer"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:83
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:83
+msgid "File size"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:96
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:96
+msgid "This file type cannot be minified and will be left alone"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:96
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:96
+msgid "Ignored"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:98
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:98
+msgid "Excluded from processing"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:98
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:98
+msgid "Excluded"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:100
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:100
+msgid "Waiting for a visitor to visit your homepage"
+msgstr ""
+
+#: admin/views/minification/enqueued-files-rows.php:100
+#: build/wp-hummingbird/admin/views/minification/enqueued-files-rows.php:100
+msgid "Pending"
+msgstr ""
+
+#: admin/views/minification/summary-meta-box.php:18
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:18
+msgid "Total minified file savings"
+msgstr ""
+
+#: admin/views/minification/summary-meta-box.php:24
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:24
+msgid "Files found"
+msgstr ""
+
+#: admin/views/minification/summary-meta-box.php:30
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:30
+msgid "Size reductions"
+msgstr ""
+
+#: admin/views/minification/summary-meta-box.php:39
+#: admin/views/minification/summary-meta-box.php:51
+#: admin/views/modals/membership-modal.php:16
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:39
+#: build/wp-hummingbird/admin/views/minification/summary-meta-box.php:51
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:16
+msgid "WPMU DEV CDN"
+msgstr ""
+
+#: admin/views/modals/bulk-update-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:1
+msgid "Bulk update"
+msgstr ""
+
+#: admin/views/modals/bulk-update-modal.php:3
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:3
+msgid "Choose what bulk update actions you wish to apply."
+msgstr ""
+
+#: admin/views/modals/bulk-update-modal.php:59
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:59
+msgid ""
+"Hummingbird will set this configuration for all chosen files. You will "
+"still need to set the changes live by clicking Save Changes on the next "
+"screen."
+msgstr ""
+
+#: admin/views/modals/bulk-update-modal.php:66
+#: admin/views/modals/check-files-modal.php:3
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:66
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:3
+msgid "Cancel"
+msgstr ""
+
+#: admin/views/modals/bulk-update-modal.php:69
+#: build/wp-hummingbird/admin/views/modals/bulk-update-modal.php:69
+msgid "Apply"
+msgstr ""
+
+#: admin/views/modals/check-files-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:1
+msgid "Checking files"
+msgstr ""
+
+#: admin/views/modals/check-files-modal.php:6
+#: admin/views/wphb-minification-page.php:25
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:6
+#: build/wp-hummingbird/admin/views/wphb-minification-page.php:25
+msgid ""
+"Hummingbird will combine your files as best it can, however, depending on "
+"your settings, combining all your files might not be possible. What you see "
+"here is the best output Hummingbird can muster!"
+msgstr ""
+
+#: admin/views/modals/check-files-modal.php:21
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:21
+msgid ""
+"Check Files is running in the background, you can check back anytime to see "
+"progress..."
+msgstr ""
+
+#: admin/views/modals/check-files-modal.php:25
+#: build/wp-hummingbird/admin/views/modals/check-files-modal.php:25
+msgid ""
+"Note: Moving files between the header and footer of your page can break "
+"your website. We recommend tweaking and checking each file as you go and if "
+"a setting causes errors then revert the setting here."
+msgstr ""
+
+#: admin/views/modals/check-performance-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/check-performance-modal.php:1
+msgid "Test in progress"
+msgstr ""
+
+#: admin/views/modals/check-performance-modal.php:17
+#: build/wp-hummingbird/admin/views/modals/check-performance-modal.php:17
+msgid "Performance test in progress..."
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:1
+msgid "Activate CDN"
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:10
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:10
+msgid "File check complete."
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:13
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:13
+msgid ""
+"Do you want to store your minified files on WPMU DEV’s super-fast CDN? It’s "
+"absolutely free for WPMU DEV members!"
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:22
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:22
+msgid "Host my files on the WPMU DEV CDN"
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:25
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:25
+msgid "What is a CDN?"
+msgstr ""
+
+#: admin/views/modals/enable-cdn-modal.php:26
+#: build/wp-hummingbird/admin/views/modals/enable-cdn-modal.php:26
+msgid "Continue"
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:1
+#: admin/views/modals/membership-modal.php:28
+#: admin/views/performance/summary-membership-meta-box.php:6
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:28
+#: build/wp-hummingbird/admin/views/performance/summary-membership-meta-box.php:6
+msgid "Upgrade Membership"
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:4
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:4
+msgid "Here's what you'll get by upgrading to Hummingbird Pro."
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:8
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:8
+msgid "Automation"
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:9
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:9
+msgid ""
+"Schedule Hummingbird to run regular performance tests daily, weekly or "
+"monthly and get email reports delivered straight to your inbox."
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:12
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:12
+msgid "Enhanced Minify Compression"
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:13
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:13
+msgid ""
+"Compress your minified files up to 2x more than regular optimization and "
+"reuce your page load speed even further."
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:17
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:17
+msgid ""
+"By default we minify your files via our API and send them back to your "
+"server. Pro users can host their files on WPMU DEV’s secure and hyper fast "
+"CDN, which will mean less load on your server and a fast visitor experience."
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:20
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:20
+msgid "Smush Pro"
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:21
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:21
+msgid ""
+"A membership for Hummingbird Pro also gets you the award winning Smush Pro "
+"with unlimited advanced lossy compression that’ll give image heavy websites "
+"a speed boost."
+msgstr ""
+
+#: admin/views/modals/membership-modal.php:25
+#: build/wp-hummingbird/admin/views/modals/membership-modal.php:25
+msgid "Get all of this, plus heaps more as part of a WPMU DEV membership."
+msgstr ""
+
+#: admin/views/modals/quick-setup-modal.php:1
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:1
+msgid "Quick Setup"
+msgstr ""
+
+#: admin/views/modals/quick-setup-modal.php:3
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:3
+msgid "Skip"
+msgstr ""
+
+#: admin/views/modals/quick-setup-modal.php:6
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:6
+msgid ""
+"Welcome to Hummingbird, the hottest Performance plugin for WordPress! We "
+"recommend running a quick performance test before you start tweaking "
+"things. Alternatively you can skip this step if you’d prefer to start "
+"customizing."
+msgstr ""
+
+#: admin/views/modals/quick-setup-modal.php:8
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:8
+msgid ""
+"This is only a performance test. Once you know what to fix you can get "
+"started in the next steps."
+msgstr ""
+
+#: admin/views/modals/quick-setup-modal.php:9
+#: admin/views/performance/empty-summary-meta-box.php:11
+#: build/wp-hummingbird/admin/views/modals/quick-setup-modal.php:9
+#: build/wp-hummingbird/admin/views/performance/empty-summary-meta-box.php:11
+msgid "Test my website"
+msgstr ""
+
+#: admin/views/performance/empty-summary-meta-box.php:8
+#: build/wp-hummingbird/admin/views/performance/empty-summary-meta-box.php:8
+msgid "Let's see what we can improve!"
+msgstr ""
+
+#: admin/views/performance/empty-summary-meta-box.php:10
+#: build/wp-hummingbird/admin/views/performance/empty-summary-meta-box.php:10
+msgid ""
+"For us to know what to improve we need to test your website. All testing is "
+"done in the background via our <br> secure servers. Once complete, we'll "
+"give you a list of things to improve, and how to do it."
+msgstr ""
+
+#: admin/views/performance/module-resume-meta-box.php:36
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:36
+msgid "Previous score"
+msgstr ""
+
+#: admin/views/performance/module-resume-meta-box.php:41
+#: admin/views/performance/module-resume-meta-box.php:49
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:41
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:49
+msgid "Available after next test"
+msgstr ""
+
+#: admin/views/performance/module-resume-meta-box.php:46
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:46
+msgid "Improvement"
+msgstr ""
+
+#: admin/views/performance/module-resume-meta-box.php:60
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:60
+msgid "Recommendations"
+msgstr ""
+
+#: admin/views/performance/running-test-meta-box.php:5
+#: build/wp-hummingbird/admin/views/performance/running-test-meta-box.php:5
+msgid "Testing your website for performance improvements"
+msgstr ""
+
+#: admin/views/performance/running-test-meta-box.php:6
+#: build/wp-hummingbird/admin/views/performance/running-test-meta-box.php:6
+msgid ""
+"This test is running in the background, you can check back anytime to see "
+"progress"
+msgstr ""
+
+#: admin/views/performance/summary-meta-box-header.php:4
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box-header.php:4
+msgid "Overall Score"
+msgstr ""
+
+#: admin/views/performance/summary-meta-box.php:47
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:47
+msgid ""
+"Here are your latest performance test results. Action as many fixes as "
+"possible, however you can always ignore warnings if you are unable to fix "
+"them."
+msgstr ""
+
+#: admin/views/performance/summary-meta-box.php:60
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:60
+msgid "Type"
+msgstr ""
+
+#: admin/views/performance/summary-meta-box.php:131
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:131
+msgid "Overview"
+msgstr ""
+
+#: admin/views/performance/summary-meta-box.php:140
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:140
+msgid "Benchmarks"
+msgstr ""
+
+#: admin/views/performance/summary-meta-box.php:163
+#: build/wp-hummingbird/admin/views/performance/summary-meta-box.php:163
+msgid "How to improve"
+msgstr ""
+
+#: admin/views/uptime/disabled-meta-box.php:8
+#: admin/views/uptime/disabled-meta-box.php:10
+#: admin/views/uptime/no-membership-meta-box.php:8
+#: build/wp-hummingbird/admin/views/uptime/disabled-meta-box.php:8
+#: build/wp-hummingbird/admin/views/uptime/disabled-meta-box.php:10
+#: build/wp-hummingbird/admin/views/uptime/no-membership-meta-box.php:8
+msgid "Monitor your website"
+msgstr ""
+
+#: admin/views/uptime/disabled-meta-box.php:13
+#: build/wp-hummingbird/admin/views/uptime/disabled-meta-box.php:13
+msgid ""
+"We can monitor your website's response time and let you know when you "
+"experience downtime. It's included with your WPMU DEV Membership and all "
+"<br> you have to do is flick a switch. What are you waiting for, %s?"
+msgstr ""
+
+#: admin/views/uptime/disabled-meta-box.php:14
+#: build/wp-hummingbird/admin/views/uptime/disabled-meta-box.php:14
+msgid "Activate Uptime Monitoring"
+msgstr ""
+
+#: admin/views/uptime/downtime-meta-box.php:6
+#: build/wp-hummingbird/admin/views/uptime/downtime-meta-box.php:6
+msgid "Here's a log of when your website was inaccessible for visitors."
+msgstr ""
+
+#: admin/views/uptime/downtime-meta-box.php:12
+#: build/wp-hummingbird/admin/views/uptime/downtime-meta-box.php:12
+msgid "No events in the chosen date range"
+msgstr ""
+
+#: admin/views/uptime/meta-box-header.php:3
+#: build/wp-hummingbird/admin/views/uptime/meta-box-header.php:3
+msgid "Tip: A lower response time is better! Google recommends less than 200ms"
+msgstr ""
+
+#: admin/views/uptime/meta-box.php:20
+#: build/wp-hummingbird/admin/views/uptime/meta-box.php:20
+msgid ""
+"Uptime monitors your server response time and lets you know when your "
+"website is down or<br> too slow for your visitors. This service is "
+"currently under maintenance as we build a brand<br> new monitoring service. "
+"Check back soon!"
+msgstr ""
+
+#: admin/views/uptime/meta-box.php:31
+#: build/wp-hummingbird/admin/views/uptime/meta-box.php:31
+msgid ""
+"Server response time is the amount of time it takes for a web server to "
+"respond to a request from a browser. The longer it takes, the longer your "
+"visitors wait for the page to start loading."
+msgstr ""
+
+#: admin/views/uptime/no-membership-meta-box.php:11
+#: build/wp-hummingbird/admin/views/uptime/no-membership-meta-box.php:11
+msgid ""
+"Uptime monitors your server response time and lets you know when your "
+"website is down or too slow for your visitors. Get Uptime monitoring as "
+"part of a WPMU DEV membership."
+msgstr ""
+
+#: admin/views/uptime/summary-meta-box.php:16
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:16
+msgid "Website availability during the reporting period"
+msgstr ""
+
+#: admin/views/uptime/summary-meta-box.php:24
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:24
+msgid "Average server response time during the reporting period"
+msgstr ""
+
+#: admin/views/uptime/summary-meta-box.php:30
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:30
+msgid "Outages"
+msgstr ""
+
+#: admin/views/uptime/summary-meta-box.php:35
+#: admin/views/uptime/summary-meta-box.php:45
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:35
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:45
+msgid "None"
+msgstr ""
+
+#: admin/views/uptime/summary-meta-box.php:50
+#: build/wp-hummingbird/admin/views/uptime/summary-meta-box.php:50
+msgid "Up Since"
+msgstr ""
+
+#: build/wp-hummingbird/core/api/request/cloudflare.php:51
+#: core/api/request/cloudflare.php:51
+msgid "Cloudflare error: %s"
+msgstr ""
+
+#: build/wp-hummingbird/core/api/request/cloudflare.php:54
+#: core/api/request/cloudflare.php:54
+msgid "Cloudflare unknown error"
+msgstr ""
+
+#: build/wp-hummingbird/core/api/request/request.php:68
+#: core/api/request/request.php:68
+msgid "Wrong Service. $service must be an instance of WP_Hummingbird_API_Service"
+msgstr ""
+
+#: build/wp-hummingbird/core/api/request/wpmudev.php:85
+#: core/api/request/wpmudev.php:85
+msgid "Unknown Error. Code: %s"
+msgstr ""
+
+#: build/wp-hummingbird/core/api/service/uptime.php:55
+#: build/wp-hummingbird/core/api/service/uptime.php:71
+#: core/api/service/uptime.php:55 core/api/service/uptime.php:71
+msgid "Unknown Error"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:49 core/class-core.php:49
+msgid "Minify New"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:50 core/class-core.php:50
+msgid "Gzip"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:51 core/class-core.php:51
+msgid "Caching"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:52 core/class-core.php:52
+msgid "Performance"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:54 core/class-core.php:54
+msgid "Smush"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:55 core/class-core.php:55
+msgid "Cloudflare"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:114 core/class-core.php:114
+msgid "See this page unminified"
+msgstr ""
+
+#: build/wp-hummingbird/core/class-core.php:125 core/class-core.php:125
+msgid "See this page minified"
+msgstr ""
+
+#: build/wp-hummingbird/core/integration/avada.php:22
+#: core/integration/avada.php:22
+msgid ""
+"JS Compiler detected in Avada Theme. For Hummingbird minification settings "
+"to work correctly, it is recommended you %s in Advanced - Dynamic CSS & JS."
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/class-module-cloudflare.php:341
+#: core/modules/class-module-cloudflare.php:341
+msgid "Invalid CloudFlare expiration value"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/class-module-performance.php:96
+#: core/modules/class-module-performance.php:96
+msgid ""
+"The performance test didn't return any results. This probably means you're "
+"on a local website (which we can't scan) or something went wrong trying to "
+"access WPMU DEV. Try again and if this error continues to appear please "
+"open a ticket with our support heroes"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/class-module-uptime.php:12
+#: core/modules/class-module-uptime.php:12
+msgid "You need to be a WPMU DEV Member"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:785
+#: core/modules/minify/class-minify-group.php:785
+msgid "This file has not a linked URL, it will not be combined/minified"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:798
+#: core/modules/minify/class-minify-group.php:798
+msgid "This file included in your output can't be minified or combined"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:845
+#: core/modules/minify/class-minify-group.php:845
+msgid "It looks like this file is empty"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:876
+#: core/modules/minify/class-minify-group.php:876
+msgid "@import directive is not allowed in stylesheets"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:891
+#: core/modules/minify/class-minify-group.php:891
+msgid "Hummingbird could not parse the content of this file"
+msgstr ""
+
+#: build/wp-hummingbird/core/modules/minify/class-minify-group.php:927
+#: core/modules/minify/class-minify-group.php:927
+msgid "Minify callback does not exist"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:123
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:24
+#: core/pro/admin/class-pro-admin.php:123
+#: core/pro/admin/views/performance/reporting-meta-box.php:24
+msgid "Daily"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:126
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:26
+#: core/pro/admin/class-pro-admin.php:126
+#: core/pro/admin/views/performance/reporting-meta-box.php:26
+msgid "Weekly"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/class-pro-admin.php:129
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:28
+#: core/pro/admin/class-pro-admin.php:129
+#: core/pro/admin/views/performance/reporting-meta-box.php:28
+msgid "Monthly"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/dashboard/reports/meta-box.php:6
+#: core/pro/admin/views/dashboard/reports/meta-box.php:6
+msgid ""
+"Monitor your website and get notified if/when it's inaccessible. We'll also "
+"watch your server response time."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/dashboard/reports/meta-box.php:16
+#: core/pro/admin/views/dashboard/reports/meta-box.php:16
+msgid "Inactive"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box-footer.php:7
+#: core/pro/admin/views/performance/reporting-meta-box-footer.php:7
+msgid "Try Pro for FREE today!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box-footer.php:11
+#: core/pro/admin/views/performance/reporting-meta-box-footer.php:11
+msgid ""
+"<p>Schedule automated performance tests and receive email reports direct to "
+"your inbox. You'll get Hummingbird Pro plus 100+ WPMU DEV plugins, themes & "
+"24/7 WP support. <a href=\"%s\" rel=\"dialog\">Try Pro for FREE "
+"today!</a></p>"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:5
+#: core/pro/admin/views/performance/reporting-meta-box.php:5
+msgid "Schedule Scans"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:7
+#: core/pro/admin/views/performance/reporting-meta-box.php:7
+msgid ""
+"Configure Hummingbird to automatically and regularly test your website and "
+"email you reports."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:17
+#: core/pro/admin/views/performance/reporting-meta-box.php:17
+msgid "Run regular scans & reports"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:20
+#: core/pro/admin/views/performance/reporting-meta-box.php:20
+msgid "Schedule"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:21
+#: core/pro/admin/views/performance/reporting-meta-box.php:21
+msgid "Frequency"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:31
+#: core/pro/admin/views/performance/reporting-meta-box.php:31
+msgid "Day of the week"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:39
+#: core/pro/admin/views/performance/reporting-meta-box.php:39
+msgid "Time of day"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:52
+#: core/pro/admin/views/performance/reporting-meta-box.php:52
+msgid "Email Recipients"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:54
+#: core/pro/admin/views/performance/reporting-meta-box.php:54
+msgid ""
+"Choose which of your website’s users will receive the test results in their "
+"inbox."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:91
+#: core/pro/admin/views/performance/reporting-meta-box.php:91
+msgid "First Name"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:98
+#: core/pro/admin/views/performance/reporting-meta-box.php:98
+msgid "Empty email"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:99
+#: core/pro/admin/views/performance/reporting-meta-box.php:99
+msgid "Email Address"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/admin/views/performance/reporting-meta-box.php:114
+#: core/pro/admin/views/performance/reporting-meta-box.php:114
+msgid "Update Settings"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/class-pro-ajax.php:81
+#: core/pro/class-pro-ajax.php:81
+msgid "Please, insert a valid email."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/class-pro.php:97 core/pro/class-pro.php:97
+msgid "Cron"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:223
+msgid "install"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:230
+msgid ""
+"Important updates are available for <strong>%s</strong>. Install the free "
+"WPMU DEV Dashboard plugin now for updates and support!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:232
+msgid ""
+"<strong>%s</strong> is almost ready - install the free WPMU DEV Dashboard "
+"plugin for updates and support!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:236
+msgid ""
+"Important updates are available for your WPMU DEV plugins/themes. Install "
+"the free WPMU DEV Dashboard plugin now for updates and support!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:238
+msgid ""
+"Almost ready - install the free WPMU DEV Dashboard plugin for updates and "
+"support!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:244
+msgid "Install Plugin"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:247
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:288
+msgid "Saving..."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:248
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:289
+#: build/wp-hummingbird/externals/shared-ui/plugin-ui.php:301
+msgid "Dismiss"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:264
+msgid "activate"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:271
+msgid ""
+"Important updates are available for <strong>%s</strong>. Activate the WPMU "
+"DEV Dashboard to update now!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:273
+msgid "Just one more step to enable updates and support for <strong>%s</strong>!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:277
+msgid ""
+"Important updates are available for your WPMU DEV plugins/themes. Activate "
+"the WPMU DEV Dashboard to update now!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:279
+msgid ""
+"Just one more step - activate the WPMU DEV Dashboard plugin and you're all "
+"done!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:285
+msgid "Activate WPMU DEV Dashboard"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:952
+msgid "We did not find any data for this plugin or theme..."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1131
+msgid "%s changelog"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1167
+msgid "New"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1184
+msgid "Version %s"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1202
+msgid "Show all changes"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/externals/dash-notice/wpmudev-dash-notification.php:1203
+msgid "Hide details"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/class-module-reporting.php:34
+#: core/pro/modules/class-module-reporting.php:34
+#. translators: %s: Url for site
+msgid "Here's your latest performance test results for %s"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WPMU DEV"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/footer.php:25
+#: core/pro/modules/reporting/templates/footer.php:25
+msgid "EVERYTHING YOU NEED FOR WORDPRESS"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/footer.php:26
+#: core/pro/modules/reporting/templates/footer.php:26
+msgid "One place, one low price, unlimited sites"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/footer.php:41
+#: core/pro/modules/reporting/templates/footer.php:41
+msgid "Incsub, PO Box 163 Albert Park, Victoria, 3206, Australia."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/header.php:18
+#: core/pro/modules/reporting/templates/header.php:18
+msgid "Test results from"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/header.php:19
+#: core/pro/modules/reporting/templates/header.php:19
+msgid "Hummingbird!"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/header.php:23
+#: core/pro/modules/reporting/templates/header.php:23
+msgid "Hummingbird Performance Report"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:24
+#: core/pro/modules/reporting/templates/main.php:24
+#. translators: %s: Username.
+msgid "Hi %s,"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:26
+#: core/pro/modules/reporting/templates/main.php:26
+msgid "It’s Hummingbird here, straight from the"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:26
+#: core/pro/modules/reporting/templates/main.php:26
+msgid "engine room. Here’s your latest Performance Test summary."
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:34
+#: core/pro/modules/reporting/templates/main.php:34
+msgid "Ok"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:36
+#: core/pro/modules/reporting/templates/main.php:36
+msgid "Warning"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:38
+#: core/pro/modules/reporting/templates/main.php:38
+msgid "Critical"
+msgstr ""
+
+#: build/wp-hummingbird/core/pro/modules/reporting/templates/main.php:52
+#: core/pro/modules/reporting/templates/main.php:52
+msgid "View full report"
+msgstr ""
+
+#: build/wp-hummingbird/externals/shared-ui/plugin-ui.php:49
+msgid "Nothing found"
+msgstr ""
+
+#: build/wp-hummingbird/externals/shared-ui/plugin-ui.php:50
+msgid "Okay, we saved your changes!"
+msgstr ""
+
+#: build/wp-hummingbird/externals/shared-ui/plugin-ui.php:51
+msgid "Oops, we could not do this..."
+msgstr ""
+
+#: build/wp-hummingbird/externals/shared-ui/plugin-ui.php:272
+msgid "Saving"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:327
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:377
+#: helpers/wp-hummingbird-helpers-core.php:327
+#: helpers/wp-hummingbird-helpers-core.php:377
+msgid "Are you sure? All your changes will be lost"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:333
+#: helpers/wp-hummingbird-helpers-core.php:333
+msgid "Remove"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:334
+#: helpers/wp-hummingbird-helpers-core.php:334
+msgid "You"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:395
+#: helpers/wp-hummingbird-helpers-core.php:395
+msgid "1 hour"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:396
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:422
+#: helpers/wp-hummingbird-helpers-core.php:396
+#: helpers/wp-hummingbird-helpers-core.php:422
+msgid "3 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:397
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:423
+#: helpers/wp-hummingbird-helpers-core.php:397
+#: helpers/wp-hummingbird-helpers-core.php:423
+msgid "4 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:398
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:424
+#: helpers/wp-hummingbird-helpers-core.php:398
+#: helpers/wp-hummingbird-helpers-core.php:424
+msgid "5 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:399
+#: helpers/wp-hummingbird-helpers-core.php:399
+msgid "6 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:400
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:426
+#: helpers/wp-hummingbird-helpers-core.php:400
+#: helpers/wp-hummingbird-helpers-core.php:426
+msgid "12 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:401
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:427
+#: helpers/wp-hummingbird-helpers-core.php:401
+#: helpers/wp-hummingbird-helpers-core.php:427
+msgid "16 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:402
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:428
+#: helpers/wp-hummingbird-helpers-core.php:402
+#: helpers/wp-hummingbird-helpers-core.php:428
+msgid "20 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:403
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:429
+#: helpers/wp-hummingbird-helpers-core.php:403
+#: helpers/wp-hummingbird-helpers-core.php:429
+msgid "1 day"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:404
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:430
+#: helpers/wp-hummingbird-helpers-core.php:404
+#: helpers/wp-hummingbird-helpers-core.php:430
+msgid "2 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:405
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:431
+#: helpers/wp-hummingbird-helpers-core.php:405
+#: helpers/wp-hummingbird-helpers-core.php:431
+msgid "3 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:406
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:432
+#: helpers/wp-hummingbird-helpers-core.php:406
+#: helpers/wp-hummingbird-helpers-core.php:432
+msgid "4 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:407
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:433
+#: helpers/wp-hummingbird-helpers-core.php:407
+#: helpers/wp-hummingbird-helpers-core.php:433
+msgid "5 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:409
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:435
+#: helpers/wp-hummingbird-helpers-core.php:409
+#: helpers/wp-hummingbird-helpers-core.php:435
+msgid "16 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:410
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:436
+#: helpers/wp-hummingbird-helpers-core.php:410
+#: helpers/wp-hummingbird-helpers-core.php:436
+msgid "24 days"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:411
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:437
+#: helpers/wp-hummingbird-helpers-core.php:411
+#: helpers/wp-hummingbird-helpers-core.php:437
+msgid "1 month"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:412
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:438
+#: helpers/wp-hummingbird-helpers-core.php:412
+#: helpers/wp-hummingbird-helpers-core.php:438
+msgid "2 months"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:413
+#: helpers/wp-hummingbird-helpers-core.php:413
+msgid "3 months"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:414
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:439
+#: helpers/wp-hummingbird-helpers-core.php:414
+#: helpers/wp-hummingbird-helpers-core.php:439
+msgid "6 months"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:415
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:440
+#: helpers/wp-hummingbird-helpers-core.php:415
+#: helpers/wp-hummingbird-helpers-core.php:440
+msgid "1 year"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:421
+#: helpers/wp-hummingbird-helpers-core.php:421
+msgid "2 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:425
+#: helpers/wp-hummingbird-helpers-core.php:425
+msgid "8 hours"
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:554
+#: helpers/wp-hummingbird-helpers-core.php:554
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:557
+#: helpers/wp-hummingbird-helpers-core.php:557
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:560
+#: helpers/wp-hummingbird-helpers-core.php:560
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:563
+#: helpers/wp-hummingbird-helpers-core.php:563
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:566
+#: helpers/wp-hummingbird-helpers-core.php:566
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:569
+#: helpers/wp-hummingbird-helpers-core.php:569
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:693
+#: helpers/wp-hummingbird-helpers-core.php:693
+msgid "Still having trouble? "
+msgstr ""
+
+#: build/wp-hummingbird/helpers/wp-hummingbird-helpers-core.php:693
+#: helpers/wp-hummingbird-helpers-core.php:693
+msgid "Open a support ticket."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Hummingbird Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://premium.wpmudev.org/project/wp-hummingbird/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Hummingbird zips through your site finding new ways to make it load faster, "
+"from file compression and minification to browser caching – because when it "
+"comes to pagespeed, every millisecond counts."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://premium.wpmudev.org"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:48
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:48
+msgctxt "Connect to CloufFlare button text"
+msgid "Connect"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:98
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:98
+msgctxt "CloudFlare Zone"
+msgid "Zone"
+msgstr ""
+
+#: admin/views/caching/cloudflare-meta-box.php:102
+#: build/wp-hummingbird/admin/views/caching/cloudflare-meta-box.php:102
+msgctxt "CloudFlare Plan"
+msgid "Plan"
+msgstr ""
+
+#: admin/views/dashboard/welcome/meta-box.php:29
+#: admin/views/performance/module-resume-meta-box.php:25
+#: build/wp-hummingbird/admin/views/dashboard/welcome/meta-box.php:29
+#: build/wp-hummingbird/admin/views/performance/module-resume-meta-box.php:25
+msgctxt "Time of the last performance report"
+msgid "at %s"
+msgstr ""
