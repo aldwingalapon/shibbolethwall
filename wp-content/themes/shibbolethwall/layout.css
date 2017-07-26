@@ -1,5 +1,6 @@
 @media only screen and (max-width:7680px){
 	.c-hamburger{display:none;}
+	#main-header .nav{width:78%;}
 	#main-header .nav .inner-nav #menu_searchform{position: absolute; top: 100%; left:0;}
 }
 
@@ -32,7 +33,7 @@
 }
 
 @media only screen and (max-width:1024px){
-
+	#main-header .nav{width:70%;}
 }
 
 @media only screen and (max-width:800px){

@@ -392,5 +392,124 @@ function primary_navigation_search_menu_item( $items, $args ) {
     return $items;
 }
 
+//Custom Post Types code generated from CPTUI
+add_action( 'init', 'cptui_register_my_cpts_slider' );
+function cptui_register_my_cpts_slider() {
+	$labels = array(
+		"name" => __( 'Sliders', 'shibbolethwall' ),
+		"singular_name" => __( 'Slider', 'shibbolethwall' ),
+		"search_items" => __( 'Search Sliders', 'shibbolethwall' ),
+		"all_items" => __( 'All Sliders', 'shibbolethwall' ),
+		"edit_item" => __( 'Edit Slider', 'shibbolethwall' ),
+		"update_item" => __( 'Update Slider', 'shibbolethwall' ),
+		"add_new_item" => __( 'Add New Slider', 'shibbolethwall' ),
+		"new_item_name" => __( 'New Slider', 'shibbolethwall' ),
+		"menu_name" => __( 'Slider', 'shibbolethwall' ),
+		);
+	$args = array(
+		"label" => __( 'Sliders', 'shibbolethwall' ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => false,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+				"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "slider", "with_front" => true ),
+		"query_var" => true,
+		"menu_position" => 5,"menu_icon" => "dashicons-slides",
+		"supports" => array( "title", "editor", "thumbnail", "page-attributes" ),
+		"taxonomies" => array( "slider_position" ),
+);
+	register_post_type( "slider", $args );
+// End of cptui_register_my_cpts_slider()
+}
+add_action( 'init', 'cptui_register_my_taxes_slider_position' );
+function cptui_register_my_taxes_slider_position() {
+	$labels = array(
+		"name" => __( 'Slider Position', 'shibbolethwall' ),
+		"singular_name" => __( 'Slider Position', 'shibbolethwall' ),
+		"search_items" => __( 'Search Slider Positions', 'shibbolethwall' ),
+		"all_items" => __( 'All Slider Positions', 'shibbolethwall' ),
+		"parent_item" => __( 'Parent Slider Position', 'shibbolethwall' ),
+		"parent_item_colon" => __( 'Parent Slider Position:', 'shibbolethwall' ),
+		"edit_item" => __( 'Edit Slider Position', 'shibbolethwall' ),
+		"update_item" => __( 'Update Slider Position', 'shibbolethwall' ),
+		"add_new_item" => __( 'Add New Slider Position', 'shibbolethwall' ),
+		"new_item_name" => __( 'New Slider Position', 'shibbolethwall' ),
+		"menu_name" => __( 'Slider Position', 'shibbolethwall' ),
+		);
+	$args = array(
+		"label" => __( 'Slider Position', 'shibbolethwall' ),
+		"labels" => $labels,
+		"public" => true,
+		"hierarchical" => true,
+		"label" => "Slider Position",
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => array( 'slug' => 'slider_position', 'with_front' => true, ),
+		"show_admin_column" => false,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"show_in_quick_edit" => false,
+	);
+	register_taxonomy( "slider_position", array( "slider" ), $args );
+// End cptui_register_my_taxes_slider_position()
+}
+
+add_filter( 'manage_edit-slider_columns', 'shibbolethwall_edit_slider_columns' ) ;
+function shibbolethwall_edit_slider_columns( $columns ) {
+	$columns = array(
+		'cb' => '<input type="checkbox" />',
+		'title' => __( 'Slider Item' ),
+		'slider_position' => __( 'Slider Position' ),
+		'date' => __( 'Date' )
+	);
+	return $columns;
+}
+add_action( 'manage_slider_posts_custom_column', 'shibbolethwall_manage_slider_columns', 10, 2 );
+function shibbolethwall_manage_slider_columns( $column, $post_id ) {
+	global $post;
+	switch( $column ) {
+		/* If displaying the 'slider_position' column. */
+		case 'slider_position' :
+			/* Get the position for the post. */
+			$terms = get_the_terms( $post_id, 'slider_position' );
+			/* If terms were found. */
+			if ( !empty( $terms ) ) {
+				$out = array();
+				/* Loop through each term, linking to the 'edit posts' page for the specific term. */
+				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'slider_position' => $term->slug ), 'edit.php' ) ),
+						esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'slider_position', 'display' ) )
+					);
+				}
+				/* Join the terms, separating them with a comma. */
+				echo join( ', ', $out );
+			}
+			/* If no terms were found, output a default message. */
+			else {
+				_e( 'No Slider Position' );
+			}
+			break;
+		/* Just break out of the switch statement for everything else. */
+		default :
+			break;
+	}
+}
+add_filter( 'manage_edit-slider_sortable_columns', 'shibbolethwall_slider_sortable_columns' );
+function shibbolethwall_slider_sortable_columns( $columns ) {
+	$columns['slider_position'] = 'slider_position';
+	return $columns;
+}
 
 ?>
