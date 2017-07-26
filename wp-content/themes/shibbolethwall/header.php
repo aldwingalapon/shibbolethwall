@@ -80,6 +80,18 @@
 			<div id="main-navigation">
 				<div class="container">
 					<div class="row">
+						<?php
+							$header_logo = get_field('header_logo', 'option');
+						?>
+						<div class="col-md-12 main-logo">
+							<div class="header-logo lazy-image" style="width:216px;" <?php echo ($header_logo ? 'data-src="' . $header_logo['url'] . '"' : 'data-src="' . get_template_directory_uri() . '/images/upvi_logo@3x.png"'); ?>><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>" class=""><img src="<?php echo get_template_directory_uri() . '/images/upvi_logo.png'; ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" style="width:216px;max-width:100%;height:auto;" /></a></div>
+							<div class="nav">
+								<div class="inner-nav">
+									<h1>96th<small>Homecoming</small></h1>
+									<?php wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'items_wrap' => '<ul class="primary-menu">%3$s</ul>', 'link_before' => '<span class="menu-item">', 'link_after'  => '</span>' ) ); ?>
+								</div>
+							</div>
+						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="clearfix"></div>

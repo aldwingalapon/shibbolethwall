@@ -181,12 +181,12 @@ ul {
 }
 
 .itsec-pro-upsell {
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
 	text-decoration: none;
 }
 
@@ -488,7 +488,7 @@ body.itsec-modal-open {
 
 #itsec-settings-messages-container div,
 .itsec-module-messages-container div {
-	background: #f1f1f1;
+
 }
 
 #itsec-settings-messages-container.no-module {
@@ -498,7 +498,7 @@ body.itsec-modal-open {
 	right: inherit;
 	opacity: 1;
 	background: none;
-	border-radius: none;
+	border-radius: 0;
 	box-shadow:none;
 	-webkit-transition: none;
 	transition: none;
@@ -507,7 +507,6 @@ body.itsec-modal-open {
 }
 
 #itsec-settings-messages-container.no-module div {
-	box-shadow: none;
 	background: #fff;
 }
 
@@ -698,4 +697,38 @@ body.itsec-modal-open {
 .itsec-password-strength.strong {
 	background-color: #c1e1b9;
 	border-color: #83c373;
+}
+
+/**
+ * Styling for output created by ITSEC_Settings_Page::show_details_toggle()
+ */
+.itsec-details-toggle-container {
+}
+.itsec-details-toggle-container .itsec-details-toggle-details-hidde {
+	display: none;
+}
+.itsec-details-toggle-container {
+	font-size: 13px;
+}
+.itsec-details-toggle-container .itsec-details-toggle-details :last-child {
+	margin-bottom: 0;
+}
+.itsec-details-toggle-container .itsec-details-toggle-details ul li {
+	margin: 1em 0;
+}
+
+/**
+ * Styling for email contacts lists
+ */
+ul.itsec-settings-contacts {
+	list-style: none;
+	margin: 1em 0;
+	padding-left: 0;
+}
+ul.itsec-settings-contacts + ul.itsec-settings-contacts {
+	padding-top: 1em;
+	border-top: 1px solid #ddd;
+}
+ul.itsec-settings-contacts li input[type="checkbox"] {
+	margin-top: 0;
 }

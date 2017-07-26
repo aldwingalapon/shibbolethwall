@@ -244,14 +244,6 @@ final class ITSEC_Global_Settings_Page extends ITSEC_Module_Settings_Page {
 			</tr>
 		<?php endif; ?>
 		<tr>
-			<th scope="row"><label for="itsec-global-lock_file"><?php _e( 'Disable File Locking', 'better-wp-security' ); ?></label></th>
-			<td>
-				<?php $form->add_checkbox( 'lock_file' ); ?>
-				<label for="itsec-global-lock_file"><?php _e( 'Disable File Locking', 'better-wp-security' ); ?></label>
-				<p class="description"><?php _e( 'iThemes Security uses file locking to prevent operations from being executed twice. We do not recommend disabling file locking unless your host prevents it from working correctly.', 'better-wp-security' ); ?></p>
-			</td>
-		</tr>
-		<tr>
 			<th scope="row"><label for="itsec-global-proxy_override"><?php _e( 'Override Proxy Detection', 'better-wp-security' ); ?></label></th>
 			<td>
 				<?php $form->add_checkbox( 'proxy_override' ); ?>

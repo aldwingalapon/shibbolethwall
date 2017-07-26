@@ -662,3 +662,10 @@
 	Enhancement: Hide Backend functions purely in PHP code now rather than relying half on PHP code and half on .htaccess and nginx.conf modifications. This allows Hide Backend to function on web servers and server configurations that it was previously not compatible with.
 	Misc: Updated or added phpDoc to many functions.
 	Misc: Updated Disable File Locking description.
+6.4.0 - 2017-07-24 - Chris Jean & Timothy Jacobs
+	Enhancement: Replaced file locking with database locking. This method of locking is compatible with all systems as it does not require the ability to write files. It also allows for locking to work on sites that have multiple front-end servers with a shared database. Since file locking is no longer used, the Global Settings > Disable File Locking setting was removed.
+	Enhancement: Add "Copy to Clipboard" functionality for server and wp-config rules.
+	Bug Fix: Prevent 404s when following links in email notifications on a site with Hide Backend enabled.
+	Bug Fix: Ensure uninstall process is not run when another version of iThemes Security is still active.
+	Bug Fix: Fixed method of working around Hide Backend.
+	Bug Fix: Warnings are no longer generated when saving a user profile with a role of "No role for this site" selected.

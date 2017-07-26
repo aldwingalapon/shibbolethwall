@@ -29,7 +29,7 @@ table {border-collapse: collapse; border-spacing: 0;}
 /* Base */
 /*----------------------------------------------*/
 html{-webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;height:100%;overflow-y: scroll;}
-body{position:relative; font-family: 'Gill Sans MT'; color:#707070; background-color: #fff; padding: 0; margin: 0; font-weight:300; font-size: 14px; height:100%;}
+body{position:relative; font-family: 'Gill Sans MT'; color:#707070; background-color: #fff; padding: 0; margin: 0; font-weight:300; font-size: 16px; height:100%;}
 img, article img, aside img, header img, section img, img[class*="align"] {max-width: 100%;}
 img, article img, aside img, header img, section img, img[class*="align"] {height: auto;}
 a, a:hover, a:active, a:focus {color:#009BC9; text-decoration:underline;}
@@ -56,6 +56,20 @@ em{font-family: 'Gill Sans MT'; font-style: italic;}
 /*----------------------------------------------*/
 /* Header */
 /*----------------------------------------------*/
+#main-header{display:block;width:100%;margin:0;padding:1rem 0;position:relative;}
+#main-header #top-header{}
+#main-header #main-navigation{}
+#main-header #bottom-header{}
+#main-header .header-logo{display: inline-block !important;vertical-align:bottom;margin-right:1rem;}
+#main-header .nav{display: inline-block; max-width: 78%; vertical-align: bottom; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 3px solid #DC9A3B;}
+#main-header .nav .inner-nav{display:table-row;}
+#main-header .nav h1{color:#000;display:table-cell;vertical-align:bottom;font-size:4.5rem;}
+#main-header .nav h1 small{display:block;font-size:1.125rem;}
+#main-header .nav .menu-primary-menu-container{display:table-cell;vertical-align:bottom;}
+#main-header .nav ul.primary-menu{display:block;margin:0 1rem;padding:0;width:100%;}
+#main-header .nav ul.primary-menu li{display: inline-block;margin:0;padding:0;}
+#main-header .nav ul.primary-menu li a{display:block;font-size:1.125rem;text-decoration:none;color:#000;background-color:transparent;margin: 0 1rem;padding: 0.5rem 0.75rem;-webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out;}
+#main-header .nav ul.primary-menu li a:hover{color:#FFF;background-color:#353535;}
 
 /*----------------------------------------------*/
 /* Main */

@@ -66,9 +66,7 @@ final class ITSEC_Admin_User_Validator extends ITSEC_Validator {
 
 		global $wpdb;
 
-		$itsec_files = ITSEC_Core::get_itsec_files();
-
-		if ( $itsec_files->get_file_lock( 'admin_user' ) ) { //make sure it isn't already running
+		if ( ITSEC_Lib::get_lock( 'admin_user', 180 ) ) { //make sure it isn't already running
 
 			//sanitize the username
 			$new_user = sanitize_text_field( $username );
@@ -95,14 +93,14 @@ final class ITSEC_Admin_User_Validator extends ITSEC_Validator {
 
 					}
 
-					$itsec_files->release_file_lock( 'admin_user' );
+					ITSEC_Lib::release_lock( 'admin_user' );
 
 					return true;
 
 				}
 
 			} elseif ( $username !== null ) { //username didn't validate
-				$itsec_files->release_file_lock( 'admin_user' );
+				ITSEC_Lib::release_lock( 'admin_user' );
 
 				return false;
 
@@ -148,7 +146,7 @@ final class ITSEC_Admin_User_Validator extends ITSEC_Validator {
 				 */
 				do_action( 'itsec_change_admin_user_id', $new_user );
 
-				$itsec_files->release_file_lock( 'admin_user' );
+				ITSEC_Lib::release_lock( 'admin_user' );
 
 				return true;
 

@@ -1,7 +1,6 @@
 jQuery( document ).ready( function ( $ ) {
-	var $container = $( '#itsec-module-card-security-check' );
 
-	$container.on( 'click', '#itsec-security-check-secure_site', function( e ) {
+	$( document ).on( 'click', '#itsec-security-check-secure_site', function( e ) {
 		e.preventDefault();
 
 		$( '#itsec-security-check-secure_site' )
@@ -27,7 +26,7 @@ jQuery( document ).ready( function ( $ ) {
 		} );
 	} );
 
-	$container.on( 'click', '.itsec-security-check-container-is-interactive :submit', function( e ) {
+	$( document ).on( 'click', '#itsec-module-card-security-check .itsec-security-check-container-is-interactive :submit', function( e ) {
 		e.preventDefault();
 
 		var $button = $( this );

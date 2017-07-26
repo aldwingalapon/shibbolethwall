@@ -548,3 +548,10 @@
 	New Feature: Added support for the ITSEC_DISABLE_MODULES define.
 3.4.1 - 2017-07-05 - Chris Jean & Timothy Jacobs
 	Bug Fix: Fixed password-protected posts not properly handling the password when Hide Backend is enabled.
+3.5.0 - 2017-07-24 - Chris Jean & Timothy Jacobs
+	Enhancement: Replaced file locking with database locking. This method of locking is compatible with all systems as it does not require the ability to write files. It also allows for locking to work on sites that have multiple front-end servers with a shared database. Since file locking is no longer used, the Global Settings > Disable File Locking setting was removed.
+	Enhancement: Add "Copy to Clipboard" functionality for server and wp-config rules.
+	Bug Fix: Prevent 404s when following links in email notifications on a site with Hide Backend enabled.
+	Bug Fix: Ensure uninstall process is not run when another version of iThemes Security is still active.
+	Bug Fix: Fixed method of working around Hide Backend.
+	Bug Fix: Warnings are no longer generated when saving a user profile with a role of "No role for this site" selected.

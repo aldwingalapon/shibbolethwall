@@ -65,7 +65,7 @@ final class ITSEC_Strong_Passwords {
 		}
 
 		require_once( ITSEC_Core::get_core_dir() . '/lib/class-itsec-lib-canonical-roles.php' );
-		
+
 		if ( isset( $user->role ) ) {
 			$role = $this->get_canonical_role_from_role_and_user( $user->role, $user );
 		} else {
@@ -140,7 +140,12 @@ final class ITSEC_Strong_Passwords {
 	 * @return string
 	 */
 	private function get_canonical_role_from_role_and_user( $role, $user ) {
-		$role_caps = array_keys( array_filter( wp_roles()->get_role( $role )->capabilities ) );
+		if ( empty( $role ) ) {
+			$role_caps = array();
+		} else {
+			$role_caps = array_keys( array_filter( wp_roles()->get_role( $role )->capabilities ) );
+		}
+
 		$user_caps = array();
 
 		if ( isset( $user->caps ) ) {

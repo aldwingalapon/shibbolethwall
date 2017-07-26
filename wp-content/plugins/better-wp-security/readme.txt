@@ -3,7 +3,7 @@ Contributors: ithemes, chrisjean, gerroald, mattdanner
 Tags: security, security plugin, malware, hack, secure, block, SSL, admin, htaccess, lockdown, login, protect, protection, anti virus, attack, injection, login security, maintenance, permissions, prevention, authentication, administration, password, brute force, ban, permissions, bots, user agents, xml rpc, security log
 Requires at least: 4.6
 Tested up to: 4.8
-Stable tag: 6.3.0
+Stable tag: 6.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -187,6 +187,14 @@ Free support may be available with the help of the community in the <a href="htt
 5. Free malware scan powered by Sucuri SiteCheck.
 
 == Changelog ==
+
+= 6.4.0 =
+ * Enhancement: Replaced file locking with database locking. This method of locking is compatible with all systems as it does not require the ability to write files. It also allows for locking to work on sites that have multiple front-end servers with a shared database. Since file locking is no longer used, the Global Settings > Disable File Locking setting was removed.
+ * Enhancement: Add "Copy to Clipboard" functionality for server and wp-config rules.
+ * Bug Fix: Prevent 404s when following links in email notifications on a site with Hide Backend enabled.
+ * Bug Fix: Ensure uninstall process is not run when another version of iThemes Security is still active.
+ * Bug Fix: Fixed method of working around Hide Backend.
+ * Bug Fix: Warnings are no longer generated when saving a user profile with a role of "No role for this site" selected.
 
 = 6.3.0 =
  * Important: The way that Hide Backend functions changes in this release. Previously, if your Hide Backend Login Slug was wplogin, going to example.com/wplogin would result in the URL remaining example.com/wplogin. The new implementation of this feature results in a redirect to a URL that looks as follows: example.com/wp-login.php?itsec-hb-token=wplogin. While this may not be desireable for some users, this change was necessary to fix longstanding compatibility issues with other plugins. Once you access the login page using the Login Slug page, a cookie is set with an expiration time of one hour. As long as the cookie remains, you can access example.com/wp-login.php without having to access the Hide Backend Login Slug first. If you wish to confirm that Hide Backend is working properly on your site, opening up a private browsing window is a quick way to test without having to log out and clear cookies.
@@ -1701,5 +1709,5 @@ This release is a complete rewrite from the ground up. Special thanks to Cory Mi
 
 == Upgrade Notice ==
 
-= 6.3.0 =
-Version 6.3.0 contains important bug and compatibility fixes. It is recommended for all users.
+= 6.4.0 =
+Version 6.4.0 contains important bug fixes and enhancements. It is recommended for all users.

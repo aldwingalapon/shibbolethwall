@@ -634,14 +634,13 @@ final class ITSEC_Lockout {
 
 		global $wpdb, $itsec_logger, $itsec_globals;
 
-		$itsec_files = ITSEC_Core::get_itsec_files();
-
 		$host_expiration = null;
 		$user_expiration = null;
 		$username        = sanitize_text_field( trim( $username ) );
+		$lock            = 'lockout_' . $host . $user . $username;
 
 		// Acquire a lock to prevent a lockout being created more than once by a particularly fast attacker.
-		if ( $itsec_files->get_file_lock( 'lockout_' . $host . $user . $username ) ) {
+		if ( ITSEC_Lib::get_lock( $lock, 180 ) ) {
 
 			//Do we have a good host to lock out or not
 			if ( ! is_null( $host ) && ITSEC_Lib::is_ip_whitelisted( sanitize_text_field( $host ) ) === false && ITSEC_Lib_IP_Tools::validate( $host ) ) {
@@ -802,12 +801,12 @@ final class ITSEC_Lockout {
 
 					if ( $good_host !== false ) {
 
-						$itsec_files->release_file_lock( 'lockout_' . $host . $user . $username );
+						ITSEC_Lib::release_lock( $lock );
 						$this->execute_lock();
 
 					} else {
 
-						$itsec_files->release_file_lock( 'lockout_' . $host . $user . $username );
+						ITSEC_Lib::release_lock( $lock );
 						$this->execute_lock( true );
 
 					}
@@ -816,7 +815,7 @@ final class ITSEC_Lockout {
 
 			}
 
-			$itsec_files->release_file_lock( 'lockout_' . $host . $user . $username );
+			ITSEC_Lib::release_lock( $lock );
 
 		}
 

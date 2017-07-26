@@ -26,6 +26,7 @@ class ITSEC_Hide_Backend {
 		add_filter( 'network_site_url', array( $this, 'filter_generated_url' ), 100, 2 );
 		add_filter( 'wp_redirect', array( $this, 'filter_redirect' ) );
 		add_filter( 'comment_moderation_text', array( $this, 'filter_comment_moderation_text' ) );
+		add_filter( 'itsec_notify_admin_page_url', array( $this, 'filter_notify_admin_page_urls' ) );
 
 		remove_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
 	}
@@ -268,6 +269,19 @@ class ITSEC_Hide_Backend {
 	 */
 	public function filter_redirect( $location ) {
 		return $this->filter_generated_url( $location, $location );
+	}
+
+	/**
+	 * Filter URLs to admin pages in emails to include the access token query arg.
+	 *
+	 * This ensures that users are redirected to the correct login page if they are logged-out.
+	 *
+	 * @param string $location
+	 *
+	 * @return string
+	 */
+	public function filter_notify_admin_page_urls( $location ) {
+		return $this->add_token_to_url( $location, 'login' );
 	}
 
 	/**

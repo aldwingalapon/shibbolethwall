@@ -24,14 +24,7 @@ class ITSEC_Notify {
 			}
 
 		} else {
-			$last_sent = ITSEC_Modules::get_setting( 'global', 'digest_last_sent' );
-			$yesterday = ITSEC_Core::get_current_time_gmt() - DAY_IN_SECONDS;
-
-			// Send digest if it has been 24 hours
-			if ( $last_sent < $yesterday && false === get_site_transient( 'itsec_notification_running' ) ) {
-				add_action( 'init', array( $this, 'init' ) );
-			}
-
+			add_action( 'init', array( $this, 'init' ) );
 		}
 
 	}
@@ -41,21 +34,43 @@ class ITSEC_Notify {
 	 *
 	 * @since 4.5
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public function init() {
-		if ( is_404() || ( ( ! defined( 'ITSEC_NOTIFY_USE_CRON' ) || false === ITSEC_NOTIFY_USE_CRON ) && get_site_transient( 'itsec_notification_running' ) !== false ) ) {
-			return;
+
+		if ( is_404() ) {
+			return false;
 		}
 
-		if ( ( ! defined( 'ITSEC_NOTIFY_USE_CRON' ) || false === ITSEC_NOTIFY_USE_CRON ) ) {
-			set_site_transient( 'itsec_notification_running', true, 3600 );
+		$use_cron   = defined( 'ITSEC_NOTIFY_USE_CRON' ) && ITSEC_NOTIFY_USE_CRON;
+		$doing_cron = defined( 'DOING_CRON' ) && DOING_CRON;
+
+		if ( $doing_cron && ! $use_cron ) {
+			return false;
 		}
 
+		if ( ! ITSEC_Lib::get_lock( 'daily-digest' ) ) {
+			return false;
+		}
+
+		if ( ! $use_cron ) {
+
+			$global = ITSEC_Modules::get_settings_obj( 'global' );
+			ITSEC_Storage::reload();
+			$global->load();
+
+			$last_sent = $global->get('digest_last_sent' );
+			$yesterday = ITSEC_Core::get_current_time_gmt() - DAY_IN_SECONDS;
+
+			// Send digest if it has been 24 hours
+			if ( $last_sent > $yesterday ) {
+				return false;
+			}
+		}
 
 		$result = $this->send_daily_digest();
 
-		delete_site_transient( 'itsec_notification_running' );
+		ITSEC_Lib::release_lock( 'daily-digest' );
 
 		return $result;
 	}
@@ -65,7 +80,7 @@ class ITSEC_Notify {
 	 *
 	 * @since 2.6.0
 	 *
-	 * @return
+	 * @return bool
 	 */
 	public function send_daily_digest() {
 
@@ -125,11 +140,11 @@ class ITSEC_Notify {
 		}
 
 
-		$mail->add_details_box( sprintf( wp_kses( __( 'For more details, <a href="%s"><b>visit your security logs</b></a>', 'better-wp-security' ), array( 'a' => array( 'href' => array() ), 'b' => array() ) ), ITSEC_Core::get_logs_page_url() ) );
+		$mail->add_details_box( sprintf( wp_kses( __( 'For more details, <a href="%s"><b>visit your security logs</b></a>', 'better-wp-security' ), array( 'a' => array( 'href' => array() ), 'b' => array() ) ), ITSEC_Mail::filter_admin_page_url( ITSEC_Core::get_logs_page_url() ) ) );
 		$mail->add_divider();
 		$mail->add_large_text( esc_html__( 'Is your site as secure as it could be?', 'better-wp-security' ) );
 		$mail->add_text( esc_html__( 'Ensure your site is using recommended settings and features with a security check.', 'better-wp-security' ) );
-		$mail->add_button( esc_html__( 'Run a Security Check ✓', 'better-wp-security' ), ITSEC_Core::get_security_check_page_url() );
+		$mail->add_button( esc_html__( 'Run a Security Check ✓', 'better-wp-security' ), ITSEC_Mail::filter_admin_page_url( ITSEC_Core::get_security_check_page_url() ) );
 
 		if ( defined( 'ITSEC_DEBUG' ) && true === ITSEC_DEBUG ) {
 			$mail->add_text( sprintf( esc_html__( 'Debug info (source page): %s', 'better-wp-security' ), esc_url( $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ) ) );
@@ -294,5 +309,4 @@ class ITSEC_Notify {
 		return 'text/html';
 
 	}
-
 }

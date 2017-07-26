@@ -1002,6 +1002,7 @@ final class ITSEC_Lib {
 	 */
 	public static function get_url_path( $url, $prefix = '' ) {
 		$path = (string) parse_url( $url, PHP_URL_PATH );
+		$path = preg_replace( '|//+|', '/', $path );
 		$path = untrailingslashit( $path );
 
 		if ( ! empty( $prefix ) && 0 === strpos( $path, $prefix ) ) {
@@ -1024,5 +1025,63 @@ final class ITSEC_Lib {
 		}
 
 		return $GLOBALS['__itsec_lib_get_request_path'];
+	}
+
+	/**
+	 * Acquire a lock.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @param string $name       Lock name.
+	 * @param int    $expires_in Number of seconds to hold the lock for.
+	 *
+	 * @return bool
+	 */
+	public static function get_lock( $name, $expires_in = 30 ) {
+
+		/** @var \wpdb $wpdb */
+		global $wpdb;
+
+		$lock = "itsec-lock-{$name}";
+		$now = ITSEC_Core::get_current_time_gmt();
+		$release_at = $now + $expires_in;
+
+		if ( empty( $wpdb->sitemeta ) ) {
+			$result = $wpdb->query( $wpdb->prepare( "INSERT IGNORE INTO `$wpdb->options` (`option_name`, `option_value`, `autoload`) VALUES (%s, %s, 'no') /* LOCK */", $lock, $release_at ) );
+		} else {
+			$result = $wpdb->query( $wpdb->prepare( "INSERT IGNORE INTO `$wpdb->sitemeta` (`site_id`, `meta_key`, `meta_value`) VALUES (%d, %s, %s) /* LOCK */", $wpdb->siteid, $lock, $release_at ) );
+		}
+
+		// The lock exists. See if it has expired.
+		if ( ! $result ) {
+
+			$locked_until = get_site_option( $lock );
+
+			if ( ! $locked_until ) {
+				// Can't write or read the lock. Bail due to an unknown and hopefully temporary error.
+				return false;
+			}
+
+			if ( $locked_until > $now ) {
+				// The lock still exists and has not expired.
+				return false;
+			}
+		}
+
+		// Ensure that the lock is set properly by triggering all the regular actions and filters.
+		update_site_option( $lock, $release_at );
+
+		return true;
+	}
+
+	/**
+	 * Release a lock.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @param string $name The lock name.
+	 */
+	public static function release_lock( $name ) {
+		delete_site_option( "itsec-lock-{$name}" );
 	}
 }
