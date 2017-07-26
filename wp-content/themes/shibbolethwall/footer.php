@@ -95,6 +95,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/classie.js" defer></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js" defer></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.simplemodal.js" defer></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollTo.min.js" defer></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/scripts/scripts.js" defer></script>
 </script>
 </body>

@@ -77,6 +77,12 @@ em{font-family: 'Gill Sans MT'; font-style: italic;}
 #main-header .nav .inner-nav #menu_searchform{width: 100%; padding:0 1rem; text-align: right;z-index:700;}
 #main-header .nav .inner-nav #menu_searchform input[type='search'].search-field{display: block; font-size: 14px; width: 100%; border:thin solid rgba(0,0,0,.2); border-radius: 0; outline: 0; margin: 0; padding: .7rem 1.5rem; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; box-shadow: 0 3px 5px 0 rgba(0,0,0,.14); -webkit-box-shadow: 0 3px 5px 0 rgba(0,0,0,.14); -moz-box-shadow: 0 3px 5px 0 rgba(0,0,0,.14);}
 
+a.smooth-scroll{color:#FFF;}
+.back_to_top-button {outline:none;visibility: hidden; -webkit-opacity: 0; -ms-opacity: 0; -moz-opacity: 0; -o-opacity: 0; opacity: 0; position: fixed; display: block; width: 40px; bottom: 3.5rem; right: 3.5rem; z-index: 50; width: 3.5rem; height: 3rem; background-color:rgba(53,53,53,1); border: 0; z-index: 1011; cursor: pointer; -webkit-transition: all 500ms ease-in-out; -ms-transition: all 500ms ease-in-out; -moz-transition: all 500ms ease-in-out; -o-transition: all 500ms ease-in-out; transition: all 500ms ease-in-out;}
+.back_to_top-button.fade-out {-webkit-opacity: 0.5; -ms-opacity: 0.5; -moz-opacity: 0.5; -o-opacity: 0.5; opacity: 0.5; -webkit-transition: all 500ms ease-in-out; -ms-transition: all 500ms ease-in-out; -moz-transition: all 500ms ease-in-out; -o-transition: all 500ms ease-in-out; transition: all 500ms ease-in-out;}
+
+.back_to_top-button.button_visible {visibility: visible; -webkit-opacity: 1; -ms-opacity: 1; -moz-opacity: 1; opacity: 1; opacity: 1; -webkit-transition: all 500ms ease-in-out; -ms-transition: all 500ms ease-in-out; -moz-transition: all 500ms ease-in-out; -o-transition: all 500ms ease-in-out; transition: all 500ms ease-in-out;}
+
 /*----------------------------------------------*/
 /* Main */
 /*----------------------------------------------*/

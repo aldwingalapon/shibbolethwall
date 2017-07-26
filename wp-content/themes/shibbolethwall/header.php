@@ -66,6 +66,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 </head>
 <body <?php id_the_body(); ?> class="<?php class_the_body(); ?>">
+	<a href="#" class="smooth-scroll"><button type="button" class="back_to_top-button"><i class="fa fa-chevron-up"></i></button></a>
 	<header id="main-header">
 		<div id="main-header-content">
 			<div id="top-header">
