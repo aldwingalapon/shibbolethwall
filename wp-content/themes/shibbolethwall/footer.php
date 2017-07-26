@@ -2,6 +2,11 @@
 		<div class="top-footer">
 			<div class="container">
 				<div class="row">
+					<div class="col-md-12">
+						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Top Footer') ) : ?>
+
+						<?php endif; ?>
+					</div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
@@ -9,50 +14,50 @@
 			<div class="four-menu middle-footer">
 				<div class="container">
 					<div class="row">
-						<?php if((is_active_sidebar('Footer Menu One')) && (is_active_sidebar('Footer Menu Two')) && (is_active_sidebar('Footer Menu Three')) && (is_active_sidebar('Footer Menu Four'))){ ?>
+						<?php if((is_active_sidebar('Home Footer Menu One')) && (is_active_sidebar('Home Footer Menu Two')) && (is_active_sidebar('Home Footer Menu Three')) && (is_active_sidebar('Home Footer Menu Four'))){ ?>
 							<div class="col-md-3 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu One') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu One') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="col-md-4 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Two') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Two') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="clearfix-sm"></div>
 							<div class="col-md-3 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Three') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Three') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="col-md-2 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Four') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Four') ) : ?>
 								<?php endif; ?>
 							</div>
-						<?php } elseif((is_active_sidebar('Footer Menu One')) && (is_active_sidebar('Footer Menu Two')) && (is_active_sidebar('Footer Menu Three')) && !(is_active_sidebar('Footer Menu Four'))){ ?>
+						<?php } elseif((is_active_sidebar('Home Footer Menu One')) && (is_active_sidebar('Home Footer Menu Two')) && (is_active_sidebar('Home Footer Menu Three')) && !(is_active_sidebar('Home Footer Menu Four'))){ ?>
 							<div class="col-md-3 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu One') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu One') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="col-md-4 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Two') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Two') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="clearfix-sm"></div>
 							<div class="col-md-5 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Three') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Three') ) : ?>
 								<?php endif; ?>
 							</div>
-						<?php } elseif((is_active_sidebar('Footer Menu One')) && (is_active_sidebar('Footer Menu Two')) && !(is_active_sidebar('Footer Menu Three')) && !(is_active_sidebar('Footer Menu Four'))){ ?>
+						<?php } elseif((is_active_sidebar('Home Footer Menu One')) && (is_active_sidebar('Home Footer Menu Two')) && !(is_active_sidebar('Home Footer Menu Three')) && !(is_active_sidebar('Home Footer Menu Four'))){ ?>
 							<div class="col-md-6 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu One') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu One') ) : ?>
 								<?php endif; ?>
 							</div>
 							<div class="col-md-6 col-sm-6 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu Two') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu Two') ) : ?>
 								<?php endif; ?>
 							</div>
-						<?php } elseif((is_active_sidebar('Footer Menu One')) && !(is_active_sidebar('Footer Menu Two')) && !(is_active_sidebar('Footer Menu Three')) && !(is_active_sidebar('Footer Menu Four'))){ ?>
+						<?php } elseif((is_active_sidebar('Home Footer Menu One')) && !(is_active_sidebar('Home Footer Menu Two')) && !(is_active_sidebar('Home Footer Menu Three')) && !(is_active_sidebar('Home Footer Menu Four'))){ ?>
 							<div class="col-md-12 col-sm-12 footer-menu-one-fourth">
-								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Menu One') ) : ?>
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Footer Menu One') ) : ?>
 								<?php endif; ?>
 							</div>
 						<?php } ?>

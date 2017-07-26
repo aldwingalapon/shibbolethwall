@@ -96,19 +96,13 @@ if (function_exists( 'register_nav_menus')) {register_nav_menus(array('primary_n
 
 if ( function_exists('register_sidebar') )
 register_sidebar(array('id'=>'default-sidebar','name'=>'Default Sidebar','before_widget' => '<span id="%1$s" class="widget %2$s">','after_widget' => '</span>','before_title' => '<h2 class="widgettitle">','after_title' => '</h2>',));
-register_sidebar(array('id'=>'home-top-footer-one','name'=>'Home Top Footer One','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-top-footer-two','name'=>'Home Top Footer Two','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-top-footer-three','name'=>'Home Top Footer Three','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-top-footer-four','name'=>'Home Top Footer Four','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-top-footer-one-3-4','name'=>'Home Top Footer One 3/4','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-top-footer-two-1-4','name'=>'Home Top Footer Two 1/4','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'footer-logo-information','name'=>'Footer Logos and Information','before_widget' => '','after_widget' => '','before_title' => '','after_title' => '',));
-register_sidebar(array('id'=>'footer-copyright','name'=>'Footer Copyright','before_widget' => '','after_widget' => '','before_title' => '','after_title' => '',));
-register_sidebar(array('id'=>'footer-menu','name'=>'Footer Copyright Menu','before_widget' => '','after_widget' => '','before_title' => '','after_title' => '',));
-register_sidebar(array('id'=>'home-footer-menu-one','name'=>'Footer Menu One','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-footer-menu-two','name'=>'Footer Menu Two','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-footer-menu-three','name'=>'Footer Menu Three','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
-register_sidebar(array('id'=>'home-footer-menu-four','name'=>'Footer Menu Four','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'footer-top','name'=>'Top Footer','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widgettittle">','after_title' => '</h2>',));
+register_sidebar(array('id'=>'home-footer-menu-one','name'=>'Home Footer Menu One','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'home-footer-menu-two','name'=>'Home Footer Menu Two','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'home-footer-menu-three','name'=>'Home Footer Menu Three','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'home-footer-menu-four','name'=>'Home Footer Menu Four','before_widget' => '','after_widget' => '','before_title' => '<h4>','after_title' => '</h4>',));
+register_sidebar(array('id'=>'footer-middle','name'=>'Middle Footer','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widgettittle">','after_title' => '</h2>',));
+register_sidebar(array('id'=>'footer-bottom','name'=>'Bottom Footer','before_widget' => '','after_widget' => '','before_title' => '<h2 class="widgettittle">','after_title' => '</h2>',));
 
 // thumbnail support
 add_theme_support('post-thumbnails'); 
