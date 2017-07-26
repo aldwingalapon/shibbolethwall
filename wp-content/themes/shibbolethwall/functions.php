@@ -383,4 +383,14 @@ class StumbleUponShareCount implements Share_Counter {
 	}
 }
 
+add_filter( 'wp_nav_menu_items', 'primary_navigation_search_menu_item', 10, 2 );
+function primary_navigation_search_menu_item( $items, $args ) {
+    if ($args->theme_location == 'primary_navigation') {
+        $items = (get_field('show_homecoming_title', 'option') ? '<li class="homecoming-title"><h1>' .
+ get_field('title_large', 'option') . '<small>' . get_field('title_small', 'option') . '</small></h1></li>' : '') . $items . (get_field('show_search_form_after_menu', 'option') ? '<li class="search-menu-item" data-toggle="collapse" data-target="#menu_searchform"><i class="fa fa-search" aria-hidden="true"></i></li>' : '');
+    }
+    return $items;
+}
+
+
 ?>

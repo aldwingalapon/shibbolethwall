@@ -87,8 +87,12 @@
 							<div class="header-logo lazy-image" style="width:216px;" <?php echo ($header_logo ? 'data-src="' . $header_logo['url'] . '"' : 'data-src="' . get_template_directory_uri() . '/images/upvi_logo@3x.png"'); ?>><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>" class=""><img src="<?php echo get_template_directory_uri() . '/images/upvi_logo.png'; ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" style="width:216px;max-width:100%;height:auto;" /></a></div>
 							<div class="nav">
 								<div class="inner-nav">
-									<h1>96th<small>Homecoming</small></h1>
 									<?php wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'items_wrap' => '<ul class="primary-menu">%3$s</ul>', 'link_before' => '<span class="menu-item">', 'link_after'  => '</span>' ) ); ?>
+									<?php if(get_field('show_search_form_after_menu', 'option')){ ?>
+										<form role="search" method="get" id="menu_searchform" class="search-form collapse" action="<?php echo home_url( '/' ); ?>">
+			`								<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search the UP Vanguard Inc. Shibboleth Wall website', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+										</form>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
