@@ -65,8 +65,8 @@ em{font-family: 'Gill Sans MT'; font-style: italic;}
 #main-header .nav .menu-primary-menu-container{position:relative;display:table-cell;vertical-align:bottom;}
 #main-header .nav ul.primary-menu{display:block;margin:0;padding:0;width:100%;}
 #main-header .nav ul.primary-menu li{display: inline-block;margin:0;padding:0;}
-#main-header .nav ul.primary-menu li a{display:block;font-size:1.125rem;text-decoration:none;color:#000;background-color:transparent;margin: 0 0.75rem;padding:0.65rem 1.25rem;-webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out;}
-#main-header .nav ul.primary-menu li a:hover, #main-header .nav ul.primary-menu li.current-menu-item a{color:#FFF;background-color:#353535;}
+#main-header .nav ul.primary-menu li a{display:block;font-size:1.125rem;text-decoration:none;color:#000;background-color:transparent;margin: 0 0.75rem;padding:0.65rem 1rem;-webkit-transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out;}
+#main-header .nav ul.primary-menu li a:hover{color:#FFF;background-color:#353535;}
 #main-header .nav ul.primary-menu li.homecoming-title{margin:0 1.25rem -0.5rem 0;}
 #main-header .nav ul.primary-menu li.homecoming-title h1{color:#000;display:table-cell;vertical-align:bottom;font-size:4.5rem;}
 #main-header .nav ul.primary-menu li.homecoming-title h1 small{display:block;font-size:1.125rem;letter-spacing: 0.25rem;color:#000;}
