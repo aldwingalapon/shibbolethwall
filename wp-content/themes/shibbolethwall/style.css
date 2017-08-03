@@ -40,7 +40,8 @@ a, a:hover, a:active, a:focus {color:#009BC9; text-decoration:underline;}
 .nopadding {padding: 0 !important;}
 .nopaddingleft {padding-left: 0 !important;}
 .nopaddingright {padding-right: 0 !important;}
-h1{font-family: 'Gill Sans MT'; font-weight:700;}
+h1, h2, h3, h4, h5, h6{}
+h1{font-family: 'Gill Sans MT'; font-weight:300;font-size:48px;line-height:1.5;margin: 0 0 1rem 0;}
 h2{font-family: 'Gill Sans MT'; font-weight:700;text-transform:uppercase;color:#707070;font-size:32px;line-height:1.5;margin: 0 0 1rem 0;}
 h3{font-family: 'Gill Sans MT';font-weight:700;text-transform:uppercase;color:#707070;font-size:22px;line-height:1.3;margin: 0 0 0.4rem 0;}
 h4{font-family: 'Gill Sans MT'; font-weight:700;text-transform: uppercase; position: relative; color: #707070; font-size: 18px; line-height: 1.3; padding-bottom: .1rem; margin: 0 0 1rem 0;}
@@ -87,8 +88,16 @@ a.smooth-scroll{color:#FFF;}
 /* Main */
 /*----------------------------------------------*/
 #main-content{}
+#main-content .page-banner{}
+#main-content .page-banner .header-image{position:relative;}
+#main-content .page-banner .header-image .header-caption{position: absolute; width: 80%; text-align: center; left: 50%; bottom: 10%; transform: translate(-50%,0%);}
+#main-content .page-banner .header-image .header-caption *{color:#FFF;}
+#main-content .page-banner .header-image .header-caption h2{}
+#main-content .page-banner .header-image .header-caption p{font-size: 1.1rem; line-height: 1.4;}
 #main-content .section{position:relative;}
 #main-content .section .container{position:relative;z-index:900;}
+#main-content .woocommerce-content{position:relative;padding-top:1rem;padding-bottom:2rem;}
+#main-content .woocommerce-content .page-title{}
 
 /*----------------------------------------------*/
 /* Forms */

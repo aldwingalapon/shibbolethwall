@@ -1,6 +1,11 @@
 <?php
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
 //Lets add Open Graph Meta Info
 function insert_fb_in_head() {
 	global $post;

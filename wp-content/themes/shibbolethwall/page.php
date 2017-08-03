@@ -9,43 +9,8 @@ get_header(); ?>
 <?php if (have_posts()) : ?>
 	<div id="main-content" class="page-template">
 		<?php while (have_posts()) : the_post(); $the_ID = $post->ID; ?>
-			<div class="page-breadcrumb">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<?php if(function_exists('the_breadcrumbs')) the_breadcrumbs(); ?>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
 			<!-- Hero Banner Section -->
-			<?php if(get_field('use_header_image_or_hero_banner', $the_ID) == 'Header Image') { ?>
-				<div class="page-banner">
-					<?php 
-						$headerimg = '';
-						$headerbg = get_stylesheet_directory_uri().'/images/default-page-header-blank.png';
-						if(get_field('header_image', $the_ID ) ) {
-							$img = get_field('header_image', $the_ID );
-							$headerimg = $img['url'];
-						} else {
-							$headerimg = get_stylesheet_directory_uri().'/images/default-page-header.jpg';	
-						}
-					 ?>
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="overlay"></div>
-								<div class="header-image lazy-image" data-src="<?php echo $headerimg; ?>"><img src="<?php echo $headerbg; ?>" width="1920" height="256" alt="<?php echo ( get_field('header_title', $the_ID ) ? the_field('header_title', $the_ID ) : get_the_title() ); ?>" title="<?php echo ( get_field('header_title', $the_ID ) ? the_field('header_title', $the_ID ) : get_the_title() ); ?>" />
-									<div class="header-caption">
-								</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-			<?php } else {
+			<?php if(get_field('use_header_image_or_hero_banner', $the_ID) == 'Hero Banner') {
 				$hero_banner_category = get_field('hero_banner_category', $the_ID);
 			?>
 				<div class="hero-banner">
@@ -159,8 +124,42 @@ get_header(); ?>
 							<?php endwhile; ?>
 						</div>
 					<?php else : endif; ?>
+				</div>			
+			<?php } else { ?>
+				<div class="page-banner">
+					<?php 
+						$headerimg = '';
+						$headerbg = get_stylesheet_directory_uri().'/images/default-page-header-blank.png';
+						if(get_field('header_image', $the_ID ) ) {
+							$img = get_field('header_image', $the_ID );
+							$headerimg = $img['url'];
+						} else {
+							$headerimg = get_stylesheet_directory_uri().'/images/default-page-header.jpg';	
+						}
+					 ?>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="overlay"></div>
+								<div class="header-image lazy-image" data-src="<?php echo $headerimg; ?>"><img src="<?php echo $headerbg; ?>" width="1920" height="256" alt="<?php echo ( get_field('header_title', $the_ID ) ? the_field('header_title', $the_ID ) : get_the_title() ); ?>" title="<?php echo ( get_field('header_title', $the_ID ) ? the_field('header_title', $the_ID ) : get_the_title() ); ?>" />
+									<div class="header-caption"><?php echo ( get_field('header_title', $the_ID ) ? '<h2 class="header-title">' . the_field('header_title', $the_ID ) . '</h2>' : '' ); ?><?php echo ( get_field('header_description', $the_ID ) ? '<p class="header-desc">' . get_field('header_description', $the_ID ) . '</p>' : '' ); ?></div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
 				</div>
-			<?php } ?>			
+			<?php } ?>	
+			<div class="page-breadcrumb">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<?php if(function_exists('the_breadcrumbs')) the_breadcrumbs(); ?>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
 			<?php if( have_rows('section_item', $the_ID ) ): $z_index = 50; ?>
 				<?php while ( have_rows('section_item', $the_ID ) ) : the_row();
 					$z_index -= 1;
