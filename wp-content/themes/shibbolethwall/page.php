@@ -160,6 +160,16 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
+			<div class="page-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<?php the_content(); ?>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
 			<?php if( have_rows('section_item', $the_ID ) ): $z_index = 50; ?>
 				<?php while ( have_rows('section_item', $the_ID ) ) : the_row();
 					$z_index -= 1;

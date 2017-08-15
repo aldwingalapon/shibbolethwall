@@ -150,7 +150,7 @@ get_header(); $the_ID = get_the_ID(); ?>
 		<?php } ?>	
 		<div class="woocommerce-content">
 			<div class="container">
-				<div class="row-fluid">
+				<div class="row">
 					<div class="col-md-12">
 						<?php woocommerce_content(); ?>
 					</div>

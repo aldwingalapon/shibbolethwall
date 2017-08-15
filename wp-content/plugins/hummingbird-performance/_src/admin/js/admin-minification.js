@@ -2,6 +2,7 @@ import Fetcher from './utils/fetcher';
 import { __, getLink } from './utils/helpers';
 import Row from './minification/Row';
 import RowsCollection from './minification/RowsCollection';
+import Scanner from './minification/Scanner';
 
 ( function( $ ) {
     'use strict';
@@ -18,11 +19,18 @@ import RowsCollection from './minification/RowsCollection';
         init: function() {
             const self = this;
 
-            // Filter action button on Minification page
-            $('#wphb-minification-filter-button').on('click', function(e) {
-                e.preventDefault();
-                $('#wphb-minification-filter').toggle('slow');
-            });
+            // Init files scanner
+            this.scanner = new Scanner( wphb.minification.get.totalSteps, wphb.minification.get.currentScanStep );
+            this.scanner.onFinishStep = this.updateProgressBar;
+            this.scanner.onFinish = ( response ) => {
+                this.updateProgressBar( 100 );
+                if ( wphb.minification.get.showCDNModal && true === response.show_cdn && $('#enable-cdn-modal').length ) {
+                    window.WDP.showOverlay( '#enable-cdn-modal', { class: 'wphb-modal small wphb-progress-modal no-close' } );
+                } else {
+                    window.location.href = getLink( 'minification' );
+                }
+            };
+
 
             // Check files button
             this.$checkFilesButton = $( '#check-files' );
@@ -34,9 +42,27 @@ import RowsCollection from './minification/RowsCollection';
                     e.preventDefault();
 					window.WDP.showOverlay("#check-files-modal", { class: 'wphb-modal small wphb-progress-modal no-close' } );
                     $(this).attr('disabled', true);
-                    self.checkFiles( getLink( 'minification' ) );
+                    self.updateProgressBar( self.scanner.getProgress() );
+                    self.scanner.scan();
                 });
             }
+
+            // Cancel scan button
+            $('body').on( 'click', '#cancel-minification-check', ( e ) => {
+                e.preventDefault();
+                this.updateProgressBar( 0, true );
+                this.scanner.cancel()
+                    .then( () => {
+                        window.location.href = getLink( 'minification' );
+                    });
+
+            });
+
+            // Filter action button on Minification page
+            $('#wphb-minification-filter-button').on('click', function(e) {
+                e.preventDefault();
+                $('#wphb-minification-filter').toggle('slow');
+            });
 
             $('.wphb-discard').click( function(e) {
                 e.preventDefault();
@@ -201,106 +227,20 @@ import RowsCollection from './minification/RowsCollection';
             return this;
         },
 
-        checkFiles: function( redirect ) {
-            const self = this;
-
-            if ( typeof redirect === 'undefined' )
-                redirect = false;
-
-            if ( ! self.minificationStarted ) {
-                // Store the progress in session storage to persist during page reloads
-                // If there is no previous value, we init one with 10%
-                if ( sessionStorage.getItem('progress') === null ) {
-                    sessionStorage.setItem('progress', 10);
-                }
-
-                // Update progress bar
-                const progress = sessionStorage.getItem('progress');
-                this.updateProgressBar( progress );
-
-                // Send an AJAX request that will flag the check files as started
-                Fetcher.minification.startCheck( progress )
-                    .then( ( response ) => {
-                        // Set the number of steps to be used in percentage count. Only if not set already.
-                        if ( ( typeof response.steps !== 'undefined' ) && ( sessionStorage.getItem('steps') === null ) ) {
-                            sessionStorage.setItem('steps', response.steps);
-                        }
-
-                        self.minificationStarted = true;
-                        self.checkFiles( redirect );
-                    });
-            }
-            else {
-                const progress = sessionStorage.getItem('progress');
-                const step = Math.round( 80 / sessionStorage.getItem('steps') );
-                Fetcher.minification.checkStep( progress, step )
-                    .then( ( response ) => {
-                        if ( typeof response.finished !== 'undefined' ) {
-                            // Finished
-                            if ( response.finished && redirect ) {
-                                // Clear session storage
-                                sessionStorage.clear();
-
-                                // Update progress bar
-                                this.updateProgressBar( 100 );
-
-                                // Show enable cdn modal only for members
-                                if ( true === response.show_cdn && $('#enable-cdn-modal').length ) {
-                                    WDP.showOverlay( '#enable-cdn-modal', { class: 'wphb-modal small wphb-progress-modal no-close' } );
-                                } else {
-                                    window.location.href = redirect;
-                                }
-                            }
-                            // Next step
-                            else if ( ! response.finished ) {
-                                // Store the progress in session storage to persist during page reloads
-                                let progress = parseInt( sessionStorage.getItem('progress') ) + Math.round( 80 / sessionStorage.getItem('steps') );
-                                sessionStorage.setItem( 'progress', progress );
-
-                                // Update progress bar.
-                                this.updateProgressBar( progress );
-
-                                // Wait 3 seconds before calling again
-                                window.setTimeout( function() {
-                                    self.checkFiles( redirect );
-                                }, 3000);
-                            }
-                        } else {
-                            // Error
-                            window.location.href = redirect;
-                        }
-                    });
-            } // End else
-
-        }, // End checkFiles
-
         updateProgressBar: function( progress, cancel = false ) {
             if ( progress > 100 ) {
                 progress = 100;
             }
             // Update progress bar
             $('.wphb-scan-progress .wphb-scan-progress-text span').text( progress + '%' );
+            $('.wphb-scan-progress .wphb-scan-progress-bar span').width( progress + '%' );
             if ( progress >= 90 ) {
                 $('.wphb-progress-state .wphb-progress-state-text').text('Finalizing...');
             }
             if ( cancel ) {
-				$('.wphb-progress-state .wphb-progress-state-text').text('Cancelling...');
+                $('.wphb-progress-state .wphb-progress-state-text').text('Cancelling...');
             }
-            $('.wphb-scan-progress .wphb-scan-progress-bar span').width( progress + '%' );
         },
-
-        cancelScan: function() {
-            Fetcher.minification.cancelScan()
-                .then( () => {
-					// Clear session storage
-					sessionStorage.clear();
-
-					this.updateProgressBar( 0, true );
-
-					// Reload page
-                    window.location.href = getLink( 'minification' );
-                });
-        }
 
     }; // End WPHB_Admin.minification
 

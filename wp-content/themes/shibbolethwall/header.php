@@ -85,6 +85,45 @@
 							$header_logo = get_field('header_logo', 'option');
 						?>
 						<div class="col-md-12 main-logo">
+							<div class="header_top">
+								<ul class="header_list">
+									<li class="login">
+									<?php if ( is_user_logged_in() ) { ?>
+										<span class="clickable_area collapsed" data-toggle="collapse" data-target="#signin_menu" aria-expanded="true"><a class="signin loggedin">Control Panel</a></span>
+										<div style="position: relative;">
+											<form>
+												<fieldset id="signin_menu" class="collapse">
+													<p><?php global $user_ID, $user_identity; get_currentuserinfo(); if ($user_ID) { echo get_avatar($user_ID, 40); ?>Welcome back, <?php echo $user_identity; } ?>! <a href="<?php echo wp_logout_url( get_option('home') ); ?>" title="Log Out">Log Out</a><?php if ( current_user_can('manage_options') ) { ?>  | <a href="<?php echo get_option('home'); ?>/wp-admin/" title="Admin">Admin</a> <?php } ?> | <a href="<?php echo get_option('home'); ?>/account/" title="My Account" class="wc_account_link">My Account</a> | <a href="<?php echo get_option('home'); ?>/cart/" title="Cart" class="wc_cart_link">Cart</a></p>
+												</fieldset>
+											</form>
+										</div>
+									<?php } else { ?>
+										<span class="clickable_area collapsed" data-toggle="collapse" data-target="#signin_menu" aria-expanded="true"><span class="user_area">Have an account?</span> <a class="signin loggedout"><span>Sign in</span></a></span>
+										<div style="position: relative;">
+											<form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
+												<fieldset id="signin_menu" class="collapse">
+														<p>
+															<label for="log">User Name</label>
+															<input type="text" name="log" id="log" value="<?php echo wp_specialchars(stripslashes($user_login), 1) ?>" title="User Name" />
+														</p>
+														<p>
+															<label for="pwd">Password</label>
+															<input type="password" name="pwd" id="pwd" title="Password" />
+														</p>
+														<p class="remember">
+															<input id="remember" name="remember_me" type="checkbox" checked="checked" value="forever" title="Remember Me" />
+															<label for="remember">Remember me</label>
+															<input id="signin_submit" type="submit" name="submit" value="Log In" title="Log In" />
+															<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+														</p>
+														<p class="forgot"><a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword" title="Forgot your password?">Forgot your password?</a></p>
+												</fieldset>
+											</form>
+										</div>
+									<?php } ?>
+									</li>
+								</ul>
+							</div>						
 							<div class="header-logo lazy-image" style="width:216px;" <?php echo ($header_logo ? 'data-src="' . $header_logo['url'] . '"' : 'data-src="' . get_template_directory_uri() . '/images/upvi_logo@3x.png"'); ?>><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('name'); ?>" class=""><img src="<?php echo get_template_directory_uri() . '/images/upvi_logo.png'; ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" style="width:216px;max-width:100%;height:auto;" /></a></div>
 							<div class="nav">
 								<div class="inner-nav">

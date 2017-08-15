@@ -1,18 +1,17 @@
 <dialog class="wphb-modal small wphb-progress-modal no-close" id="check-files-modal" title="<?php esc_attr_e( 'Checking files', 'wphb' ); ?>">
 	<div class="title-action">
-		<input type="button" class="button button-ghost" id="cancel-minification-check" value="<?php esc_attr_e( 'Cancel', 'wphb' ); ?>" onclick="WPHB_Admin.minification.cancelScan()">
+		<input type="button" class="button button-ghost" id="cancel-minification-check" value="<?php esc_attr_e( 'Cancel', 'wphb' ); ?>">
 	</div>
 	<div class="wphb-dialog-content">
 		<p><?php esc_html_e( 'Hummingbird will combine your files as best it can, however, depending on your settings, combining all your files might not be possible. What you see here is the best output Hummingbird can muster!', 'wphb' ); ?></p>
-		<?php $progress = get_option( 'wphb-minification-check-files-progress' ); ?>
 
 		<div class="wphb-block-test" id="check-files-modal-content">
 			<div class="wphb-scan-progress">
 				<div class="wphb-scan-progress-text">
-					<span><?php echo $progress; ?>%</span>
+					<span>0%</span>
 				</div><!-- end wphb-scan-progress-text -->
 				<div class="wphb-scan-progress-bar">
-					<span style="width: <?php echo $progress; ?>%"></span>
+					<span style="width: 0%"></span>
 				</div><!-- end wphb-scan-progress-bar -->
 			</div><!-- end wphb-scan-progress -->
 		</div><!-- end wphb-block-test -->

@@ -81,30 +81,37 @@ function wphb_get_server_type() {
  */
 function wphb_get_servers() {
 	return array(
-		'apache' => 'Apache',
-		'LiteSpeed' => 'LiteSpeed',
-		'nginx' => 'NGINX',
-		'iis' => 'IIS',
-		'iis-7' => 'IIS 7'
+		'apache'     => 'Apache',
+		'LiteSpeed'  => 'LiteSpeed',
+		'nginx'      => 'NGINX',
+		'iis'        => 'IIS',
+		'iis-7'      => 'IIS 7',
+		'cloudflare' => 'CloudFlare',
 	);
 }
 
 /**
+ * Get servers dropdown
  *
  * @param array $args
+ * @param bool  $cloudflare  Add CloudFlare to the server list.
  */
-function wphb_get_servers_dropdown( $args = array() ) {
+function wphb_get_servers_dropdown( $args = array(), $cloudflare = true ) {
 
 	$defaults = array(
-		'class' => '',
-		'id' => '',
-		'name' => 'wphb-server-type',
-		'selected' => false
+		'class'    => '',
+		'id'       => '',
+		'name'     => 'wphb-server-type',
+		'selected' => false,
 	);
 
 	$args = wp_parse_args( $args, $defaults );
 
 	$servers = wphb_get_servers();
+
+	if ( ! $cloudflare ) {
+		unset( $servers['cloudflare'] );
+	}
 
 	if ( ! $args['id'] )
 		$args['id'] = $args['name'];
@@ -164,12 +171,20 @@ function wphb_save_htaccess( $module ) {
 	return false;
 }
 
+/**
+ * Remove .htaccess rules.
+ *
+ * @param string $module  Module name.
+ *
+ * @return bool
+ */
 function wphb_unsave_htaccess( $module ) {
-	if ( ! wphb_is_htaccess_written( $module ) )
+	if ( ! wphb_is_htaccess_written( $module ) ) {
 		return false;
+	}
 
 	$home_path = get_home_path();
-	$htaccess_file = $home_path.'.htaccess';
+	$htaccess_file = $home_path . '.htaccess';
 
 	if ( wphb_is_htaccess_writable() ) {
 		return insert_with_markers( $htaccess_file, 'WP-HUMMINGBIRD-' . strtoupper( $module ), '' );
@@ -314,19 +329,27 @@ function wphb_enqueue_admin_scripts( $ver ) {
 	wp_enqueue_script( 'wphb-admin', $file, array( 'jquery', 'underscore' ), $ver );
 
 	$i10n = array(
-		'recheckURL' => add_query_arg( 'run', 'true', wphb_get_admin_menu_url( 'caching' ) ),
-		'htaccessErrorURL' => add_query_arg( 'htaccess-error', 'true', wphb_get_admin_menu_url( 'caching' ) ),
+		'recheckURL' => add_query_arg( array(
+				'view' => 'browser',
+				'run'  => 'true',
+			), wphb_get_admin_menu_url( 'caching' ) ),
+		'htaccessErrorURL' => add_query_arg( array(
+				'view'           => 'browser',
+				'htaccess-error' => 'true',
+			), wphb_get_admin_menu_url( 'caching' ) ),
 		'cacheEnabled' => wphb_is_htaccess_written('caching')
 	);
 	wp_localize_script( 'wphb-admin', 'wphbCachingStrings', $i10n );
 
-	$i10n = array(
-		'checkFilesNonce' => wp_create_nonce( 'wphb-minification-check-files' ),
-		'chartNonce' => wp_create_nonce( 'wphb-chart' ),
-		'finishedCheckURLsLink' => wphb_get_admin_menu_url( 'minification' ),
-		'discardAlert' => __( 'Are you sure? All your changes will be lost', 'wphb' ),
-	);
-	wp_localize_script( 'wphb-admin', 'wphbMinificationStrings', $i10n );
+	if ( wphb_can_execute_php() ) {
+		$i10n = array(
+			'checkFilesNonce' => wp_create_nonce( 'wphb-minification-check-files' ),
+			'chartNonce' => wp_create_nonce( 'wphb-chart' ),
+			'finishedCheckURLsLink' => wphb_get_admin_menu_url( 'minification' ),
+			'discardAlert' => __( 'Are you sure? All your changes will be lost', 'wphb' ),
+		);
+		wp_localize_script( 'wphb-admin', 'wphbMinificationStrings', $i10n );
+	}
 
 	$i10n = array(
 		'finishedTestURLsLink' => wphb_get_admin_menu_url( 'performance' ),
@@ -373,13 +396,30 @@ function wphb_enqueue_admin_scripts( $ver ) {
 		'nonces' => array(
 			'HBFetchNonce' => wp_create_nonce( 'wphb-fetch' )
 		),
-		'strings' => array(
-			'discardAlert' => __( 'Are you sure? All your changes will be lost', 'wphb' ),
-		),
-		'links' => array(
-			'minification' => wphb_get_admin_menu_url( 'minification' )
-		)
 	);
+
+	if ( wphb_can_execute_php() ) {
+		$i10n = array_merge( $i10n, array(
+			'minification' => array(
+				'is' => array(
+					'scanning' => wphb_minification_is_scanning_files(),
+					'scanned' => wphb_minification_is_scan_finished(),
+				),
+				'get' => array(
+					'currentScanStep' => wphb_minification_get_current_scan_step(),
+					'totalSteps' => wphb_minification_get_scan_steps_number(),
+					'showCDNModal' => ! is_multisite(),
+				),
+			),
+			'strings' => array(
+				'discardAlert' => __( 'Are you sure? All your changes will be lost', 'wphb' ),
+			),
+			'links' => array(
+				'minification' => wphb_get_admin_menu_url( 'minification' ),
+			),
+		) );
+	}
+
 	wp_localize_script( 'wphb-admin', 'wphb', $i10n );
 }
 
@@ -732,7 +772,7 @@ function wphb_get_display_name( $id ) {
  * @return bool True if the pro folder is available
  */
 function wphb_load_pro() {
-	if ( class_exists( 'WP_Hummingbird_Pro' ) && is_a( wp_hummingbird()->pro, 'WP_Hummingbird_Pro' ) ) {
+	if ( class_exists( 'WP_Hummingbird_Pro' ) && ( wp_hummingbird()->pro instanceof WP_Hummingbird_Pro ) ) {
 		// Already loaded
 		return true;
 	}

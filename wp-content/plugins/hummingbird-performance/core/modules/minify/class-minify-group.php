@@ -49,13 +49,14 @@ class WP_Hummingbird_Module_Minify_Group {
 	public $type = '';
 
 	/**
-	 * What handles should not be minified|combined|enqueued
+	 * What handles should not be minified|combined|enqueued|deferred
 	 *
 	 * @var array
 	 */
 	private $dont_minify = array();
 	private $dont_combine = array();
 	private $dont_enqueue = array();
+	private $defer = array();
 
 	/**
 	 * Save dependencies for each handle
@@ -279,6 +280,22 @@ class WP_Hummingbird_Module_Minify_Group {
 			$this->should_do_handle( $handle, 'combine', false );
 		}
 
+		if ( 'scripts' === $this->type ) {
+			/**
+			 * Filter the resource (combine or not)
+			 *
+			 * @usedby wphb_filter_resource_combine()
+			 *
+			 * @var bool false
+			 * @var string $handle Source slug
+			 * @var string $source_url Source URL
+			 * @var string $type scripts|styles
+			 */
+			if ( apply_filters( 'wphb_defer_resource', false, $handle, $this->type, $url ) ) {;
+				$this->should_do_handle( $handle, 'defer', true );
+			}
+		}
+
 		$this->refresh_hash();
 	}
 
@@ -299,9 +316,20 @@ class WP_Hummingbird_Module_Minify_Group {
 			$this->should_do_handle( $handle, 'minify', true ); // This will remove the hanlde from $this->dont_minify
 			$this->should_do_handle( $handle, 'combine', true ); // This will remove the hanlde from $this->dont_combine
 			$this->should_do_handle( $handle, 'enqueue', true ); // This will remove the hanlde from $this->dont_enqueue
+			$this->should_do_handle( $handle, 'defer', false ); // This will remove the hanlde from $this->defer
 			$this->handles = array_values( $this->handles );
 			$this->refresh_hash();
 		}
+	}
+
+	/**
+	 * Check if the group should be deferred
+	 *
+	 * @return bool
+	 */
+	public function is_deferred() {
+		// All assets should be deferred to defer the whole group
+		return ( 'scripts' === $this->type && count( $this->get_handles() ) === count( $this->defer ) );
 	}
 
 	/**
@@ -487,14 +515,22 @@ class WP_Hummingbird_Module_Minify_Group {
 		switch ( $action ) {
 			case 'minify': {
 				$should = 'dont_minify';
+				$do = 'dont';
 				break;
 			}
 			case 'combine': {
 				$should = 'dont_combine';
+				$do = 'dont';
 				break;
 			}
 			case 'enqueue': {
 				$should = 'dont_enqueue';
+				$do = 'dont';
+				break;
+			}
+			case 'defer': {
+				$should = 'defer';
+				$do = 'do';
 				break;
 			}
 			default: {
@@ -502,23 +538,47 @@ class WP_Hummingbird_Module_Minify_Group {
 			}
 		}
 
+		// @TODO: Refactor a bit
 		if ( ! is_null( $value ) ) {
-			// Handle should or shouldn't be minified
-			$value = (bool) $value;
-			if ( ! $value && ! in_array( $handle, $this->$should ) ) {
-				$new_should = $this->$should;
-				$new_should[] = $handle;
-				$this->$should = $new_should;
-			} elseif ( $value && in_array( $handle, $this->$should ) ) {
-				// Remove from the array
-				$new_should = $this->$should;
-				$key = array_search( $handle, $new_should );
-				unset( $new_should[ $key ] );
-				$this->$should = array_values( $new_should );
+			if ( 'dont' === $do ) {
+				// Handle should or shouldn't be minified
+				$value = (bool) $value;
+				if ( ! $value && ! in_array( $handle, $this->$should ) ) {
+					$new_should = $this->$should;
+					$new_should[] = $handle;
+					$this->$should = $new_should;
+				} elseif ( $value && in_array( $handle, $this->$should ) ) {
+					// Remove from the array
+					$new_should = $this->$should;
+					$key = array_search( $handle, $new_should );
+					unset( $new_should[ $key ] );
+					$this->$should = array_values( $new_should );
+				}
 			}
+			else {
+				// Handle should or shouldn't be done
+				$value = (bool) $value;
+				if ( $value && ! in_array( $handle, $this->$should ) ) {
+					$new_should = $this->$should;
+					$new_should[] = $handle;
+					$this->$should = $new_should;
+				} elseif ( ! $value && in_array( $handle, $this->$should ) ) {
+					// Remove from the array
+					$new_should = $this->$should;
+					$key = array_search( $handle, $new_should );
+					unset( $new_should[ $key ] );
+					$this->$should = array_values( $new_should );
+				}
+			}
+
 		} else {
 			// Return the value
-			return in_array( $handle, $this->$should ) ? false : true;
+			if ( 'dont' === $do ) {
+				return in_array( $handle, $this->$should ) ? false : true;
+			}
+			else {
+				return ! in_array( $handle, $this->$should ) ? false : true;
+			}
 		}
 
 		return null;
@@ -530,6 +590,10 @@ class WP_Hummingbird_Module_Minify_Group {
 
 	public function get_dont_enqueue_list() {
 		return $this->dont_enqueue;
+	}
+
+	public function get_defer_list() {
+		return $this->defer;
 	}
 
 	/**
@@ -666,7 +730,11 @@ class WP_Hummingbird_Module_Minify_Group {
 	 * @return array
 	 */
 	public function get_data() {
-		return isset( $this->extra['data'] ) ? $this->extra['data'] : array();
+		$data = isset( $this->extra['data'] ) ? $this->extra['data'] : array();
+		if ( ! is_array( $data ) ) {
+			$data = array( $data );
+		}
+		return $data;
 	}
 
 	/**
@@ -1058,9 +1126,7 @@ class WP_Hummingbird_Module_Minify_Group {
 	 */
 	public function delete_file() {
 		if ( get_post( $this->file_id ) && 'wphb_minify_group' === get_post_type( $this->file_id ) ) {
-			if ( $this->get_file_path() ) {
-				wp_delete_file( $this->get_file_path() );
-			}
+			// This will also delete the file. See WP_Hummingbird_Module_Minify::on_delete_post()
 			wp_delete_post( $this->file_id, true );
 			$this->file_id = 0;
 			wp_cache_delete( 'wphb_minify_groups' );
@@ -1164,6 +1230,17 @@ class WP_Hummingbird_Module_Minify_Group {
 				$in_footer
 			);
 
+			$group_id = $this->group_id;
+
+			if ( $this->is_deferred() ) {
+				add_filter( 'script_loader_tag', function( $tag, $handle ) use ( $group_id ) {
+					if ( $group_id !== $handle ) {
+						return $tag;
+					}
+					return str_replace( ' src', ' defer src', $tag );
+				}, 100, 2 );
+			}
+
 			// Add extras to the dependency
 			foreach ( $this->get_extra() as $extra_key => $extra_value ) {
 				if ( 'data' === $extra_key ) {
@@ -1187,7 +1264,6 @@ class WP_Hummingbird_Module_Minify_Group {
 				wp_dequeue_script( $this->group_id . '-' . $handle );
 			}
 
-			$group_id = $this->group_id;
 			$handles = $this->get_handles();
 			// Make sure that this element is makred as done once WordPress has enqueued it
 			add_action( 'wp_head', function() use ( $handles, $group_id ) {
@@ -1285,6 +1361,15 @@ class WP_Hummingbird_Module_Minify_Group {
 				$in_footer
 			);
 
+			if ( $this->is_deferred() ) {
+				add_filter( 'script_loader_tag', function( $tag, $handle ) use ( $new_id ) {
+					if ( $new_id !== $handle ) {
+						return $tag;
+					}
+					return str_replace( ' src', ' defer src', $tag );
+				}, 100, 2 );
+			}
+
 			// A hack to avoid tons of warnings the first time we calculate things
 			wp_scripts()->groups[ $new_id ] = $in_footer ? 1 : 0;
 
@@ -1361,22 +1446,6 @@ class WP_Hummingbird_Module_Minify_Group {
 		}
 
 		return $new_id;
-	}
-
-	/**
-	 * If we would have dequeued the style, wp_style_is() would stop working
-	 * so instead of that we'll keep the current queue but we'll remove all attributes for
-	 * the registered style
-	 *
-	 * @param string $handle
-	 */
-	private function simulate_dequeue_asset( $handle ) {
-		$wp_sources = 'styles' === $this->type ? wp_styles() : wp_scripts();
-		if ( isset( $wp_sources->registered[ $handle ] ) ) {
-			$wp_sources->registered[ $handle ]->src = false;
-			$wp_sources->registered[ $handle ]->deps = array();
-			$wp_sources->registered[ $handle ]->extra = array();
-		}
 	}
 
 	/**

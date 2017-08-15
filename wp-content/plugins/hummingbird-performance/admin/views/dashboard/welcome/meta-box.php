@@ -1,3 +1,19 @@
+<?php
+/**
+ * Welcome meta box on dashboard page.
+ *
+ * @package Hummingbird
+ *
+ * @var int    $caching_issues  Number of issues.
+ * @var bool   $cf_active       CloudFlare status.
+ * @var int    $cf_current      CloudFlare expiry settings.
+ * @var int    $gzip_issues     Number of gzip issues.
+ * @var object $last_report     Last report object.
+ * @var bool   $uptime_active   Uptime status.
+ * @var object $uptime_report   Uptime report object.
+ */
+
+?>
 <div class="wphb-block-entry">
 
 	<div class="wphb-block-entry-image wphb-block-entry-image-bottom">
@@ -19,7 +35,7 @@
 				&mdash;
 			<?php endif; ?>
 		</span>
-		<p class="current-performance-score"><?php _e( 'Current performance score', 'wphb' ); ?></p>
+		<p class="current-performance-score"><?php esc_html_e( 'Current performance score', 'wphb' ); ?></p>
 		<span>
 			<?php
 			if ( $last_report && ! is_wp_error( $last_report ) ) {
@@ -30,18 +46,18 @@
 				</span>
 			<?php
 			} elseif ( wphb_performance_is_doing_report() ) {
-				_e( 'Running scan...', 'wphb' );
+				esc_html_e( 'Running scan...', 'wphb' );
 			} else {
-				_e( 'Never', 'wphb' );
+				esc_html_e( 'Never', 'wphb' );
 			} ?>
 		</span>
-		<p><?php _e( 'Last test date', 'wphb' ); ?></p>
+		<p><?php esc_html_e( 'Last test date', 'wphb' ); ?></p>
 	</div>
 
 	<div class="wphb-block-entry-third">
 		<ul class="dev-list">
 			<li>
-				<span class="list-label"><?php _e( 'Browser Caching', 'wphb' ); ?></span>
+				<span class="list-label"><?php esc_html_e( 'Browser Caching', 'wphb' ); ?></span>
 				<span class="list-detail">
 					<?php if ( $cf_active ) : ?>
 						<?php if ( 691200 === $cf_current ) : ?>
@@ -59,7 +75,7 @@
 				</span>
 			</li>
 			<li>
-				<span class="list-label"><?php _e( 'GZIP Compression', 'wphb' ); ?></span>
+				<span class="list-label"><?php esc_html_e( 'GZIP Compression', 'wphb' ); ?></span>
 				<span class="list-detail">
 					<?php if ( $gzip_issues ) : ?>
 						<div class="wphb-pills"><?php echo intval( $gzip_issues ); ?></div>
@@ -69,14 +85,18 @@
 				</span>
 			</li>
 			<li>
-				<span class="list-label"><?php _e( 'Last Down', 'wphb' ); ?></span>
+				<span class="list-label"><?php esc_html_e( 'Last Down', 'wphb' ); ?></span>
 				<span class="list-detail">
 					<?php if ( ! wphb_is_member() ) : ?>
-						<a class="button button-content-cta button-ghost" href="#wphb-upgrade-membership-modal" id="dash-uptime-update-membership" rel="dialog"><?php _e( 'Pro Feature', 'wphb' ); ?></a>
+						<a class="button button-content-cta button-ghost" href="#wphb-upgrade-membership-modal" id="dash-uptime-update-membership" rel="dialog">
+							<?php esc_html_e( 'Pro Feature', 'wphb' ); ?>
+						</a>
 					<?php elseif ( is_wp_error( $uptime_report ) || ( ! $uptime_active ) ) : ?>
-						<a target="_blank" class="button button-disabled" id="dash-uptime-inactive"><?php _e( 'Uptime Inactive', 'wphb' ); ?></a>
+						<a target="_blank" class="button button-disabled" id="dash-uptime-inactive">
+							<?php esc_html_e( 'Uptime Inactive', 'wphb' ); ?>
+						</a>
 					<?php else :
-						echo $site_date;
+						echo esc_html( $site_date );
 					endif; ?>
 				</span>
 			</li>

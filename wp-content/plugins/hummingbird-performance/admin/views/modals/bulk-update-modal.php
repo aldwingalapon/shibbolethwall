@@ -15,18 +15,21 @@
 				var minify = modal.find( 'input.filter-minify' ).prop( 'checked' ),
 					combine = modal.find( 'input.filter-combine').prop('checked'),
 					footer = modal.find( 'input.filter-position-footer' ).prop( 'checked' ),
+					defer = modal.find( 'input.filter-defer' ).prop( 'checked' ),
 					selectedFiles = filesCollection.getSelectedItems();
 
 				for ( var i in selectedFiles ) {
 					selectedFiles[i].change( 'minify', minify );
 					selectedFiles[i].change( 'combine', combine );
 					selectedFiles[i].change( 'footer', footer );
+					selectedFiles[i].change( 'defer', defer );
 				}
 
 				// Unset all the values in bulk update checkboxes
 				modal.find('input.filter-minify').prop('checked', false);
 				modal.find('input.filter-combine').prop('checked', false);
 				modal.find('input.filter-position-footer').prop('checked', false);
+				modal.find('input.filter-defer').prop('checked', false);
 			});
 		</script>
 
@@ -51,6 +54,13 @@
 					<span class="toggle tooltip-l tooltip-right" tooltip="<?php esc_attr_e( 'Load this file in the footer of the page', 'wphb' ); ?>"></span>
 					<i class="hb-icon-minify-footer"></i>
 					<span><?php esc_html_e( 'Footer', 'wphb' ); ?></span>
+				</label>
+
+				<input type="checkbox" class="toggle-checkbox filter-toggles filter-defer" name="filter-defer" id="filter-defer">
+				<label for="filter-defer" class="toggle-label">
+					<span class="toggle tooltip-l tooltip-right" tooltip="<?php esc_attr_e( 'Execute this script once the page is completely loaded', 'wphb' ); ?>"></span>
+					<i class="hb-icon-minify-defer"></i>
+					<span><?php esc_html_e( 'Defer', 'wphb' ); ?></span>
 				</label>
 			</span>
 		</div><!-- end tooltip-box -->

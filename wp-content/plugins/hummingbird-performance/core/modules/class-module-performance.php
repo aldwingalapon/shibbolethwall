@@ -20,6 +20,23 @@ class WP_Hummingbird_Module_Performance extends WP_Hummingbird_Module {
 	}
 
 	/**
+	 * Do a cron scan.
+	 *
+	 * @return array|mixed|object|WP_Error
+	 */
+	public static function cron_scan() {
+		// Start the test.
+		self::set_doing_report( true );
+		$api = wphb_get_api();
+		$report = $api->performance->check();
+		// Stop the test.
+		self::set_doing_report( false );
+
+		// Return the results.
+		return $report;
+	}
+
+	/**
 	 * Return the last Performance scan done data
 	 *
 	 * @return false|array|WP_Error Data of the last scan or false of there's not such data
@@ -60,7 +77,7 @@ class WP_Hummingbird_Module_Performance extends WP_Hummingbird_Module {
 	 * @return bool
 	 */
 	public static function stopped_report() {
-		return (bool)get_site_option( 'wphb-stop-report' );
+		return (bool) get_site_option( 'wphb-stop-report' );
 	}
 
 	/**

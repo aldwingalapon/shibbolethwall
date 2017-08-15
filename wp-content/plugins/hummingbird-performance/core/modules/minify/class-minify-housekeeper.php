@@ -31,7 +31,7 @@ class WP_Hummingbird_Module_Minify_Housekeeper {
 		$groups = WP_Hummingbird_Module_Minify_Group::get_minify_groups();
 		foreach ( $groups as $group ) {
 			$instance = WP_Hummingbird_Module_Minify_Group::get_instance_by_post_id( $group->ID );
-			if ( is_a( $instance, 'WP_Hummingbird_Module_Minify_Group'  ) && $instance->is_expired() && $instance->file_id ) {
+			if ( ( $instance instanceof WP_Hummingbird_Module_Minify_Group ) && $instance->is_expired() && $instance->file_id ) {
 				$instance->delete_file();
 				wp_delete_post( $instance->file_id, true );
 			}

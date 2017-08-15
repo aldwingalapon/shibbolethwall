@@ -29,7 +29,7 @@ class WP_Hummingbird_Minification_Page extends WP_Hummingbird_Admin_Page {
 
 	public function on_load() {
 
-		wphb_minification_maybe_stop_checking_files();
+		wphb_minification_maybe_stop_scanning_files();
 		if ( isset( $_POST['submit'] ) ) {
 			check_admin_referer( 'wphb-enqueued-files' );
 
@@ -127,6 +127,28 @@ class WP_Hummingbird_Minification_Page extends WP_Hummingbird_Admin_Page {
 				$diff = array_merge(
 					array_diff( $current_options['combine'][ $type ], $options['combine'][ $type ] ),
 					array_diff( $options['combine'][ $type ], $current_options['combine'][ $type ] )
+				);
+
+				if ( $diff ) {
+					foreach ( $diff as $diff_handle ) {
+						$_groups = WP_Hummingbird_Module_Minify_Group::get_groups_from_handle( $diff_handle, $type );
+						if ( $_groups ) {
+							$changed_groups = array_merge( $changed_groups, $_groups );
+						}
+					}
+				}
+
+				$key = array_search( $handle, $options['defer'][ $type ] );
+				if ( ! isset( $item['defer'] ) && false !== $key ) {
+					unset( $options['defer'][ $type ][ $key ] );
+				}
+				elseif ( isset( $item['defer'] ) ) {
+					$options['defer'][ $type ][] = $handle;
+				}
+				$options['defer'][ $type ] = array_unique( $options['defer'][ $type ] );
+				$diff = array_merge(
+					array_diff( $current_options['defer'][ $type ], $options['defer'][ $type ] ),
+					array_diff( $options['defer'][ $type ], $current_options['defer'][ $type ] )
 				);
 
 				if ( $diff ) {
@@ -239,7 +261,7 @@ class WP_Hummingbird_Minification_Page extends WP_Hummingbird_Admin_Page {
                 <div class="actions status">
                     <div class="toggle-group toggle-group-with-buttons">
                         <div class="tooltip-box">
-							<span class="toggle" tooltip="<?php _e( 'Disable Minification', 'wphb' ); ?>">
+							<span class="toggle" tooltip="<?php _e( 'Turn off Minification', 'wphb' ); ?>">
 								<input type="checkbox" id="wphb-disable-minification" class="toggle-checkbox" name="wphb-disable-minification" checked>
 								<label for="wphb-disable-minification" class="toggle-label"></label>
 							</span>
@@ -270,7 +292,7 @@ class WP_Hummingbird_Minification_Page extends WP_Hummingbird_Admin_Page {
 		$collection = wphb_minification_get_resources_collection();
 		$module = wphb_get_module( 'minify' );
 
-		if ( ( empty( $collection['styles'] ) && empty( $collection['scripts'] ) ) || wphb_minification_is_checking_files() || ! $module->is_active() ) {
+		if ( ( empty( $collection['styles'] ) && empty( $collection['scripts'] ) ) || wphb_minification_is_scanning_files() || ! $module->is_active() ) {
 			$this->add_meta_box( 'minification/enqueued-files-empty', __( 'Get Started', 'wphb' ), array( $this, 'enqueued_files_empty_metabox' ), null, null, 'box-enqueued-files-empty', array( 'box_class' => 'dev-box content-box content-box-one-col-center') );
 		}
 		else {
@@ -287,7 +309,7 @@ class WP_Hummingbird_Minification_Page extends WP_Hummingbird_Admin_Page {
 	public function enqueued_files_empty_metabox() {
 		// Get current user name
 		$user = wphb_get_current_user_info();
-		$checking_files = wphb_minification_is_checking_files();
+		$checking_files = wphb_minification_is_scanning_files();
 		$this->view( 'minification/enqueued-files-empty-meta-box', array( 'user' => $user, 'checking_files' => $checking_files ) );
 	}
 

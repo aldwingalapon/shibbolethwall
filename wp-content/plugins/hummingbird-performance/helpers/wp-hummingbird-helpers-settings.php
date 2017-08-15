@@ -43,6 +43,7 @@ function wphb_get_default_settings() {
 		'caching' => false,
 		'uptime' => false,
 		'use_cdn' => false,
+		'gravatar_cache' => false,
 
 		// Only for multisites. Toggles minification in a subsite
 		// By default is true as if 'minify' is set to false, this option has no meaning.
@@ -54,6 +55,7 @@ function wphb_get_default_settings() {
 		'dont_minify' => array( 'scripts' => array(), 'styles' => array() ),
 		'combine' => array( 'scripts' => array(), 'styles' => array() ),
 		'position' => array( 'scripts' => array(), 'styles' => array() ),
+		'defer' => array( 'scripts' => array(), 'styles' => array() ),
 		'caching_expiry_css' => '8d/A691200',
 		'caching_expiry_javascript' => '8d/A691200',
 		'caching_expiry_media' => '8d/A691200',
@@ -77,7 +79,7 @@ function wphb_get_default_settings() {
 }
 
 function wphb_get_blog_option_names() {
-	return array( 'block', 'minify-blog', 'minify-cdn', 'dont_minify', 'combine', 'position', 'max_files_in_group', 'last_change' );
+	return array( 'block', 'minify-blog', 'minify-cdn', 'dont_minify', 'defer', 'combine', 'position', 'max_files_in_group', 'last_change' );
 }
 
 function wphb_get_setting_type( $option_name ) {

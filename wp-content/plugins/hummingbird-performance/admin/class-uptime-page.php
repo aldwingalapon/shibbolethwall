@@ -49,7 +49,6 @@ class WP_Hummingbird_Uptime_Page extends WP_Hummingbird_Admin_Page {
 	}
 
 	public function register_meta_boxes() {
-
 		// Check if Uptime is active in the server.
 		if ( wphb_is_uptime_remotely_enabled() ) {
 			wphb_uptime_enable_locally();

@@ -11,19 +11,6 @@ class WP_Hummingbird_Admin_AJAX {
 	 * WP_Hummingbird_Admin_AJAX constructor.
 	 */
 	public function __construct() {
-
-		/* Not used anywhere?
-		add_action( 'wp_ajax_wphb_ajax', array( $this, 'process' ) );
-
-		add_action( 'wp_ajax_minification_check_url', array( $this, 'minification_check_url' ) );
-		add_action( 'wp_ajax_minification_finish_check', array( $this, 'minification_finish_check' ) );
-
-		add_action( 'wp_ajax_caching_toggle_caching', array( $this, 'toggle_caching' ) );
-		add_action( 'wp_ajax_caching_clear_cache', array( $this, 'clear_caching_cache' ) );
-		add_action( 'wp_ajax_caching_write_htaccess', array( $this, 'write_caching_htaccess' ) );
-		add_action( 'wp_ajax_gzip_write_htaccess', array( $this, 'write_gzip_htaccess' ) );
-		*/
-
 		// Run performance test.
 		add_action( 'wp_ajax_wphb_performance_run_test', array( $this, 'performance_run_test' ) );
 		// Set expiration for browser caching.
@@ -52,40 +39,10 @@ class WP_Hummingbird_Admin_AJAX {
 		add_action( 'wp_ajax_wphb_minification_check_step', array( $this, 'minification_check_step' ) );
 		// Cancel scan.
 		add_action( 'wp_ajax_wphb_minification_cancel_scan', array( $this, 'minification_cancel_scan' ) );
+		// Delete scan
+		add_action( 'wp_ajax_wphb_minification_finish_scan', array( $this, 'minification_finish_scan' ) );
 
 	}
-
-	/*
-	public function process() {
-		if ( ! isset( $_REQUEST['module_action'] ) || ! isset( $_REQUEST['module'] ) ) {
-			wp_send_json_error();
-		}
-
-		if ( ! isset( $_REQUEST['wphb_nonce'] ) || ! isset( $_REQUEST['nonce_name'] ) ) {
-			wp_send_json_error();
-		}
-
-		check_ajax_referer( $_REQUEST['nonce_name'], 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) ) {
-			wp_send_json_error();
-		}
-
-		$method = $_REQUEST['module'] . '_' . $_REQUEST['module_action'];
-
-		if ( ! method_exists( $this, $method ) ) {
-			wp_send_json_error();
-		}
-
-		if ( ! isset( $_REQUEST['data'] ) ) {
-			$data = array();
-		} else {
-			$data = $_REQUEST['data'];
-		}
-
-		call_user_func( array( $this, $method ), $data );
-	}
-	*/
 
 	/**
 	 * Run performance test.
@@ -167,7 +124,15 @@ class WP_Hummingbird_Admin_AJAX {
 		}
 
 		$options = wphb_get_settings();
-		$options[ 'caching_expiry_' . $type ] = $value;
+		if ( 'all' === $type ) {
+			$options['caching_expiry_css']        = $value;
+			$options['caching_expiry_javascript'] = $value;
+			$options['caching_expiry_media']      = $value;
+			$options['caching_expiry_images']     = $value;
+		} else {
+			$options[ 'caching_expiry_' . $type ] = $value;
+		}
+
 		wphb_update_settings( $options );
 
 		/**
@@ -358,16 +323,10 @@ class WP_Hummingbird_Admin_AJAX {
 	 * Set a flag that marks the minification check files as started.
 	 */
 	public function minification_start_check() {
-		if ( ! wphb_minification_is_checking_files() ) {
-			wphb_minification_init_scan();
-		}
-
-		// Get number of pages for calculating the progress.
-		$check_files = get_option( 'wphb-minification-check-files' );
+		wphb_minification_init_scan();
 
 		wp_send_json_success( array(
-			'finished' => false,
-			'steps'    => count( $check_files['urls_list'] ),
+			'steps'    => wphb_minification_get_scan_steps_number(),
 		));
 	}
 
@@ -375,46 +334,38 @@ class WP_Hummingbird_Admin_AJAX {
 	 * Process step during minification scan.
 	 */
 	public function minification_check_step() {
-		$check_files = get_option( 'wphb-minification-check-files' );
+		$urls = wphb_minification_get_scan_urls();
+		$total_steps = count( $urls );
+		$current_step = absint( $_POST['step'] );
 
-		if ( false === $check_files ) {
-			// We have finished. Show CDN modal only for members.
-			$cdn_modal = true;
-			if ( ! wphb_is_member() ) {
-				$cdn_modal = false;
-				// Remove CDN if set.
-				wphb_update_setting( 'use_cdn', false );
-			}
+		wphb_minification_update_scan_step( $current_step );
 
-			wp_send_json_success( array(
-				'finished' => true,
-				'show_cdn' => $cdn_modal,
-			));
+		if ( isset( $urls[ $current_step ] ) ) {
+			wphb_minification_scan_url( $urls[ $current_step ] );
 		}
 
-		if ( empty( $check_files['urls_list'] ) ) {
-			// We have finished with URLs, just scan home again to gain some time.
-			WP_Hummingbird_Module_Minify::scan( home_url() );
-			delete_option( 'wphb-minification-check-files' );
-			delete_option( 'wphb-minification-check-files-progress' );
-		} else {
-			$next_url = array_shift( $check_files['urls_list'] );
-			$check_files['urls_done'][] = $next_url;
-			update_option( 'wphb-minification-check-files', $check_files );
-			$progress = absint( $_POST['progress'] ) + absint( $_POST['step'] ); // Input var ok.
-			update_option( 'wphb-minification-check-files-progress', $progress );
-			WP_Hummingbird_Module_Minify::scan( $next_url );
+
+		wp_send_json_success();
+	}
+
+	public function minification_finish_scan() {
+		delete_transient( 'wphb-minification-files-scanning' );
+		update_option( 'wphb-minification-files-scanned', true );
+
+		// We have finished. Show CDN modal only for members.
+		$cdn_modal = true;
+		if ( ! wphb_is_member() ) {
+			$cdn_modal = false;
+			// Remove CDN if set.
+			wphb_update_setting( 'use_cdn', false );
 		}
 
-		$current_time = current_time( 'timestamp' );
-		// If more than 4 minutes has passed, kill the process.
-		if ( empty( $check_files['on'] ) || $current_time > ( $check_files['on'] + 240 ) ) {
-			delete_option( 'wphb-minification-check-files' );
-			delete_option( 'wphb-minification-check-files-progress' );
+		if ( ! current_user_can( wphb_get_admin_capability() ) ) {
+			$cdn_modal = false;
 		}
 
 		wp_send_json_success( array(
-			'finished' => false,
+			'show_cdn' => $cdn_modal
 		));
 	}
 
@@ -427,75 +378,8 @@ class WP_Hummingbird_Admin_AJAX {
 		wphb_toggle_minification( false );
 		wphb_delete_pending_process_queue();
 		wphb_clear_minification_cache( false );
-		delete_option( 'wphb-minification-check-files' );
-		delete_option( 'wphb-minification-check-files-progress' );
 		wp_send_json_success();
 	}
-
-	/**
-	 * Get all the URLs that the Minification Check Files button should process
-	 */
-	/*
-	public function minification_check_url() {
-		check_ajax_referer( 'wphb-minification-check-files', 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) ) {
-			wp_send_json_error();
-		}
-
-		$data = $_REQUEST['data'];
-		$url = $data['url'];
-		$results = WP_Hummingbird_Module_Minify::scan( $url );
-
-
-		wp_send_json_success( $results );
-	}
-
-	public function toggle_caching() {
-		check_ajax_referer( 'wphb-caching-toggle', 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) )
-			die();
-
-		$options = wphb_get_settings();
-
-		$options['caching'] = $_REQUEST['data']['activate'] === 'true';
-		wphb_update_settings( $options );
-
-		die();
-	}
-
-	public function clear_caching_cache() {
-		check_ajax_referer( 'wphb-caching-clear', 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) )
-			die();
-
-		wphb_clear_caching_cache();
-
-		die();
-
-
-	}
-
-	function write_gzip_htaccess() {
-		check_ajax_referer( 'wphb-write-htacces', 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) )
-			die();
-
-		wphb_save_htaccess( 'gzip' );
-	}
-
-	function write_caching_htaccess() {
-		check_ajax_referer( 'wphb-write-htacces', 'wphb_nonce' );
-
-		if ( ! current_user_can( wphb_get_admin_capability() ) )
-			die();
-
-		wphb_save_htaccess( 'caching' );
-	}
-	*/
 
 	/**
 	 * Connect to CloudFlare.

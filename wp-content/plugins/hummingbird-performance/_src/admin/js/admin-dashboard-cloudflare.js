@@ -10,11 +10,11 @@ import Fetcher from './utils/fetcher';
             this.$stepsContainer = $('#cloudflare-steps');
             this.$infoBox = $( '#cloudflare-info' );
             this.$spinner = $( '.cloudflare-spinner' );
-            this.$deactivateButton = $('#wphb-box-dashboard-cloudflare').find('.box-title .buttons');
+            this.$deactivateButton = $('.cloudflare-deactivate.button');
 
             this.renderStep( this.currentStep );
 
-            $('body').on( 'click', '.cloudflare-clear-cache .button', function(e ) {
+            $('body').on( 'click', '.cloudflare-clear-cache.button', function(e ) {
                 e.preventDefault();
                 this.purgeCache.apply( $(e.target), [this] );
             }.bind(this));

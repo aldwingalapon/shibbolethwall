@@ -50,7 +50,7 @@ class WP_Hummingbird_Admin_Notices {
 			return;
 		}
 
-		$url = $dashboard::$ui->page_urls->plugins_url;
+		$url = WPMUDEV_Dashboard::$ui->page_urls->plugins_url;
 		$cap = is_multisite() ? 'manage_network_plugins' : 'update_plugins';
 		if ( ! current_user_can( $cap ) ) {
 			return;
@@ -75,7 +75,7 @@ class WP_Hummingbird_Admin_Notices {
 	 * Notice displayed when the free version is deactivated because the pro one was already active
 	 */
 	public function free_version_deactivated() {
-		if ( ! get_plugins( '/wp-hummingbird-wporg' ) ) {
+		if ( ! array_key_exists( 'wp-hummingbird-wporg/wp-hummingbird.php', get_plugins() ) ) {
 			return;
 		}
 
@@ -112,7 +112,7 @@ class WP_Hummingbird_Admin_Notices {
 	 * @since 1.5.4
 	 */
 	public function free_version_rate() {
-		if ( ! get_plugins( '/wp-hummingbird-wporg' ) ) {
+		if ( ! array_key_exists( 'wp-hummingbird-wporg/wp-hummingbird.php', get_plugins() ) ) {
 			return;
 		}
 
@@ -133,15 +133,16 @@ class WP_Hummingbird_Admin_Notices {
 		}
 
 		$dismiss_url = wp_nonce_url( add_query_arg( 'wphb-dismiss', 'free-rated' ), 'wphb-dismiss-notice' );
-		$review_url = 'https://wordpress.org/plugins/hummingbird-performance';
+		$review_url = 'https://wordpress.org/support/plugin/hummingbird-performance/reviews/';
 
 		?>
 		<div class="notice-info notice wphb-notice">
 			<p>
-				<?php
-				/* translators: %s: Review URL */
-				printf( __( 'We\'ve spent countless hours developing this free plugin for you, and we would really appreciate it if you <a href="%s" target="_blank">dropped us a quick rating</a>!', 'wphb' ), esc_url( $review_url ) ); ?>
+				<?php esc_html_e( "We've spent countless hours developing this free plugin for you, and we would really appreciate it if you dropped us a quick rating!", 'wphb' ); ?>
 				<a class="wphb-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"><span class="dashicons dashicons-dismiss"></span></a>
+			</p>
+			<p>
+				<a href="<?php echo esc_url( $review_url ); ?>" class="button" target="_blank"><?php esc_html_e( 'Rate Hummingbird', 'wphb' ); ?></a>
 			</p>
 		</div>
 		<style>

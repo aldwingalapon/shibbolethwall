@@ -76,7 +76,6 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 			wphb_flush_cache( false );
 			delete_site_option( 'wphb_version' );
 			delete_option( 'wphb_cache_folder_error' );
-			delete_option( 'wphb-minification-check-files' );
 			delete_site_option( 'wphb-last-report' );
 			delete_site_option( 'wphb-last-report-score' );
 			delete_site_option( 'wphb-server-type' );
@@ -184,6 +183,14 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 
 				if ( version_compare( $version, '1.5.4.beta.1', '<' ) ) {
 					self::upgrade_1_5_4_beta_1();
+				}
+
+				if ( version_compare( $version, '1.5.4', '<' ) ) {
+					self::upgrade_1_5_4();
+				}
+
+				if ( version_compare( $version, '1.5.5', '<' ) ) {
+					self::upgrade_1_5_5();
 				}
 
 				update_site_option( 'wphb_version', WPHB_VERSION );
@@ -333,6 +340,18 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 			}
 
 			wphb_update_settings( $options );
+		}
+
+		private static function upgrade_1_5_4() {
+			// Delete old minification options
+			delete_option( 'wphb-minification-check-files' );
+			delete_option( 'wphb-minification-check-files-progress' );
+		}
+
+		private static function upgrade_1_5_5() {
+			// Delete old minification options
+			delete_option( 'wphb-minification-check-files' );
+			delete_option( 'wphb-minification-check-files-progress' );
 		}
 
 

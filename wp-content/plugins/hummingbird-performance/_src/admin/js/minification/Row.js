@@ -9,6 +9,7 @@ const Row = ( _element, _filter, _filter_sec ) => {
         $combine = $el.find( '.toggle-combine' ),
         $minify = $el.find( '.toggle-minify' ),
         $posFooter = $el.find( '.toggle-position-footer' ),
+        $defer = $el.find( '.toggle-defer' ),
         $disableIcon = $el.find( '.toggle-cross > i' );
 
     if ( _filter_sec ) {
@@ -84,6 +85,10 @@ const Row = ( _element, _filter, _filter_sec ) => {
                 }
                 case 'combine': {
                     $combine.prop( 'checked', value );
+                    break;
+                }
+                case 'defer': {
+                    $defer.prop( 'checked', value );
                     break;
                 }
                 case 'include': {

@@ -48,7 +48,7 @@
 					</li>
 				<?php else: ?>
 					<li>
-						<span class="list-label"><?php _e( 'WPMU DEV CDN', 'wphb' ); ?></span>
+						<span class="list-label"><?php _e( 'Host your files on WPMU DEV’s blazing fast CDN', 'wphb' ); ?></span>
 						<span class="list-detail">
 							<div><a class="button button-content-cta button-ghost" href="#wphb-upgrade-membership-modal" id="dash-uptime-update-membership" rel="dialog"><?php _e( 'Pro Feature', 'wphb' ); ?></a></div>
 						</span>

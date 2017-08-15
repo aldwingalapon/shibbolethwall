@@ -8,8 +8,13 @@
 
 		<div class="content">
 			<p><?php echo sprintf( __( "Hummingbird's Minification engine can combine and minify the files your website outputs when a <br> user visits your website. The less requests your visitors have to make to your server, the <br> better. Let's check to see what we can optimise, %s!", 'wphb' ), $user ); ?></p>
-			<a id="check-files" class="button button-large" href="#check-files-modal"><?php esc_html_e( 'Activate Minification', 'wphb' ); ?></a>
 		</div><!-- end content -->
+
+		<div class="buttons">
+			<a id="check-files" class="button button-large" href="#check-files-modal">
+				<?php esc_html_e( 'Activate Minification', 'wphb' ); ?>
+			</a>
+		</div>
 
 	</div><!-- end wphb-block-entry-content -->
 

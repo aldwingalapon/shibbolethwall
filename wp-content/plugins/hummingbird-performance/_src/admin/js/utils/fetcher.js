@@ -149,12 +149,9 @@ function Fetcher() {
              *
              * @param progress
              */
-            startCheck: ( progress ) => {
+            startCheck: () => {
                 const action = actionPrefix + 'minification_start_check';
-                return request( action, { progress }, 'POST' )
-                    .then( ( response ) => {
-                        return response;
-                    });
+                return request( action, {}, 'POST' );
             },
 
             /**
@@ -163,12 +160,20 @@ function Fetcher() {
              * @param progress
              * @param step
              */
-            checkStep: ( progress, step ) => {
+            checkStep: ( step ) => {
                 const action = actionPrefix + 'minification_check_step';
-                return request( action, { progress, step }, 'POST' )
+                return request( action, { step }, 'POST' )
                     .then( ( response ) => {
                         return response;
                     });
+            },
+
+            /**
+             * Finish minification process.
+             */
+            finishCheck: () => {
+                const action = actionPrefix + 'minification_finish_scan';
+                return request( action, {}, 'POST' );
             },
 
 			/**
@@ -207,7 +212,6 @@ function Fetcher() {
                     .then( ( response ) => {
                         return response;
                     });
-
             },
 
             /**

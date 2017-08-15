@@ -8,6 +8,7 @@ require_once( 'minify/class-minify-sources-collector.php' );
 include_once( 'minify/class-minify-group.php' );
 include_once( 'minify/class-minify-groups-list.php' );
 include_once( 'minify/class-minify-housekeeper.php' );
+include_once( 'minify/class-minify-scanner.php' );
 
 class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 
@@ -34,6 +35,11 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 	public $housekeeper;
 
 	/**
+	 * @var WP_Hummingbird_Module_Minify_Scanner
+	 */
+	public $scanner;
+
+	/**
 	 * Counter that will name scripts/styles slugs
 	 *
 	 * @var int
@@ -55,6 +61,8 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 		parent::__construct( $slug, $name );
 		$this->housekeeper = new WP_Hummingbird_Module_Minify_Housekeeper();
 		$this->housekeeper->init();
+
+		$this->scanner = new WP_Hummingbird_Module_Minify_Scanner();
 		self::$counter = 0;
 	}
 
@@ -75,7 +83,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 
 		add_action( 'before_delete_post', array( $this, 'on_delete_post' ), 10 );
 
-		// Process the queue through ajax
+		// Process the queue through WP Cron
 		add_action( 'wphb_minify_process_queue', array( $this, 'process_queue' ) );
 	}
 
@@ -85,7 +93,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 	public function on_delete_post( $post_id ) {
 		$group = WP_Hummingbird_Module_Minify_Group::get_instance_by_post_id( $post_id );
 
-		if ( is_a( $group, 'WP_Hummingbird_Module_Minify_Group'  ) && $group->file_id ) {
+		if ( ( $group instanceof WP_Hummingbird_Module_Minify_Group ) && $group->file_id ) {
 			if ( $group->get_file_path() && file_exists( $group->get_file_path() ) ) {
 				wp_delete_file( $group->get_file_path() );
 			}
@@ -94,41 +102,11 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 	}
 
 	public function should_be_active( $is_active ) {
-		if ( ! $this->can_execute_php() ) {
+		if ( ! wphb_can_execute_php() ) {
 			return false;
 		}
 
 		return $is_active;
-	}
-
-	/**
-	 * Check if Hummingbird is currently checking files
-	 *
-	 * @return bool
-	 */
-	public static function is_checking_files() {
-		$checking_files = get_option( 'wphb-minification-check-files', 0 );
-		if ( $checking_files )
-			return true;
-
-		return false;
-	}
-
-	/**
-	 * Check if the current PHP version is suitable for minification
-	 */
-	public function can_execute_php() {
-		$minimun = $this->get_php_min_version();
-
-		if ( version_compare( PHP_VERSION, $minimun, '<' ) ) {
-			return false;
-		}
-
-		return true;
-	}
-
-	public function get_php_min_version() {
-		return '5.3';
 	}
 
 	public function run() {
@@ -136,7 +114,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 
 		add_action( 'init', array( $this, 'register_cpts' ) );
 
-		if ( is_admin() || is_customize_preview() || is_a( $wp_customize, 'WP_Customize_Manager' ) ) {
+		if ( is_admin() || is_customize_preview() || ( $wp_customize instanceof WP_Customize_Manager ) ) {
 			return;
 		}
 
@@ -268,13 +246,11 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 		// Group dependencies by attributes like args, extra, etc
 		$_groups = $this->group_dependencies_by_attributes( $handles, $wp_dependencies, $type );
 
-
 		// Create a Groups list object
 		$groups_list = new WP_Hummingbird_Module_Minify_Groups_List( $type );
 		array_map(array( $groups_list, 'add_group' ), $_groups );
 
 		unset( $_groups );
-
 
 		// Time to split the groups if we're not combining some of them
 		foreach ( $groups_list->get_groups() as $group ) {
@@ -292,57 +268,14 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 			}
 
 			$dont_combine_list = $group->get_dont_combine_list();
-
 			if ( $dont_combine_list ) {
-				// There are one or more handles that should not be combined
-				/** @var WP_Hummingbird_Module_Minify_Group $group */
-				$handles = $group->get_handles();
-				// Here we'll save sources that don't need to be minified/combine
-				// Then we'll extract those handles from the group and we'll create
-				// a new group for them keeping the groups order
-				$group_combine = array();
-				foreach ( $handles as $handle ) {
-					$combine_resource = $group->should_do_handle( $handle, 'combine' );
-					$group_combine[ $handle ] = $combine_resource ? 1 : 0;
-				}
+				$splitted_group = $this->_get_splitted_group_structure_by( 'combine', $group );
+				// Split the group!
+				$groups_list->split_group( $group->hash, $splitted_group );
+			}
 
-				// Now split groups if needed based on combine value
-				// We need to keep always the order, ALWAYS
-				// This will save the new splitted group structure
-				$splitted_group = array();
-
-				$last_status = null;
-				foreach ( $group_combine as $handle => $status ) {
-
-					// Last minify status will be the first one by default
-					if ( is_null( $last_status ) ) {
-						$last_status = $status;
-					}
-
-					// Set the splitted groups to the last element
-					end( $splitted_group );
-					if ( $last_status === $status && $status !== 0 ) {
-						$current_key = key( $splitted_group );
-						if ( ! $current_key ) {
-							// Current key can be NULL, set to 0
-							$current_key = 0;
-						}
-
-						if ( ! isset( $splitted_group[ $current_key ] ) || ! is_array( $splitted_group[ $current_key ] ) ) {
-							$splitted_group[ $current_key ] = array();
-						}
-
-						$splitted_group[ $current_key ][] = $handle;
-					}
-					else {
-						// Create a new group
-						$splitted_group[] = array( $handle );
-					}
-
-
-					$last_status = $status;
-				}
-
+			if ( 'scripts' === $type && $group->get_defer_list() ) {
+				$splitted_group = $this->_get_splitted_group_structure_by( 'defer', $group, false );
 				// Split the group!
 				$groups_list->split_group( $group->hash, $splitted_group );
 			}
@@ -394,12 +327,75 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 					if ( $group->should_process_group() ) {
 						$this->group_queue[] = $group;
 					}
-
 				}
 			}
 		}
 
 		return $return_to_wp;
+	}
+
+	/**
+	 * Create a new group structure based on $by parameter
+	 *
+	 * This will allow later to split groups into new groups based on combination/deferring...
+	 *
+	 * @param string $by combine|defer|minify...
+	 * @param WP_Hummingbird_Module_Minify_Group $group
+	 * @param bool $value Value to apply if the handle should be done
+	 *
+	 * @return array New structure
+	 */
+	private function _get_splitted_group_structure_by( $by, $group, $value = true ) {
+		$handles = $group->get_handles();
+
+		// Here we'll save sources that don't need to be minified/combine/deferred...
+		// Then we'll extract those handles from the group and we'll create
+		// a new group for them keeping the groups order
+		$group_todos = array();
+		foreach ( $handles as $handle ) {
+			$value = absint( $value );
+			$not_value = absint( ! $value );
+			$group_todos[ $handle ] = $group->should_do_handle( $handle, $by ) ? $value : $not_value;
+		}
+
+		// Now split groups if needed based on $by value
+		// We need to keep always the order, ALWAYS
+		// This will save the new splitted group structure
+		$splitted_group = array();
+
+		$last_status = null;
+		foreach ( $group_todos as $handle => $status ) {
+
+			// Last minify status will be the first one by default
+			if ( is_null( $last_status ) ) {
+				$last_status = $status;
+			}
+
+			// Set the splitted groups to the last element
+			end( $splitted_group );
+			if ( $last_status === $status && $status !== 0 ) {
+				$current_key = key( $splitted_group );
+				if ( ! $current_key ) {
+					// Current key can be NULL, set to 0
+					$current_key = 0;
+				}
+
+				if ( ! isset( $splitted_group[ $current_key ] ) || ! is_array( $splitted_group[ $current_key ] ) ) {
+					$splitted_group[ $current_key ] = array();
+				}
+
+				$splitted_group[ $current_key ][] = $handle;
+			}
+			else {
+				// Create a new group
+				$splitted_group[] = array( $handle );
+			}
+
+
+			$last_status = $status;
+		}
+
+		return $splitted_group;
 	}
 
 	/**
@@ -488,16 +484,13 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 				$new_group = new WP_Hummingbird_Module_Minify_Group();
 				$new_group->set_type( $type );
 				foreach ( $registered_dependency->extra as $key => $value ) {
-					if ( 'data' === $key ) {
-						// We'll do this later as it can cause duplicated data in different groups
-						continue;
-					}
 					$new_group->add_extra( $key, $value );
 				}
 
 				// We'll treat this later
 				$new_group->delete_extra( 'after' );
 				$new_group->delete_extra( 'before' );
+				$new_group->delete_extra( 'data' );
 
 				$new_group->set_args( $registered_dependency->args );
 
@@ -672,7 +665,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 			if ( $count >= 8 ) {
 				break;
 			}
-			if ( ! is_a( $item, 'WP_Hummingbird_Module_Minify_Group' ) )
+			if ( ! ( $item instanceof WP_Hummingbird_Module_Minify_Group ) )
 				continue;
 
 			/** @var WP_Hummingbird_Module_Minify_Group $item */
@@ -779,7 +772,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 	/**
 	 * Clear the module cache
 	 */
-	public static function clear_cache( $reset_settings = true ) {
+	public function clear_cache( $reset_settings = true ) {
 		global $wpdb;
 
 		// Clear all the cached groups data
@@ -820,7 +813,7 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 		// Clear the pending process queue
 		self::clear_pending_process_queue();
 
-		update_option( 'wphb-minification-check-files', 0 );
+		$this->scanner->reset_scan();
 
 		WP_Hummingbird_Minification_Errors_Controller::clear_errors();
 	}
@@ -828,107 +821,6 @@ class WP_Hummingbird_Module_Minify extends WP_Hummingbird_Module {
 	public static function clear_pending_process_queue() {
 		delete_option( 'wphb_process_queue' );
 		delete_transient( 'wphb-processing' );
-	}
-
-	/**
-	 * Initializes the scanning process
-	 */
-	public static function init_scan() {
-		wphb_clear_minification_cache( false );
-
-		// Activate minification if is not
-		wphb_toggle_minification( true );
-
-		// Calculate URLs to Check
-		$args = array(
-			'orderby'        => 'rand',
-			'posts_per_page' => '1',
-			'ignore_sticky_posts' => true,
-			'post_status' => 'publish'
-		);
-
-		$urls = array();
-
-		$urls[] = home_url();
-
-		$post_types = get_post_types();
-		$post_types = array_diff( $post_types, array( 'attachment', 'nav_menu_item', 'revision' ) );
-
-		foreach ( $post_types as $post_type ) {
-			$args['post_type'] = $post_type;
-			$posts = get_posts( $args );
-			if ( $posts ) {
-				$urls[] = get_permalink( $posts[0] );
-			}
-
-			$post_type_archive_link = get_post_type_archive_link( $post_type );
-			if ( $post_type_archive_link )
-				$urls[] = $post_type_archive_link;
-		}
-
-		if ( get_option( 'show_on_front' ) && $post = get_post( get_option( 'page_for_posts' ) ) ) {
-			$urls[] = get_permalink( $post->ID );
-		}
-
-		$urls = array_unique( $urls );
-
-		$urls_list = array();
-		// Duplicate every URL 4 times. This will be enough to generate all the files for most of the sites
-		for ( $i = 0; $i < 4; $i++ ) {
-			$urls_list = array_merge( $urls_list, $urls );
-		}
-
-		sort( $urls_list );
-		$urls = $urls_list;
-
-		$args = array(
-			'on' => current_time( 'timestamp' ),
-			'urls_list' => $urls,
-			'urls_done' => array()
-		);
-
-		update_option( 'wphb-minification-check-files', $args );
-	}
-
-	/**
-	 * This function send a request to a URL in the site
-	 * that will trigger the files collection
-	 *
-	 * Executed with AJAX
-	 *
-	 * @param string $url
-	 *
-	 * @return array
-	 */
-	public static function scan( $url ) {
-		$cookies = array();
-		foreach ( $_COOKIE as $name => $value ) {
-			if ( strpos( $name, 'wordpress_' ) > -1 ) {
-				$cookies[] = new WP_Http_Cookie( array( 'name' => $name, 'value' => $value ) );
-			}
-
-		}
-
-		$result = array();
-
-		$args = array(
-			'timeout' => 0.01,
-			'cookies' => $cookies,
-			'blocking' => false,
-			'sslverify' => false
-		);
-		$result['cookie'] = wp_remote_get( $url, $args );
-
-		// One call logged out
-		$args = array(
-			'timeout' => 0.01,
-			'blocking' => false,
-			'sslverify' => false
-		);
-
-		$result['no-cookie'] = wp_remote_get( $url, $args );
-
-		return $result;
 	}
 
 }

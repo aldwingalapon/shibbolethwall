@@ -74,7 +74,7 @@ class WP_Hummingbird_Module_Minify_Groups_List {
 	 * @return bool
 	 */
 	public function add_group( $group ) {
-		if ( ! is_a( $group, 'WP_Hummingbird_Module_Minify_Group' ) ) {
+		if ( ! ( $group instanceof WP_Hummingbird_Module_Minify_Group ) ) {
 			return false;
 		}
 
