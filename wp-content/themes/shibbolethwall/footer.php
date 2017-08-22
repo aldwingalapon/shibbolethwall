@@ -11,6 +11,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
+			<div class="clearfix"></div>
 			<div class="four-menu middle-footer">
 				<div class="container">
 					<div class="row">

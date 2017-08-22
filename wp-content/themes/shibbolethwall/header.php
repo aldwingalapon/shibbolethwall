@@ -69,6 +69,7 @@
 	<a href="#" class="smooth-scroll"><button type="button" class="back_to_top-button"><i class="fa fa-chevron-up"></i></button></a>
 	<header id="main-header">
 		<div id="main-header-content">
+<!--
 			<div id="top-header">
 				<div class="container">
 					<div class="row">
@@ -78,6 +79,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>			
+-->
 			<div id="main-navigation">
 				<div class="container">
 					<div class="row">
@@ -116,7 +118,7 @@
 															<input id="signin_submit" type="submit" name="submit" value="Log In" title="Log In" />
 															<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 														</p>
-														<p class="forgot"><a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword" title="Forgot your password?">Forgot your password?</a></p>
+														<p class="forgot"><a href="<?php echo get_option('home'); ?>/account/" title="Register">Register</a> | <a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword" title="Forgot your password?">Forgot your password?</a></p>
 												</fieldset>
 											</form>
 										</div>
@@ -141,6 +143,7 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
+<!--
 			<div id="bottom-header">
 				<div class="container">
 					<div class="row">
@@ -150,5 +153,6 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>			
+-->
 		</div>
 	</header>
