@@ -6,6 +6,15 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+add_action( 'template_redirect', 'wc_redirect_non_logged_to_login_access');
+function wc_redirect_non_logged_to_login_access() {
+
+    if ( !is_user_logged_in() && ( is_woocommerce() || is_shop() || is_cart() || is_checkout() ) ) {
+        wp_redirect( get_permalink( get_page_by_path( 'account' )) );
+        exit();
+    }
+}
+
 //Lets add Open Graph Meta Info
 function insert_fb_in_head() {
 	global $post;
