@@ -2,7 +2,7 @@
 
 
 final class ITSEC_Logs_Page {
-	private $version = 1.5;
+	private $version = 1.7;
 
 	private $self_url = '';
 	private $modules = array();

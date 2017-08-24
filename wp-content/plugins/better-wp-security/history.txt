@@ -669,3 +669,14 @@
 	Bug Fix: Ensure uninstall process is not run when another version of iThemes Security is still active.
 	Bug Fix: Fixed method of working around Hide Backend.
 	Bug Fix: Warnings are no longer generated when saving a user profile with a role of "No role for this site" selected.
+6.5.0 - 2017-08-23 - Chris Jean & Timothy Jacobs
+	Enhancement: Simplified the SSL module to offer a simple Enable/Disable setting and simplified explanations. The legacy settings are available by selecting Advanced.
+	Enhancement: Added the itsec-get-ip filter to allow code to supply the remote IP directly.
+	Enhancement: Enabling SSL support will only log you out if you are not already on an https connection.
+	Enhancement: Improve password requirements compatibility with plugins and systems that integrate with WordPress Users.
+	Removed Old Feature: Removed the "Replace jQuery With a Safe Version" feature as its use (protecting against a specific jQuery bug: https://bugs.jquery.com/ticket/9521) is many years old and is no longer a concern.
+	Bug Fix: Bumped version number of some scripts to ensure that they refresh properly.
+	Bug Fix: Fixed way to work around Hide Backend on some hosts.
+6.5.1 - 2017-08-23 - Chris Jean & Timothy Jacobs
+	Bug Fix: Fixed logical error that prevented backups from executing.
+	Bug Fix: Fixed issue that could cause database locks to flood the database.

@@ -82,7 +82,7 @@ class ITSEC_Backup {
 	 */
 	public function do_backup( $one_time = false ) {
 
-		if ( ITSEC_Lib::get_lock( 'backup', 180 ) ) {
+		if ( ! ITSEC_Lib::get_lock( 'backup', 180 ) ) {
 			return new WP_Error( 'itsec-backup-do-backup-already-running', __( 'Unable to create a backup at this time since a backup is currently being created. If you wish to create an additional backup, please wait a few minutes before trying again.', 'better-wp-security' ) );
 		}
 

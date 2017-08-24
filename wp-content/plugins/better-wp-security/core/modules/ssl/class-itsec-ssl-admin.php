@@ -2,7 +2,9 @@
 
 class ITSEC_SSL_Admin {
 	function run() {
-		if ( 1 === ITSEC_Modules::get_setting( 'ssl', 'frontend' ) ) {
+		$settings = ITSEC_Modules::get_settings( 'ssl' );
+
+		if ( 'advanced' === $settings['require_ssl'] && 1 === $settings['frontend'] ) {
 
 			add_action( 'post_submitbox_misc_actions', array( $this, 'ssl_enable_per_content' ) );
 			add_action( 'save_post', array( $this, 'save_post' ) );
@@ -54,7 +56,7 @@ class ITSEC_SSL_Admin {
 			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 				return $id;
 			}
-			
+
 			if ( ! current_user_can( 'edit_post', $id ) ) {
 				return $id;
 			}

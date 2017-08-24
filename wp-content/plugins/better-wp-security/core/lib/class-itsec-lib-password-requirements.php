@@ -179,8 +179,10 @@ class ITSEC_Lib_Password_Requirements {
 			return;
 		}
 
-		$user->user_pass = $_POST['pass1'];
-		$error			 = wp_update_user( $user );
+		$error = wp_update_user( array(
+			'ID'        => $user->ID,
+			'user_pass' => $_POST['pass1']
+		) );
 
 		if ( is_wp_error( $error ) ) {
 			$this->error_message = $error->get_error_message();

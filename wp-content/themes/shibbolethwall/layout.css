@@ -74,6 +74,7 @@
 	#main-header .nav{width:100%;}
 	#main-header .nav ul.primary-menu li.homecoming-title{display: block; margin: 0; padding: 0;}
 	#main-header .nav ul.primary-menu li.homecoming-title h1{display:block;}
+	#main-header .nav ul.primary-menu li:not(.homecoming-title) a{font-size:1.125rem;}
 	#main-header .nav .inner-nav, #main-header .nav .menu-primary-menu-container {display:block;}
 
 }

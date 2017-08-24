@@ -571,6 +571,10 @@ var itsecSettingsPage = {
 
 		var $window = jQuery( window ), height = $window.height(), width = $window.width(), offset = $el.offset();
 
+		if ( ! $el ) {
+			return false;
+		}
+
 		return offset.top < height && offset.left < width;
 	},
 
